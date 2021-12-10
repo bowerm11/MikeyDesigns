@@ -14,6 +14,7 @@
         <p><?php echo date("F jS, Y");?></p>
     </body>
     <script type="text/javascript" src="./wwwroot/js/Index/coverAnimation/coverAnimation.js"></script>
+    <script type="text/javascript" src="./wwwroot/js/Index/coverAnimation/abstract/threeObjectSet.js"></script>
     <script type="text/javascript" src="./wwwroot/js/Index/coverAnimation/island/island.js"></script>
     <script type="module" src="./wwwroot/js/Index/index.js"></script>
 </html>

@@ -32,9 +32,9 @@ class CoverAnimation {
     loadAndRunAsync() {
         var coverAnimationObj = this;
 
-        this.IslandModel.loadData().then(function () {
+        this.IslandModel.loadDataAsync().then(function () {
             document.body.appendChild(coverAnimationObj.Renderer.domElement);
-
+            coverAnimationObj.IslandModel.setAllRotationAnimation(80, -.1, 0, .1);
             coverAnimationObj.MouseWheelTracker.OnWheelEvent = function () {
                 if (coverAnimationObj.MouseWheelTracker.WheelHasZoomedIn()) {
                     coverAnimationObj.Camera.position.z -= coverAnimationObj.MouseZoomSensitivity;
@@ -45,15 +45,15 @@ class CoverAnimation {
 
             coverAnimationObj.MouseMoveTracker.OnClickAndDrag = function () {
                 if (coverAnimationObj.MouseMoveTracker.MouseHasMovedUp()) {
-                    coverAnimationObj.IslandModel.Object.rotation.x -= coverAnimationObj.MouseDragSensitivity.X;
+                    coverAnimationObj.IslandModel.rotateAllBy(-coverAnimationObj.MouseDragSensitivity.X, 0, 0);
                 } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedDown()) {
-                    coverAnimationObj.IslandModel.Object.rotation.x += coverAnimationObj.MouseDragSensitivity.X;
+                    coverAnimationObj.IslandModel.rotateAllBy(coverAnimationObj.MouseDragSensitivity.X, 0, 0);
                 }
 
                 if (coverAnimationObj.MouseMoveTracker.MouseHasMovedRight()) {
-                    coverAnimationObj.IslandModel.Object.rotation.y += coverAnimationObj.MouseDragSensitivity.Y;
+                    coverAnimationObj.IslandModel.rotateAllBy(0, coverAnimationObj.MouseDragSensitivity.Y, 0);
                 } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedLeft()) {
-                    coverAnimationObj.IslandModel.Object.rotation.y -= coverAnimationObj.MouseDragSensitivity.Y;
+                    coverAnimationObj.IslandModel.rotateAllBy(0, -coverAnimationObj.MouseDragSensitivity.Y, 0);
                 }
             };
 

@@ -1,10 +1,10 @@
-class Island {
+class Island extends ThreeObjectSet {
     constructor(coverAnimation) {
-        this.CoverAnimation = coverAnimation;
-        this.Object = null;
+        super(coverAnimation);
+        this.IslandModel = null;
     }
 
-    loadData() {
+    loadDataAsync() {
         var islandObj = this;
 
         return new Promise((resolve, reject) => {
@@ -12,8 +12,9 @@ class Island {
 
             loader.load("./wwwroot/models/model.glb",
                 function (model) {
-                    islandObj.Object = model.scene;
-                    islandObj.CoverAnimation.Scene.add(islandObj.Object);
+                    islandObj.IslandModel = model.scene;
+                    islandObj.CoverAnimation.Scene.add(islandObj.IslandModel);
+                    islandObj.setAllScenes();
                     resolve();
                 },
                 function (loading) {
