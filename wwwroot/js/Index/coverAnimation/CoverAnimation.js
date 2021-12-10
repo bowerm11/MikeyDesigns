@@ -14,6 +14,7 @@ class CoverAnimation {
         this.MouseZoomSensitivity = 0.1;
         this.MouseWheelTracker = new MouseZoom(this.Renderer.domElement);
         this.MouseMoveTracker = new ClickAndDrag(this.Renderer.domElement);
+        this.StarBackground = new StarBackground(this);
         this.IslandModel = new Island(this);
 
         this.Camera.position.set(0, 0, 53);
@@ -22,7 +23,8 @@ class CoverAnimation {
         //Add css canvas style to 100% for same render size but lower res.
         this.Renderer.setSize(window.innerWidth, window.innerHeight);
         this.Renderer.setPixelRatio(1.5);
-        this.Renderer.setClearColor(0xffffff, 0.8);
+        //this.Renderer.setClearColor(0xffffff, 0.8);
+        this.Renderer.autoClear = false;
 
         this.Scene.add(this.AmbientLight);
         this.DirectionalLight.position.set(10, 20, 0);
@@ -34,7 +36,7 @@ class CoverAnimation {
 
         this.IslandModel.loadDataAsync().then(function () {
             document.body.appendChild(coverAnimationObj.Renderer.domElement);
-            coverAnimationObj.IslandModel.setAllRotationAnimation(80, -.1, 0, .1);
+
             coverAnimationObj.MouseWheelTracker.OnWheelEvent = function () {
                 if (coverAnimationObj.MouseWheelTracker.WheelHasZoomedIn()) {
                     coverAnimationObj.Camera.position.z -= coverAnimationObj.MouseZoomSensitivity;
@@ -45,16 +47,43 @@ class CoverAnimation {
 
             coverAnimationObj.MouseMoveTracker.OnClickAndDrag = function () {
                 if (coverAnimationObj.MouseMoveTracker.MouseHasMovedUp()) {
-                    coverAnimationObj.IslandModel.rotateAllBy(-coverAnimationObj.MouseDragSensitivity.X, 0, 0);
+                    var x = coverAnimationObj.Camera.position.x,
+                    y = coverAnimationObj.Camera.position.y,
+                    z = coverAnimationObj.Camera.position.z,
+                    rotSpeed = 0.01;
+                
+                    coverAnimationObj.Camera.position.y = y * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) - y * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);
                 } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedDown()) {
-                    coverAnimationObj.IslandModel.rotateAllBy(coverAnimationObj.MouseDragSensitivity.X, 0, 0);
+                    var x = coverAnimationObj.Camera.position.x,
+                    y = coverAnimationObj.Camera.position.y,
+                    z = coverAnimationObj.Camera.position.z,
+                    rotSpeed = 0.01;
+                
+                    coverAnimationObj.Camera.position.y = y * Math.cos(rotSpeed) - z * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) + y * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);        
                 }
 
                 if (coverAnimationObj.MouseMoveTracker.MouseHasMovedRight()) {
-                    coverAnimationObj.IslandModel.rotateAllBy(0, coverAnimationObj.MouseDragSensitivity.Y, 0);
-                } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedLeft()) {
-                    coverAnimationObj.IslandModel.rotateAllBy(0, -coverAnimationObj.MouseDragSensitivity.Y, 0);
-                }
+                    var x = coverAnimationObj.Camera.position.x,
+                    y = coverAnimationObj.Camera.position.y,
+                    z = coverAnimationObj.Camera.position.z,
+                    rotSpeed = 0.01;
+                
+                    coverAnimationObj.Camera.position.x = x * Math.cos(rotSpeed) - z * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) + x * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);
+                  } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedLeft()) {
+                    var x = coverAnimationObj.Camera.position.x,
+                    y = coverAnimationObj.Camera.position.y,
+                    z = coverAnimationObj.Camera.position.z,
+                    rotSpeed = 0.01;
+                
+                    coverAnimationObj.Camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
+                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);                }
             };
 
             coverAnimationObj.Renderer.domElement.addEventListener('mousemove', function (e) {
@@ -192,8 +221,10 @@ class MouseZoom {
 }
 
 function runAnimationLoop(CoverAnimation) {
+    CoverAnimation.Renderer.clear(true, true, true);
+    CoverAnimation.Renderer.render(CoverAnimation.Scene, CoverAnimation.Camera);
+    CoverAnimation.Renderer.render(CoverAnimation.StarBackground.StarScene, CoverAnimation.Camera);
     //Inner function is a 'closure'.
     //It remembers the instance param of current loop prior to deletion.
     requestAnimationFrame(function () { return runAnimationLoop(CoverAnimation) });
-    CoverAnimation.Renderer.render(CoverAnimation.Scene, CoverAnimation.Camera);
 }
