@@ -1,23 +1,27 @@
 class CoverAnimation {
-    constructor(THREE, GLTFLoader) {
+    constructor(THREE, GLTFLoader, OrbitControls) {
         this.THREE = THREE;
         this.GLTFLoader = GLTFLoader;
         this.LoadManager = new THREE.LoadingManager();
         this.Renderer = new THREE.WebGLRenderer({ antialias: true });
         this.Camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
+        this.CameraOrbitControl = new OrbitControls(this.Camera, this.Renderer.domElement);
         this.Scene = new THREE.Scene();
         this.AmbientLight = new THREE.AmbientLight(0xebe8f0, 0.5);
         this.DirectionalLight = new THREE.DirectionalLight(0xebe8f0, 0.5);
         this.RayCaster = new THREE.Raycaster();
         this.MouseVector = new THREE.Vector2();
-        this.MouseDragSensitivity = { X: 0.05, Y: 0.05 };
+        this.MouseDragSensitivity = { X: 0.02, Y: 0.02 };
         this.MouseZoomSensitivity = 0.1;
         this.MouseWheelTracker = new MouseZoom(this.Renderer.domElement);
         this.MouseMoveTracker = new ClickAndDrag(this.Renderer.domElement);
         this.StarBackground = new StarBackground(this);
         this.IslandModel = new Island(this);
 
-        this.Camera.position.set(0, 0, 53);
+        this.Camera.position.set(0, 0, 50);
+        this.CameraOrbitControl.target.set(0, 0, 0);
+        this.CameraOrbitControl.enableZoom = true;
+        this.CameraOrbitControl.update();
 
         //Set size will set size of canvas. Add third param and set to false to change resolution.
         //Add css canvas style to 100% for same render size but lower res.
@@ -47,43 +51,17 @@ class CoverAnimation {
 
             coverAnimationObj.MouseMoveTracker.OnClickAndDrag = function () {
                 if (coverAnimationObj.MouseMoveTracker.MouseHasMovedUp()) {
-                    var x = coverAnimationObj.Camera.position.x,
-                    y = coverAnimationObj.Camera.position.y,
-                    z = coverAnimationObj.Camera.position.z,
-                    rotSpeed = 0.01;
-                
-                    coverAnimationObj.Camera.position.y = y * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) - y * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);
+                    coverAnimationObj.Camera.position.y += coverAnimationObj.MouseDragSensitivity.Y;
+                    
                 } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedDown()) {
-                    var x = coverAnimationObj.Camera.position.x,
-                    y = coverAnimationObj.Camera.position.y,
-                    z = coverAnimationObj.Camera.position.z,
-                    rotSpeed = 0.01;
-                
-                    coverAnimationObj.Camera.position.y = y * Math.cos(rotSpeed) - z * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) + y * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);        
+                    coverAnimationObj.Camera.position.y -= coverAnimationObj.MouseDragSensitivity.Y;
                 }
 
                 if (coverAnimationObj.MouseMoveTracker.MouseHasMovedRight()) {
-                    var x = coverAnimationObj.Camera.position.x,
-                    y = coverAnimationObj.Camera.position.y,
-                    z = coverAnimationObj.Camera.position.z,
-                    rotSpeed = 0.01;
-                
-                    coverAnimationObj.Camera.position.x = x * Math.cos(rotSpeed) - z * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) + x * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);
+                    coverAnimationObj.Camera.position.x += coverAnimationObj.MouseDragSensitivity.X;
                   } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedLeft()) {
-                    var x = coverAnimationObj.Camera.position.x,
-                    y = coverAnimationObj.Camera.position.y,
-                    z = coverAnimationObj.Camera.position.z,
-                    rotSpeed = 0.01;
-                
-                    coverAnimationObj.Camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
-                    coverAnimationObj.Camera.lookAt(coverAnimationObj.Scene.position);                }
+                    coverAnimationObj.Camera.position.x -= coverAnimationObj.MouseDragSensitivity.X;
+                }
             };
 
             coverAnimationObj.Renderer.domElement.addEventListener('mousemove', function (e) {
@@ -220,7 +198,9 @@ class MouseZoom {
     };
 }
 
+
 function runAnimationLoop(CoverAnimation) {
+    CoverAnimation.CameraOrbitControl.update();
     CoverAnimation.Renderer.clear(true, true, true);
     CoverAnimation.Renderer.render(CoverAnimation.Scene, CoverAnimation.Camera);
     CoverAnimation.Renderer.render(CoverAnimation.StarBackground.StarScene, CoverAnimation.Camera);

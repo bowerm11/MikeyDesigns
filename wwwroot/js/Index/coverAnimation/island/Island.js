@@ -13,6 +13,7 @@ class Island extends ThreeObjectSet {
             loader.load("./wwwroot/models/model.glb",
                 function (model) {
                     islandObj.IslandModel = model.scene;
+                    islandObj.IslandModel.position.set(0, 0, 0);
                     islandObj.CoverAnimation.Scene.add(islandObj.IslandModel);
                     islandObj.setAllScenes();
                     resolve();

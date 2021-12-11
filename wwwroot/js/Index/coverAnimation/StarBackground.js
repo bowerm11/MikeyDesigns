@@ -5,7 +5,7 @@ class StarBackground {
         this.StarGeometry = new this.CoverAnimation.THREE.CircleGeometry(.1, 20);
 
         //white, yellow, blue
-        this.StarMeshes = this.addMeshes(0xffffff, 0x00a2ff);
+        this.StarMeshes = this.addMeshes(0xffffff, 0x00a2ff, 0xff8800);
         this.initGeometry(200);
     }
 
@@ -23,9 +23,9 @@ class StarBackground {
 
     initGeometry(starCount) {
         for(var i=0;i<starCount;i++) {
-            var x = StarBackground.generateRandomCoord(),
-                y = StarBackground.generateRandomCoord(),
-                z = StarBackground.generateRandomCoord(),
+            var x = StarBackground.generateRandomCoord(-80, 80),
+                y = StarBackground.generateRandomCoord(-100, 80),
+                z = StarBackground.generateRandomCoord(-80, 80),
                 circleClone = this.returnRanomMesh();
 
             circleClone.position.set(x, y, z);
@@ -37,7 +37,7 @@ class StarBackground {
         return this.StarMeshes[Math.floor(Math.random()*this.StarMeshes.length)].clone();
     }
 
-    static generateRandomCoord() {
-        return (Math.random() - 0.5) * 70
+    static generateRandomCoord(min, max) {
+        return Math.random() * (max - min) + min;
     }
 }
