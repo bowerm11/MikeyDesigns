@@ -1,12 +1,12 @@
 class StarBackground {
     constructor(coverAnimation) {
         this.CoverAnimation = coverAnimation;
-        this.Stars = new Stars(this.CoverAnimation.THREE);
-        this.Nebula = new Nebula(this.CoverAnimation.THREE);
+        this.Stars = new Stars(this.CoverAnimation);
+        this.Nebula = new Nebula(this.CoverAnimation);
     }
 
     render() {
-        this.CoverAnimation.Renderer.render(this.Stars.StarScene, this.CoverAnimation.Camera);
+        this.Stars.render(this.CoverAnimation.Renderer, this.CoverAnimation.Camera);
         this.CoverAnimation.Renderer.render(this.Nebula.NebulaScene, this.CoverAnimation.Camera);
     }
 
@@ -16,22 +16,29 @@ class StarBackground {
 }
 
 class Stars {
-    constructor(THREE) {
-        this.THREE = THREE;
+    constructor(coverAnimation) {
+        this.THREE = coverAnimation.THREE;
         this.StarScene = new this.THREE.Scene();
         this.StarGeometry = new this.THREE.CircleGeometry(.12, 16);
         this.StarColors = [0xffffff, 0x00a2ff, 0xff8800];
         
         //white, yellow, blue
-        this.StarMeshes = this.addMeshes(this.StarColors);
-        this.initStarGeometry(200);
+        this.StarMeshes = this.#addMeshes(this.StarColors);
+        this.MovingStars = this.#initMovingStarGeometry(100);
+        this.#initStaticStarGeometry(100);
     }
 
-    addMeshes(colors) {
+    render(renderer, camera) {
+        this.#moveStars();
+        renderer.render(this.StarScene, camera);
+    }
+
+    #addMeshes(colors) {
         const meshes = []
         for(var i = 0; i < colors.length; i++) {
             const colorChoice = colors[i];
             const material = new this.THREE.MeshBasicMaterial({ color: colorChoice });
+            material.side = this.THREE.DoubleSide;
             const mesh = new this.THREE.Mesh(this.StarGeometry, material);
             meshes.push(mesh);
         }
@@ -39,57 +46,105 @@ class Stars {
         return meshes;
     }
 
-    initStarGeometry(starCount) {
+    #initStaticStarGeometry(starCount) {
         for(var i=0;i<starCount;i++) {
             var x = StarBackground.generateRandomCoord(-80, 80),
                 y = StarBackground.generateRandomCoord(-100, 80),
                 z = StarBackground.generateRandomCoord(-80, 80),
-                circleClone = this.returnRanomMesh();
+                circleClone = this.#returnRanomMesh();
 
             circleClone.position.set(x, y, z);
             this.StarScene.add(circleClone);
         }
     }
 
-    returnRanomMesh() {
+    #initMovingStarGeometry(starCount) {
+        var stars = [];
+
+        for(var i=0;i<starCount;i++) {
+            var x = StarBackground.generateRandomCoord(-80, 80),
+                y = StarBackground.generateRandomCoord(-100, 80),
+                z = StarBackground.generateRandomCoord(-80, 80),
+                circleClone = this.#returnRanomMesh();
+
+            circleClone.position.set(x, y, z);
+            this.StarScene.add(circleClone);
+            stars.push(circleClone);
+        } 
+
+        return stars;
+    }
+
+    #moveStars() {
+        for(var i=0;i<this.MovingStars.length;i++) {
+            var star = this.MovingStars[i];
+            
+            star.position.x += StarBackground.generateRandomCoord(-0.01, 0.01);
+            star.position.y += StarBackground.generateRandomCoord(-0.01, 0.01);
+            star.position.z += StarBackground.generateRandomCoord(-0.01, 0.01);
+        }
+    }
+
+    #returnRanomMesh() {
         return this.StarMeshes[Math.floor(Math.random()*this.StarMeshes.length)].clone();
     }
 }
 
 class Nebula {
-    constructor(THREE) {
-        this.THREE = THREE;
+    constructor(coverAnimation) {
+        this.THREE = coverAnimation.THREE;
+        this.SmokeTexture = coverAnimation.Assets.SmokeTexture;
         this.NebulaScene = new this.THREE.Scene();
 
-        this.RedLight = new this.THREE.PointLight(0xd8547e,70,500,1.7);
-        this.RedLight.position.set(-150,0,0);
-        this.NebulaScene.add(this.RedLight);
+        this.CloudGeo = new this.THREE.PlaneBufferGeometry(15, 15);
+        this.CloudMaterial = new this.THREE.MeshLambertMaterial({map: this.SmokeTexture, transparent: true});
+        this.CloudMaterial.side = this.THREE.DoubleSide;
 
-        this.BlueLight = new this.THREE.PointLight(0x3677ac,70,500,1.7);
-        this.BlueLight.position.set(150,0,0);
-        this.NebulaScene.add(this.BlueLight);
+        this.#addBlueNebulas(9);
+        this.#addRedNebulas(9);
+    }
 
-        var nebulaObj = this;
-        this.TextureLoad = new this.THREE.TextureLoader();
-        this.TextureLoad.load("./wwwroot/images/smoke.png", function(texture){
-          var cloudGeo = new nebulaObj.THREE.PlaneBufferGeometry(500,500);
-          var cloudMaterial = new nebulaObj.THREE.MeshLambertMaterial({
-            map:texture,
-            transparent: true
-          });
-
-          for(let p=0; p<1; p++) {
-            let cloud = new nebulaObj.THREE.Mesh(cloudGeo, cloudMaterial);
-            cloud.position.set(
-              0,
-              60,
-              0
+    #addBlueNebulas(nebulaNum) {
+        for(var i = 0; i < nebulaNum; i++) {
+            var cloudMesh = new this.THREE.Mesh(this.CloudGeo, this.CloudMaterial);
+            var blueLight = new this.THREE.PointLight(0x3677ac, 165, 11, 1.7);
+        
+            blueLight.position.set(
+                StarBackground.generateRandomCoord(-90, 90),
+                StarBackground.generateRandomCoord(-90, 90),
+                StarBackground.generateRandomCoord(-90, 90)
             );
-            cloud.rotation.x = 1.57;
-            cloud.material.opacity = 0.55;
-            cloud.material.depthWrite = false;
-            nebulaObj.NebulaScene.add(cloud);
-          }
-        });
+            cloudMesh.position.set(blueLight.position.x, blueLight.position.y + 5, blueLight.position.z);
+            cloudMesh.rotation.x = StarBackground.generateRandomCoord(0, 1.57);
+            cloudMesh.rotation.y = StarBackground.generateRandomCoord(0, 1.57);
+            cloudMesh.rotation.z = StarBackground.generateRandomCoord(0, 1.57);
+            cloudMesh.material.opacity = 0.55;
+            cloudMesh.material.depthWrite = false;
+
+            this.NebulaScene.add(blueLight);
+            this.NebulaScene.add(cloudMesh);
+        }      
+    }
+
+    #addRedNebulas(nebulaNum) {
+        for(var i = 0; i < nebulaNum; i++) {
+            var cloudMesh = new this.THREE.Mesh(this.CloudGeo, this.CloudMaterial);
+            var redLight = new this.THREE.PointLight(0xd8547e, 120, 11, 1.7);
+        
+            redLight.position.set(
+                StarBackground.generateRandomCoord(-90, 90),
+                StarBackground.generateRandomCoord(-90, 90),
+                StarBackground.generateRandomCoord(-90, 90)
+            );
+            cloudMesh.position.set(redLight.position.x, redLight.position.y + 5, redLight.position.z);
+            cloudMesh.rotation.x = StarBackground.generateRandomCoord(0, 1.57);
+            cloudMesh.rotation.y = StarBackground.generateRandomCoord(0, 1.57);
+            cloudMesh.rotation.z = StarBackground.generateRandomCoord(0, 1.57);
+            cloudMesh.material.opacity = 0.55;
+            cloudMesh.material.depthWrite = false;
+
+            this.NebulaScene.add(redLight);
+            this.NebulaScene.add(cloudMesh);
+        }      
     }
 }
