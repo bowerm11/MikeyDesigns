@@ -1,18 +1,17 @@
+class AssetLoader {
+
+}
+
 class CoverAnimation {
     constructor(THREE, GLTFLoader, OrbitControls) {
         this.THREE = THREE;
         this.GLTFLoader = GLTFLoader;
-        this.LoadManager = new THREE.LoadingManager();
         this.Renderer = new THREE.WebGLRenderer({ antialias: true });
-        this.Camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
+        this.Camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
         this.CameraOrbitControl = new OrbitControls(this.Camera, this.Renderer.domElement);
-        this.Scene = new THREE.Scene();
-        this.AmbientLight = new THREE.AmbientLight(0xebe8f0, 0.5);
-        this.DirectionalLight = new THREE.DirectionalLight(0xebe8f0, 0.5);
         this.RayCaster = new THREE.Raycaster();
-        this.MouseVector = new THREE.Vector2();
-        this.MouseDragSensitivity = { X: 0.02, Y: 0.02 };
-        this.MouseZoomSensitivity = 0.1;
+        this.MousePositionVector = new THREE.Vector2();
+        this.MouseSensitivity = new THREE.Vector3(0.02, 0.02, 0.1);
         this.MouseWheelTracker = new MouseZoom(this.Renderer.domElement);
         this.MouseMoveTracker = new ClickAndDrag(this.Renderer.domElement);
         this.StarBackground = new StarBackground(this);
@@ -20,19 +19,14 @@ class CoverAnimation {
 
         this.Camera.position.set(0, 0, 50);
         this.CameraOrbitControl.target.set(0, 0, 0);
-        this.CameraOrbitControl.enableZoom = true;
-        this.CameraOrbitControl.update();
+        this.CameraOrbitControl.enablePan= false;
 
         //Set size will set size of canvas. Add third param and set to false to change resolution.
         //Add css canvas style to 100% for same render size but lower res.
+        //this.Renderer.setClearColor(0xffffff, 0.8);
         this.Renderer.setSize(window.innerWidth, window.innerHeight);
         this.Renderer.setPixelRatio(1.5);
-        //this.Renderer.setClearColor(0xffffff, 0.8);
         this.Renderer.autoClear = false;
-
-        this.Scene.add(this.AmbientLight);
-        this.DirectionalLight.position.set(10, 20, 0);
-        this.Scene.add(this.DirectionalLight);
     }
 
     loadAndRunAsync() {
@@ -40,55 +34,53 @@ class CoverAnimation {
 
         this.IslandModel.loadDataAsync().then(function () {
             document.body.appendChild(coverAnimationObj.Renderer.domElement);
-
-            coverAnimationObj.MouseWheelTracker.OnWheelEvent = function () {
-                if (coverAnimationObj.MouseWheelTracker.WheelHasZoomedIn()) {
-                    coverAnimationObj.Camera.position.z -= coverAnimationObj.MouseZoomSensitivity;
-                } else if (coverAnimationObj.MouseWheelTracker.WheelHasZoomedOut()) {
-                    coverAnimationObj.Camera.position.z += coverAnimationObj.MouseZoomSensitivity;
-                }
-            };
-
-            coverAnimationObj.MouseMoveTracker.OnClickAndDrag = function () {
-                if (coverAnimationObj.MouseMoveTracker.MouseHasMovedUp()) {
-                    coverAnimationObj.Camera.position.y += coverAnimationObj.MouseDragSensitivity.Y;
-                    
-                } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedDown()) {
-                    coverAnimationObj.Camera.position.y -= coverAnimationObj.MouseDragSensitivity.Y;
-                }
-
-                if (coverAnimationObj.MouseMoveTracker.MouseHasMovedRight()) {
-                    coverAnimationObj.Camera.position.x += coverAnimationObj.MouseDragSensitivity.X;
-                  } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedLeft()) {
-                    coverAnimationObj.Camera.position.x -= coverAnimationObj.MouseDragSensitivity.X;
-                }
-            };
-
-            coverAnimationObj.Renderer.domElement.addEventListener('mousemove', function (e) {
-                var rect = this.getBoundingClientRect();
-
-                coverAnimationObj.MouseVector.x = ((e.clientX - rect.left) / coverAnimationObj.Renderer.domElement.clientWidth) * 2 - 1;
-                coverAnimationObj.MouseVector.y = -((e.clientY - rect.top) / coverAnimationObj.Renderer.domElement.clientHeight) * 2 + 1;
-                coverAnimationObj.RayCaster.setFromCamera(coverAnimationObj.MouseVector, coverAnimationObj.Camera);
-                
-                var intersects = coverAnimationObj.RayCaster.intersectObjects(coverAnimationObj.Scene.children);
-
-                if (intersects.length > 0) {
-                    alert(intersects[0]);
-                }
-            }, false);
-
-            window.addEventListener('resize', function(e) {
-                coverAnimationObj.Renderer.setSize(window.innerWidth, window.innerHeight);
-                coverAnimationObj.Camera.aspect = window.innerWidth / window.innerHeight;
-                coverAnimationObj.Camera.updateProjectionMatrix();
-            });
-
+            coverAnimationObj.setControlListeners();
             runAnimationLoop(coverAnimationObj);
         }).catch(function (e) {
             console.log(e.stack);
         });
     };
+
+    setControlListeners() {
+        var coverAnimationObj = this;
+
+        this.MouseWheelTracker.OnWheelEvent = function () {
+            if (coverAnimationObj.MouseWheelTracker.WheelHasZoomedIn()) {
+                coverAnimationObj.Camera.position.z -= coverAnimationObj.MouseSensitivity.z;
+            } else if (coverAnimationObj.MouseWheelTracker.WheelHasZoomedOut()) {
+                coverAnimationObj.Camera.position.z += coverAnimationObj.MouseSensitivity.z;
+            }
+        };
+
+        this.MouseMoveTracker.OnClickAndDrag = function () {
+            if (coverAnimationObj.MouseMoveTracker.MouseHasMovedUp()) {
+                coverAnimationObj.Camera.position.y += coverAnimationObj.MouseSensitivity.y;
+                
+            } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedDown()) {
+                coverAnimationObj.Camera.position.y -= coverAnimationObj.MouseSensitivity.y;
+            }
+
+            if (coverAnimationObj.MouseMoveTracker.MouseHasMovedRight()) {
+                coverAnimationObj.Camera.position.x += coverAnimationObj.MouseSensitivity.x;
+              } else if (coverAnimationObj.MouseMoveTracker.MouseHasMovedLeft()) {
+                coverAnimationObj.Camera.position.x -= coverAnimationObj.MouseSensitivity.x
+            }
+        };
+
+        this.Renderer.domElement.addEventListener('mousemove', function (e) {
+            var rect = this.getBoundingClientRect();
+            coverAnimationObj.MousePositionVector.x = ((e.clientX - rect.left) / coverAnimationObj.Renderer.domElement.clientWidth) * 2 - 1;
+            coverAnimationObj.MousePositionVector.y = -((e.clientY - rect.top) / coverAnimationObj.Renderer.domElement.clientHeight) * 2 + 1;
+            coverAnimationObj.RayCaster.setFromCamera(coverAnimationObj.MousePositionVector, coverAnimationObj.Camera);
+            coverAnimationObj.IslandModel.checkMouseHoveredComponents(coverAnimationObj.RayCaster);
+        }, false);
+
+        window.addEventListener('resize', function(e) {
+            coverAnimationObj.Renderer.setSize(window.innerWidth, window.innerHeight);
+            coverAnimationObj.Camera.aspect = window.innerWidth / window.innerHeight;
+            coverAnimationObj.Camera.updateProjectionMatrix();
+        });
+    }
 }
 
 class ClickAndDrag {
@@ -202,8 +194,9 @@ class MouseZoom {
 function runAnimationLoop(CoverAnimation) {
     CoverAnimation.CameraOrbitControl.update();
     CoverAnimation.Renderer.clear(true, true, true);
-    CoverAnimation.Renderer.render(CoverAnimation.Scene, CoverAnimation.Camera);
-    CoverAnimation.Renderer.render(CoverAnimation.StarBackground.StarScene, CoverAnimation.Camera);
+    CoverAnimation.IslandModel.render();
+    CoverAnimation.StarBackground.render();
+
     //Inner function is a 'closure'.
     //It remembers the instance param of current loop prior to deletion.
     requestAnimationFrame(function () { return runAnimationLoop(CoverAnimation) });
