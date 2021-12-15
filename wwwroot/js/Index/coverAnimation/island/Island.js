@@ -4,37 +4,13 @@ class Island extends ThreeObjectSet {
         this.AmbientLight = new coverAnimation.THREE.AmbientLight(0xebe8f0, 0.5);
         this.DirectionalLight = new coverAnimation.THREE.DirectionalLight(0xebe8f0, 0.5);
         this.IslandScene = new coverAnimation.THREE.Scene();
-        this.IslandModel = null;
+        this.IslandModel = coverAnimation.Assets.IslandModel.scene;
 
+        this.IslandScene.add(this.IslandModel);
         this.IslandScene.add(this.AmbientLight);
         this.DirectionalLight.position.set(10, 20, 0);
         this.IslandScene.add(this.DirectionalLight);
     }
-
-    loadDataAsync() {
-        var islandObj = this;
-
-        return new Promise((resolve, reject) => {
-            const loader = new islandObj.CoverAnimation.GLTFLoader();
-
-            loader.load("./wwwroot/models/model.glb",
-                function (model) {
-                    islandObj.IslandModel = model.scene;
-                    islandObj.IslandModel.position.set(0, 0, 0);
-                    islandObj.IslandScene.add(islandObj.IslandModel);
-                    islandObj.setAllScenes();
-                    resolve();
-                },
-                function (loading) {
-                    console.log((loading.loaded / loading.total * 100) + '% loaded');
-                },
-                function (error) {
-                    console.log('An error happened: ' + error);
-                    reject();
-                }
-            );
-        });
-    };
 
     checkMouseHoveredComponents(rayCaster) {
         var intersects = rayCaster.intersectObject(this.IslandModel);
