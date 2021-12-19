@@ -1,0 +1,1 @@
+var movingHamburgerbtn = new AttractableBtn(document.getElementById("hamburgerClickable"));
