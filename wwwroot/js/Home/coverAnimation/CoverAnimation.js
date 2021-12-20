@@ -9,8 +9,8 @@ class AssetLoader {
     }
 
     startLoadingAssetsAsync() {
-        this.#loadGLTFAssetAsync("./wwwroot/models/island.glb", (model) => this.IslandModel = model);
-        this.#loadTextureAsync("./wwwroot/images/smoke.png", (model) => this.SmokeTexture = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/island.glb", (model) => this.IslandModel = model);
+        this.#loadTextureAsync("/wwwroot/images/Home/smoke.png", (model) => this.SmokeTexture = model);
     }
 
     doneLoadingAssets(callback) {
