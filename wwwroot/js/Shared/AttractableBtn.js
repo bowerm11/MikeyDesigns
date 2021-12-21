@@ -3,11 +3,14 @@ function AttractableBtn(actionElement) {
     this.coords = this.actionElement.getBoundingClientRect();
     this.elmX = this.coords.left;
     this.elmY = this.coords.top;
-    this.actionRadiusPx = 100;
+    this.elmCenterPoints = { x: ((this.coords.right - this.coords.left) / 2), y: ((this.coords.bottom - this.coords.top) / 2)};
+
+    this.actionRadiusPx = 30;
     this.leftRadMax = this.coords.left - this.actionRadiusPx;
     this.rightRadMax = this.coords.right + this.actionRadiusPx;
     this.topRadMax = this.coords.top - this.actionRadiusPx;
     this.bottomRadMax = this.coords.bottom + this.actionRadiusPx;
+
     this.speed = 0.05;
     this.mouseX = null;
     this.mouseY = null;
@@ -46,8 +49,8 @@ function AttractableBtn(actionElement) {
 }
 
 function followCursorAnimation(obj) {
-    var distX = obj.mouseX - obj.elmX;
-    var distY = obj.mouseY - obj.elmY;
+    var distX = obj.mouseX - obj.elmX - obj.elmCenterPoints.x;
+    var distY = obj.mouseY - obj.elmY - obj.elmCenterPoints.y;
 
     obj.elmX += (distX * obj.speed);
     obj.elmY += (distY * obj.speed);
