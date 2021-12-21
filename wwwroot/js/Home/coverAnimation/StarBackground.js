@@ -24,12 +24,10 @@ class Stars {
         
         //white, yellow, blue
         this.StarMeshes = this.#addMeshes(this.StarColors);
-        this.MovingStars = this.#initMovingStarGeometry(100);
-        this.#initStaticStarGeometry(100);
+        this.#initStaticStarGeometry(200);
     }
 
     render(renderer, camera) {
-        this.#moveStars();
         renderer.render(this.StarScene, camera);
     }
 
@@ -55,33 +53,6 @@ class Stars {
 
             circleClone.position.set(x, y, z);
             this.StarScene.add(circleClone);
-        }
-    }
-
-    #initMovingStarGeometry(starCount) {
-        var stars = [];
-
-        for(var i=0;i<starCount;i++) {
-            var x = StarBackground.generateRandomCoord(-80, 80),
-                y = StarBackground.generateRandomCoord(-100, 80),
-                z = StarBackground.generateRandomCoord(-80, 80),
-                circleClone = this.#returnRanomMesh();
-
-            circleClone.position.set(x, y, z);
-            this.StarScene.add(circleClone);
-            stars.push(circleClone);
-        } 
-
-        return stars;
-    }
-
-    #moveStars() {
-        for(var i=0;i<this.MovingStars.length;i++) {
-            var star = this.MovingStars[i];
-            
-            star.position.x += StarBackground.generateRandomCoord(-0.01, 0.01);
-            star.position.y += StarBackground.generateRandomCoord(-0.01, 0.01);
-            star.position.z += StarBackground.generateRandomCoord(-0.01, 0.01);
         }
     }
 

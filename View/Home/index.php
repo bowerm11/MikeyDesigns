@@ -9,13 +9,14 @@
     <head>
         <title>Mikey Designs</title>
         <link rel="stylesheet" href="<?php echo $homeConstants->indexCssPath?>">
+        <link rel="stylesheet" href="/wwwroot/css/src/bootstrap/bootstrap.min.css">
     </head>
     <body>
         <?php include($homeConstants->viewSharedPath."/_navbar.php"); ?>
     </body>
+    <script type="text/javascript" src="/wwwroot/js/src/jQuery/jQuery.min.js"></script>
     <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/coverAnimation.js"></script>
     <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/StarBackground.js"></script>
-    <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/abstract/threeObjectSet.js"></script>
     <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/island/island.js"></script>
     <script type="module" src="/wwwroot/js/Home/index.js"></script>
 </html>

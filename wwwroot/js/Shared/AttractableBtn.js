@@ -1,11 +1,12 @@
 function AttractableBtn(actionElement) {
     this.actionElement = actionElement;
+    this.wasActivated = false;
     this.coords = this.actionElement.getBoundingClientRect();
     this.elmX = this.coords.left;
     this.elmY = this.coords.top;
     this.elmCenterPoints = { x: ((this.coords.right - this.coords.left) / 2), y: ((this.coords.bottom - this.coords.top) / 2)};
 
-    this.actionRadiusPx = 30;
+    this.actionRadiusPx = 15;
     this.leftRadMax = this.coords.left - this.actionRadiusPx;
     this.rightRadMax = this.coords.right + this.actionRadiusPx;
     this.topRadMax = this.coords.top - this.actionRadiusPx;
@@ -24,8 +25,11 @@ function AttractableBtn(actionElement) {
 
             var iswithinRadius = attractObj.isWithinRadius();
             if (iswithinRadius && attractObj.animationReq == null) {
+                attractObj.wasActivated = true;
+                attractObj.onActivation();
                 followCursorAnimation(attractObj);
-            } else if (!iswithinRadius && attractObj.animationReq == null) {
+            } else if (!iswithinRadius && attractObj.animationReq == null && attractObj.wasActivated) {
+                attractObj.onDeactivation();
                 returnToDefaulAnimation(attractObj);
             }
         });
@@ -43,6 +47,14 @@ function AttractableBtn(actionElement) {
     this.clearAnimationReq = function() {
         cancelAnimationFrame(this.animationReq);
         this.animationReq = null;
+    }
+
+    this.onActivation = function() {
+
+    }
+
+    this.onDeactivation = function() {
+
     }
 
     this.init();
