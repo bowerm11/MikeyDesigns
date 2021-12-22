@@ -1,3 +1,7 @@
+.no-padding {
+    padding: 0px;
+}
+
 .hamburger-wrapper {
     border-radius: 53px;
     border-style: solid;
@@ -21,26 +25,80 @@
     display: block;
 }
 
+.nav-menu-bar {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-hyperlink-icon {
+    width: 25px;
+    height: 25px;
+    padding: 0px;
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-hyperlink {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-hyperlink div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.nav-hyperlink div a {
+    color: rgb(31 31 31);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-hyperlink div a:hover {
+    color: rgb(243, 243, 243);
+    text-decoration: underline;
+}
+
 #nav-screen {
     position: absolute;
+    pointer-events: none;
     width: 100%;
     height: 100%;
-    z-index: 99;
+    z-index: 0;
 }
 
-#nav-screen-left {
-    background-image: url("/wwwroot/images/Shared/hamblack.png");
+#nav-screen-top {
+    padding: 0px;
+    height: 90%;
+    pointer-events: all;
+    /* background-image: url(/wwwroot/images/Shared/hamTop.jpg); */
+    /* background-size: contain; */
+    background-color: rgb(31 31 31);
+}
+
+#nav-screen-bottom {
+    padding: 0px;
+    height: 10%;
+    pointer-events: all;
+    /* background-image: url(/wwwroot/images/Shared/hamwhite.png); */
     background-size: cover;
-    background-color: #202020;
+    background-color: rgb(176 176 176);
 }
 
-#nav-screen-right {
-    background-image: url("/wwwroot/images/Shared/hamwhite.png");
-    background-size: cover;
-    background-color: #dadada;
+@keyframes navSelectorRise {
+    100% {
+        transform: translate(0%, 20%);
+    }
 }
 
-@keyframes slideDownInFrame {
+@keyframes slideDown {
     0% {
         transform: translate(0%, -100%);
     }
@@ -49,16 +107,7 @@
     }
 }
 
-@keyframes slideUpInFrame {
-    0% {
-        transform: translate(0%, 100%);
-    }
-    100% {
-        transform: translate(0%, 0%);
-    }
-}
-
-@keyframes slideDownOutFrame {
+@keyframes slideDownUndo {
     0% {
         transform: translate(0%, 0%);
     }
@@ -67,29 +116,20 @@
     }
 }
 
-@keyframes slideUpOutFrame {
+@keyframes slideUp {
+    0% {
+        transform: translate(0%, 100%);
+    }
+    100% {
+        transform: translate(0%, 0%);
+    }
+}
+
+@keyframes slideUpUndo {
     0% {
         transform: translate(0%, 0%);
     }
     100% {
         transform: translate(0%, 100%);
-    }
-}
-
-@keyframes scaleUp {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.25);
-    }
-}
-
-@keyframes scaleDown {
-    0% {
-        transform: scale(1.25);
-    }
-    100% {
-        transform: scale(1);
     }
 }

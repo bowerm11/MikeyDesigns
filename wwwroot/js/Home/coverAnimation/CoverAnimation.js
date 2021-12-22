@@ -70,6 +70,7 @@ class CoverAnimation {
     constructor(THREE, Assets, OrbitControls) {
         this.THREE = THREE;
         this.Assets = Assets;
+        this.handHelperElm = document.getElementById("hand-helper");
         this.Renderer = new THREE.WebGLRenderer({ antialias: true });
         this.Camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 500); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
         this.CameraOrbitControl = new OrbitControls(this.Camera, this.Renderer.domElement);
@@ -85,7 +86,7 @@ class CoverAnimation {
 
         //Set size will set size of canvas. Add third param and set to false to change resolution.
         //Add css canvas style to 100% for same render size but lower res.
-        //this.Renderer.setClearColor(0xffffff, 0.8);
+        this.Renderer.setClearColor(0xffffff, 0.15);
         this.Renderer.setSize(window.innerWidth, window.innerHeight);
         this.Renderer.setPixelRatio(1.5);
         this.Renderer.autoClear = false;
@@ -107,6 +108,13 @@ class CoverAnimation {
             coverAnimationObj.RayCaster.setFromCamera(coverAnimationObj.MousePositionVector, coverAnimationObj.Camera);
             coverAnimationObj.IslandModel.checkMouseHoveredComponents(coverAnimationObj.RayCaster);
         }, false);
+
+        this.Renderer.domElement.addEventListener('click', function() {
+            coverAnimationObj.handHelperElm.style.animation = "fadeOut 1s forwards";
+            setTimeout(function() {
+                coverAnimationObj.handHelperElm.remove();
+            }, 1000);
+        });
 
         window.addEventListener('resize', function(e) {
             coverAnimationObj.Renderer.setSize(window.innerWidth, window.innerHeight);
