@@ -8,10 +8,10 @@
 </div>  
 <div id="nav-screen" class="container-fluid" hidden>
     <div class="row h-100 margin-none">
-        <div class="col-6 no-padding">
+        <div class="col-5 no-padding">
             <div class="row h-100 margin-none">
                 <div id="nav-square-small-top-container" class="col-12">  
-                    <div id="nav-square-small-top">
+                    <div id="nav-square-small-top" title="Click Here for More Info">
                         <div>
                             <p id="about-text" class="block-title color-gray">
                                 <span class="position-relative color-white animate-underline right-underline-gray">About</span>
@@ -65,11 +65,26 @@
                 </div>  
             </div>
         </div>
-        <div id="nav-square-large-right-container" class="col-6">  
+        <div id="nav-square-large-right-container" class="col-7">  
             <div id="nav-square-large-right">
                 <p id="project-text" class="block-title color-white">
                     <span class="position-relative animate-underline center-underline-white">Projects</span>
-                </p>     
+                </p>    
+                <div id="projects-info" class="projects-container">
+                    <div class="container-fluid card-container">
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>  
     </div>

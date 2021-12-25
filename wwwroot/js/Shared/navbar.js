@@ -79,12 +79,13 @@ function NavbarSquares() {
         const infoPromise = $.Deferred();
         const obj = this;
 
-        this.topLeftSquare.showInfoAsync(this.navAnimationSpeedSec, 0);
-        this.bottomLeftSquare.showInfoAsync(this.navAnimationSpeedSec, 0.2);
+        this.rightSquare.showInfoAsync(this.navAnimationSpeedSec, 0);
+        this.topLeftSquare.showInfoAsync(this.navAnimationSpeedSec, 0.15);
+        this.bottomLeftSquare.showInfoAsync(this.navAnimationSpeedSec, 0.3);
 
         setTimeout(function() {
             infoPromise.resolve();
-        }, this.navAnimationSpeedMs + 200);
+        }, this.navAnimationSpeedMs + 300);
 
         infoPromise.done(function() {
             obj.navAnimationIsRunning = false;
@@ -99,11 +100,12 @@ function NavbarSquares() {
         const infoPromise = $.Deferred();
         this.navAnimationIsRunning = true;
         this.bottomLeftSquare.closeInfoAsync(this.navAnimationSpeedSec, 0);
-        this.topLeftSquare.closeInfoAsync(this.navAnimationSpeedSec, 0.2);
+        this.topLeftSquare.closeInfoAsync(this.navAnimationSpeedSec, 0);
+        this.rightSquare.closeInfoAsync(this.navAnimationSpeedSec, 0);
 
         setTimeout(function() {
             infoPromise.resolve();
-        }, this.navAnimationSpeedMs + 200);
+        }, this.navAnimationSpeedMs);
 
         infoPromise.done(function() {
             if (typeof whenDone === 'function' && whenDone()) {
@@ -185,7 +187,6 @@ function NavbarTopLeftSquare() {
         const obj = this;
         var promises = [];
         var charTime = 0;
-        var charTimeInterval = 300;
 
         for (let i = 0; i < buzzword.length; i++) {
             const char = buzzword[i];
@@ -197,7 +198,7 @@ function NavbarTopLeftSquare() {
             }, charTime);
 
             promises.push(charWritePromise);
-            charTime += charTimeInterval;
+            charTime += getRandomInt(75, 300);
         }
 
         const charWritePromiseLastWait = $.Deferred();
@@ -262,6 +263,7 @@ function NavbarBottomLeftSquare() {
 
 function NavbarRightSquare() {
     this.square = document.getElementById("nav-square-large-right-container");
+    this.innerInfo = document.getElementById("projects-info");
 
     this.init = function() {
         this.square.addEventListener("mouseover", function() {
@@ -282,7 +284,21 @@ function NavbarRightSquare() {
             navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftUndo";
     }
 
+    this.showInfoAsync = function(animationSpeed, delay) {
+        this.innerInfo.style.animation = 
+            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftOpacity";
+    }
+
+    this.closeInfoAsync = function(animationSpeed, delay) {
+        this.innerInfo.style.animation = 
+            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftOpacityUndo";
+    }
+
     this.init();
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function focusChildrenUnderline(elm) {

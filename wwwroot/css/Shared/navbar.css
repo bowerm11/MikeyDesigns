@@ -1,3 +1,32 @@
+.scrollbox {
+    overflow: auto;
+    width: 200px;
+    max-height: 200px;
+    margin: 50px auto;
+    background:
+        /* Shadow covers */
+        linear-gradient(white 30%, rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+        
+        /* Shadows */
+        radial-gradient(50% 0, farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)),
+        radial-gradient(50% 100%,farthest-side, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+    background:
+        /* Shadow covers */
+        linear-gradient(white 30%, rgba(255,255,255,0)),
+        linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
+        
+        /* Shadows */
+        radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
+        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+
+    /* Opera doesn't support this in the shorthand */
+    background-attachment: local, local, scroll, scroll;
+}
+
 .center-middle-screen {
     width: 160px;
     height: 160px;
@@ -104,7 +133,7 @@
     color: #ffffff;
     margin-left: auto;
     margin-right: auto;
-    margin-top: auto;
+    margin-top: 20px;
     margin-bottom: auto;
     font-size: 18px;
     font-weight: 200;
@@ -156,9 +185,6 @@
 
 .about-container {
     transform: translate(-135%, 0%);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
 }
 
 .about-inner-header {
@@ -183,6 +209,65 @@
     animation: blink .7s linear infinite;
 }
 
+.projects-container {
+    width: 90%;
+    min-height: 200px;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    transform: translate(135%, 0%);
+}
+
+.card-container {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.projects-card {
+    width: 90%;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.projects-card:hover {
+    transform: scale(1.05);
+    transition: all .25s ease-out;
+}
+
+.project-card-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6c6c6c;
+    text-align: center;
+    margin: 0;
+}
+
+.card-img-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-color: #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-container img {
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.card-info {
+    display: inline-block;
+    color: #919191;
+}
+
 #nav-screen {
     position: absolute;
     pointer-events: none;
@@ -204,7 +289,6 @@
 }
 
 #nav-square-large-right:hover {
-    cursor: pointer;
     background-color: #1f1f1f;
     -webkit-transition: background-color 200ms ease-out;
     -ms-transition: background-color 200ms ease-out;
@@ -214,7 +298,7 @@
 #nav-square-small-top-container {
     transform: translate(0%, -100%);
     padding: 0px;
-    height: 50%;
+    height: 40%;
     pointer-events: all;
 }
 
@@ -235,7 +319,7 @@
 #nav-square-small-bottom-container {
     transform: translate(0%, 100%);
     padding: 0px;
-    height: 50%;
+    height: 60%;
     pointer-events: all;
 }
 
@@ -359,6 +443,28 @@
         transform: translate(0%, 0%);
     }
     100% {
+        transform: translate(100%, 0%);
+    }
+}
+
+@keyframes slideLeftOpacity {
+    0% {
+        opacity: 0;
+        transform: translate(100%, 0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+}
+
+@keyframes slideLeftOpacityUndo {
+    0% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
+    100% {
+        opacity: 0;
         transform: translate(100%, 0%);
     }
 }
