@@ -8,8 +8,8 @@
 <html>
     <head>
         <title>Mikey Designs</title>
-        <link rel="stylesheet" href="<?php echo $homeConstants->indexCssPath?>">
         <link rel="stylesheet" href="/wwwroot/css/src/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo $homeConstants->indexCssPath?>">
     </head>
     <body>
         <div id="hand-helper" class="hand-graphic">
