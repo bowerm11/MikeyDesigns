@@ -23,6 +23,14 @@ function NavBar() {
     this.init();
 }
 
+NavBar.isInLargeView = function() {
+    if ($(window).width() >= 768) {
+        return true;
+    }
+
+    return false;
+}
+
 function NavbarSquares() {
     this.navAnimationIsRunning = false;
     this.navAnimationSpeedSec = 0.5;
@@ -139,7 +147,7 @@ function NavbarTopLeftSquare() {
     this.square = document.getElementById("nav-square-small-top-container");
     this.aboutContainer = document.getElementById("about-info");
     this.buzzword = document.getElementById("buzzword");
-    this.buzzwords = ["Designer", "Modeler", "Sketcher"];
+    this.buzzwords = ["Creator", "Innovator", "Environmentalist", "Leader", "Industrial Designer", "Cordwainer"];
     this.currentBuzzwordIndex = 0;
 
     this.init = function() {
@@ -198,7 +206,7 @@ function NavbarTopLeftSquare() {
             }, charTime);
 
             promises.push(charWritePromise);
-            charTime += getRandomInt(75, 300);
+            charTime += getRandomInt(65, 300);
         }
 
         const charWritePromiseLastWait = $.Deferred();
@@ -239,13 +247,23 @@ function NavbarBottomLeftSquare() {
     }
 
     this.openSquareAsync = function(navAnimationSpeedSec, delay) {
-        this.square.style.animation =
-            navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideBottomUp";
+        if (NavBar.isInLargeView()) {
+            this.square.style.animation =
+                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideBottomUp";
+        } else {
+            this.square.style.animation =
+                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRight";
+        } 
     }
 
     this.closeSquareAsync = function(navAnimationSpeedSec, delay) {
-        this.square.style.animation = 
-            navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideBottomUpUndo";
+        if (NavBar.isInLargeView()) {
+            this.square.style.animation = 
+                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideBottomUpUndo";
+        } else {
+            this.square.style.animation = 
+                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRightUndo";
+        }
     }
 
     this.showInfoAsync = function(animationSpeed, delay) {

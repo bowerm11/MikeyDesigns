@@ -1,15 +1,14 @@
 <?php 
     include_once("../../Controller/Shared/NavbarConstants.php");
-    include_once($navConstants->controllerSharedPath."/preventDirectCall.php");
+    include_once($navConst->rootPath."/Controller/Shared/preventDirectCall.php");
 ?>
-<link rel="stylesheet" href="<?php echo $navConstants->navbarCss ?>">
 <div id="hamburgerClickable" class="hamburger-wrapper">
-    <img class="hamburger-icon" src="<?php echo $navConstants->menuIconDir ?>" alt="Menu">
+    <img class="hamburger-icon" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">
 </div>  
 <div id="nav-screen" class="container-fluid" hidden>
-    <div class="row h-100 margin-none">
-        <div class="col-5 no-padding">
-            <div class="row h-100 margin-none">
+    <div class="row stretch-to-screen margin-none">
+        <div class="col-12 col-md-5 no-padding">
+            <div class="row stretch-to-screen margin-none">
                 <div id="nav-square-small-top-container" class="col-12">  
                     <div id="nav-square-small-top" title="Click Here for More Info">
                         <div>
@@ -37,41 +36,118 @@
                             </div>
                             <div class="contact-table">
                                 <div class="contact-table-line margin-t-10">
-                                    <img src="/wwwroot/images/Shared/file-lines.svg" alt="Resume: " class="contact-img">
-                                    <a href="" class="contact-text">Resume</a>
+                                    <img src="<?php echo $navConst->fileImg?>" alt="Resume: " class="contact-img">
+                                    <a href="<?php echo $navConst->resumePath?>" class="contact-text" target="_blank">Resume</a>
                                     <div class="seperator-line"></div>
                                 </div>    
                                 <div class="contact-table-line margin-t-10">
-                                    <img src="/wwwroot/images/Shared/envelope.svg" alt="Email: " class="contact-img">
-                                    <a href="" class="contact-text">Email</a>
+                                    <img src="<?php echo $navConst->emailImg?>" alt="Email: " class="contact-img">
+                                    <a href="mailto:bower.michael316@gmail.com" class="contact-text">bower.michael316@gmail.com</a>
                                     <div class="seperator-line"></div>
                                 </div>    
                                 <div class="contact-table-line">
-                                    <img src="/wwwroot/images/Shared/phone.svg" alt="Number: " class="contact-img">
+                                    <img src="<?php echo $navConst->phoneImg?>" alt="Number: " class="contact-img">
                                     <a href="tel:1-912-312-6253" class="contact-text">+1 (912) 312-6253</a>
                                     <div class="seperator-line"></div>
                                 </div> 
                                 <div class="contact-table-line">
-                                    <img src="/wwwroot/images/Shared/location-arrow.svg" alt="Location: " class="contact-img">
+                                    <img src="<?php echo $navConst->locationImg?>" alt="Location: " class="contact-img">
                                     <a href="https://www.google.com/maps/place/Jacksonville,+FL/@30.3452116,-81.8231902,65957m/data=!3m2!1e3!4b1!4m5!3m4!1s0x88e5b716f1ceafeb:0xc4cd7d3896fcc7e2!8m2!3d30.3321838!4d-81.655651" target="_blank" class="contact-text">Jacksonville, FL</a>
                                 </div> 
                             </div>
                             <div class="contact-social-section">
-                                <a href="https://github.com/bowerm11" target="_blank"><img src="/wwwroot/images/Shared/github.svg" alt="Github" class="contact-img contact-social-icon"></a>
-                                <a href="https://github.com/bowerm11" target="_blank"><img src="/wwwroot/images/Shared/linkedin.svg" alt="LinkedIn" class="contact-img contact-social-icon"></a>
+                                <a href="https://github.com/bowerm11" target="_blank"><img src="<?php echo $navConst->gitImg?>" alt="Github" class="contact-img contact-social-icon"></a>
+                                <a href="https://www.linkedin.com/in/michael-bower-b6a265159/" target="_blank"><img src="<?php echo $navConst->linkedInImg?>" alt="LinkedIn" class="contact-img contact-social-icon"></a>
                             </div>  
                         </div>
                     </div>
                 </div>  
             </div>
         </div>
-        <div id="nav-square-large-right-container" class="col-7">  
+        <div id="nav-square-large-right-container" class="col-12 col-md-7">  
             <div id="nav-square-large-right">
                 <p id="project-text" class="block-title color-white">
                     <span class="position-relative animate-underline center-underline-white">Projects</span>
                 </p>    
                 <div id="projects-info" class="projects-container">
                     <div class="container-fluid card-container">
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
+                        <div class="row projects-card">
+                            <div class="col-12">
+                                <p class="project-card-header">Header</p>
+                            </div>
+                            <div class="col-3 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
+                            <div class="col-9 card-info">
+                                <p>this is a testthis is a test</p>
+                            </div>
+                        </div>
                         <div class="row projects-card">
                             <div class="col-12">
                                 <p class="project-card-header">Header</p>
