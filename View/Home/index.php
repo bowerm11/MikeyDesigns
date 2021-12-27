@@ -1,27 +1,33 @@
 <?php 
+    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once("../../Controller/Home/HomeConstants.php");
-    include_once($homeConstants->controllerSharedPath."/allowDirectCall.php");
-    include_once($homeConstants->viewSharedPath."/_defaultHeaders.php");
+    include_once($homeConst->rootPath."/Controller/Shared/_defaultHeaders.php");
 ?>
 
 <!DOCTYPE html>
-<html>
+<html id="html">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Mikey Designs</title>
-        <link rel="stylesheet" href="<?php echo $homeConstants->indexCssPath?>">
-        <link rel="stylesheet" href="/wwwroot/css/src/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo $homeConst->bootstrapCss?>">
+        <link rel="stylesheet" href="<?php echo $homeConst->homeCss?>">
+        <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
     <body>
-        <div id="hand-helper" class="hand-graphic">
-            <img class="hand-img" src="/wwwroot/images/Home/hand-pointer.svg" alt="">
-        </div>
-        <?php include($homeConstants->viewSharedPath."/_navbar.php"); ?>
+        <div id="homeContainer" class="removeable-section">
+            <div id="hand-helper" class="hand-graphic">
+                <img class="hand-img" src="<?php echo $homeConst->handImg?>" alt="">
+            </div>
+            <div id="canvas-container"></div>
+        </div>    
+        <?php include_once($homeConst->navBarPhp) ?>
     </body>
-    <script type="text/javascript" src="/wwwroot/js/src/jQuery/jQuery.min.js"></script>
-    <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/coverAnimation.js"></script>
-    <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/StarBackground.js"></script>
-    <script type="text/javascript" src="/wwwroot/js/Home/coverAnimation/island/island.js"></script>
-    <script type="text/javascript" src="/wwwroot/js/Shared/AttractableBtn.js"></script>
-    <script type="text/javascript" src="/wwwroot/js/Shared/navBar.js"></script>
-    <script type="module" src="/wwwroot/js/Home/index.js"></script>
+    <script type="text/javascript" src="<?php echo $homeConst->jQueryJs?>"></script>
+    <script type="text/javascript" src="<?php echo $homeConst->coverAnimationJs?>"></script>
+    <script type="text/javascript" src="<?php echo $homeConst->starBackgroundJs?>"></script>
+    <script type="text/javascript" src="<?php echo $homeConst->islandJs?>"></script>
+    <script type="text/javascript" src="<?php echo $homeConst->attractableBtnJs?>"></script>
+    <script type="text/javascript" src="<?php echo $homeConst->navBarJs?>"></script>
+    <script type="module" src="<?php echo $homeConst->indexJs?>"></script>
 </html>
