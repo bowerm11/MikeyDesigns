@@ -1,7 +1,7 @@
 <?php 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once("../../Controller/About/AboutConstants.php");
-    include_once($aboutConst->rootPath."/Controller/Shared/_defaultHeaders.php");
+    include_once(GlobalConstants::$rootPath."/Controller/Shared/_defaultHeaders.php");
 ?>
 
 <!DOCTYPE html>

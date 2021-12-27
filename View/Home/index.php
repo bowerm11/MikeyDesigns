@@ -1,7 +1,11 @@
 <?php 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
-    include_once("../../Controller/Home/HomeConstants.php");
-    include_once($homeConst->rootPath."/Controller/Shared/_defaultHeaders.php");
+    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
+    include_once("../../Controller/Home/HomeConstant.php");
+    include_once(GlobalConstants::$rootPath . "/Controller/Shared/Logger.php");
+    include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
+
+    Logger::Log("This is a test.", "Index_Home");
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +19,7 @@
         <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
     <body>
+        <div></div>
         <div id="homeContainer" class="removeable-section">
             <div id="hand-helper" class="hand-graphic">
                 <img class="hand-img" src="<?php echo $homeConst->handImg?>" alt="">

@@ -1,6 +1,6 @@
 <?php 
     include_once("../../Controller/Shared/NavbarConstants.php");
-    include_once($navConst->rootPath."/Controller/Shared/preventDirectCall.php");
+    include_once(GlobalConstants::$rootPath."/Controller/Shared/preventDirectCall.php");
 ?>
 <div id="hamburgerClickable" class="hamburger-wrapper">
     <img class="hamburger-icon" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">

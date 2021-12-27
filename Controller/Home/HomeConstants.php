@@ -2,7 +2,7 @@
     include_once(__DIR__ . "/../Shared/preventDirectCall.php");
     include_once(__DIR__ . "/../Shared/_GlobalConstants.php");
 
-    class HomeConstants extends GlobalConstants {
+    class HomeConstants {
         //CSS
         public $bootstrapCss;
         public $homeCss;
@@ -24,22 +24,21 @@
         public $navBarPhp;
         
         function __construct() {
-            parent::__construct();
-            $this->bootstrapCss = $this->AppendVersion("/wwwroot/css/src/bootstrap/bootstrap.min.css");
-            $this->homeCss = $this->AppendVersion("/wwwroot/css/Home/index.css");
-            $this->navbarCss = $this->AppendVersion("/wwwroot/css/Shared/navbar.css");
+            $this->bootstrapCss = GlobalConstants::AppendVersion("/wwwroot/css/src/bootstrap/bootstrap.min.css");
+            $this->homeCss = GlobalConstants::AppendVersion("/wwwroot/css/Home/index.css");
+            $this->navbarCss = GlobalConstants::AppendVersion("/wwwroot/css/Shared/navbar.css");
 
-            $this->jQueryJs = $this->AppendVersion("/wwwroot/js/src/jQuery/jQuery.min.js");
-            $this->coverAnimationJs = $this->AppendVersion("/wwwroot/js/Home/coverAnimation/coverAnimation.js");
-            $this->starBackgroundJs = $this->AppendVersion("/wwwroot/js/Home/coverAnimation/StarBackground.js");
-            $this->islandJs = $this->AppendVersion("/wwwroot/js/Home/coverAnimation/island/island.js");
-            $this->attractableBtnJs = $this->AppendVersion("/wwwroot/js/Shared/AttractableBtn.js");
-            $this->navBarJs = $this->AppendVersion("/wwwroot/js/Shared/navBar.js");
-            $this->indexJs = $this->AppendVersion("/wwwroot/js/Home/index.js");
+            $this->jQueryJs = GlobalConstants::AppendVersion("/wwwroot/js/src/jQuery/jQuery.min.js");
+            $this->coverAnimationJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/coverAnimation.js");
+            $this->starBackgroundJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/StarBackground.js");
+            $this->islandJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/island/island.js");
+            $this->attractableBtnJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/AttractableBtn.js");
+            $this->navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navBar.js");
+            $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/index.js");
 
-            $this->handImg = $this->AppendVersion("/wwwroot/images/Home/hand-pointer.svg");
+            $this->handImg = GlobalConstants::AppendVersion("/wwwroot/images/Home/hand-pointer.svg");
 
-            $this->navBarPhp = $this-> rootPath . "/View/Shared/_navbar.php";
+            $this->navBarPhp = GlobalConstants::$rootPath . "/View/Shared/_navbar.php";
         }
     }
 
