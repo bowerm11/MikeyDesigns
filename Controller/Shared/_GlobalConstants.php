@@ -1,4 +1,6 @@
 <?php 
+    include_once(__DIR__ . "/preventDirectCall.php");
+
     abstract class GlobalConstants {
         public $version;
         public $rootPath;

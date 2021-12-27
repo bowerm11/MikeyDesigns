@@ -1,22 +1,26 @@
 <?php 
+    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once("../../Controller/Home/HomeConstants.php");
-    include_once($homeConst->rootPath."/Controller/Shared/allowDirectCall.php");
     include_once($homeConst->rootPath."/Controller/Shared/_defaultHeaders.php");
 ?>
 
 <!DOCTYPE html>
 <html id="html">
     <head>
-        <title>Mikey Designs</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mikey Designs</title>
         <link rel="stylesheet" href="<?php echo $homeConst->bootstrapCss?>">
         <link rel="stylesheet" href="<?php echo $homeConst->homeCss?>">
         <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
     <body>
-        <div id="hand-helper" class="hand-graphic">
-            <img class="hand-img" src="<?php echo $homeConst->handImg?>" alt="">
-        </div>
+        <div id="homeContainer" class="removeable-section">
+            <div id="hand-helper" class="hand-graphic">
+                <img class="hand-img" src="<?php echo $homeConst->handImg?>" alt="">
+            </div>
+            <div id="canvas-container"></div>
+        </div>    
         <?php include_once($homeConst->navBarPhp) ?>
     </body>
     <script type="text/javascript" src="<?php echo $homeConst->jQueryJs?>"></script>

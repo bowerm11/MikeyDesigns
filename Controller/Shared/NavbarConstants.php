@@ -1,4 +1,5 @@
 <?php 
+    include_once(__DIR__ . "/preventDirectCall.php");
     include_once(__DIR__ . "/_GlobalConstants.php");
 
     class NavbarConstants extends GlobalConstants {
@@ -14,6 +15,9 @@
         //File Path
         public $resumePath;
 
+        //About
+        public $aboutUrl;
+
         //Projects
 
         function __construct() {
@@ -27,6 +31,7 @@
             $this->linkedInImg = $this->AppendVersion("/wwwroot/images/Shared/linkedin.svg");
 
             $this->resumePath = $this->AppendVersion("/wwwroot/images/Shared/Michael_Bower_Resume.pdf");
+            $this->aboutUrl = "/View/About/index.php";
         }
     }
 

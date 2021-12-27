@@ -1,7 +1,8 @@
 function NavBar() {
     this.hamburgerElm = document.getElementById("hamburgerClickable");
+    this.removeableSections = document.getElementsByClassName("removeable-section");
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
-    this.navBackground = new NavbarSquares();
+    this.navBackground = new NavbarSquares(this);
 
     this.init = function() {
         var navObj = this;
@@ -15,9 +16,23 @@ function NavBar() {
             navObj.hamburgerElm.style.animation = ".3s scaleDown ease-out forwards";
         }
         
-        this.hamburgerElm.onclick = function () {
+        this.hamburgerElm.onclick = function() {
             navObj.navBackground.toggleMenuBar();
         }  
+    }
+
+    this.hideRemoveableSections = function() {
+        for (let i = 0; i < this.removeableSections.length; i++) {
+            const section = this.removeableSections[i];
+            section.style.opacity = "0";
+        }
+    }
+
+    this.scrollToProject = function(projectName) {
+        var obj = this;
+        this.navBackground.openMenuBar(function () {
+            obj.navBackground.rightSquare.scrollTo(projectName);
+        });
     }
 
     this.init();
@@ -31,7 +46,8 @@ NavBar.isInLargeView = function() {
     return false;
 }
 
-function NavbarSquares() {
+function NavbarSquares(navBar) {
+    this.navBar = navBar;
     this.navAnimationIsRunning = false;
     this.navAnimationSpeedSec = 0.5;
     this.navAnimationSpeedMs = this.navAnimationSpeedSec * 1000;
@@ -39,26 +55,79 @@ function NavbarSquares() {
     this.navScreenElm = document.getElementById("nav-screen");
     this.rightSquare = new NavbarRightSquare();
     this.bottomLeftSquare= new NavbarBottomLeftSquare();
-    this.topLeftSquare = new NavbarTopLeftSquare();
+    this.topLeftSquare = new NavbarTopLeftSquare(this);
 
     this.init = function() {
         
     }
 
-    this.toggleMenuBar = function() {
-        var obj = this;
+    this.openMenuBar = function (whenDone) {
         if (this.navScreenElm.hidden) {
-            this.openMenuAsync(function() {
-                obj.showSquareInfoAsync();
+            this.openMenu(function () {
+                if (typeof whenDone === 'function' && whenDone()) {
+                    whenDone();
+                } 
             });
         } else {
-            this.closeInfoAsync(function () {
-                obj.closeMenuAsync();
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
+        }
+    }
+
+    this.closeMenuBar = function (whenDone) {
+        if (!this.navScreenElm.hidden) {
+            this.closeMenu(function () {
+                if (typeof whenDone === 'function' && whenDone()) {
+                    whenDone();
+                } 
+            });
+        } else {
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
+        }
+    }
+
+    this.toggleMenuBar = function(whenDone) {
+        if (this.navScreenElm.hidden) {
+            this.openMenu(function () {
+                if (typeof whenDone === 'function' && whenDone()) {
+                    whenDone();
+                } 
+            });
+        } else {
+            this.closeMenu(function () {
+                if (typeof whenDone === 'function' && whenDone()) {
+                    whenDone();
+                } 
             });
         }
     }
 
-    this.openMenuAsync = function(whenDone) {
+    this.openMenu = function(whenDone) {
+        var obj = this;
+        this.openSquaresAsync(function() {
+            obj.showSquareInfoAsync(function () {
+                if (typeof whenDone === 'function' && whenDone()) {
+                    whenDone();
+                } 
+            });
+        });
+    }
+
+    this.closeMenu = function(whenDone) {
+        var obj = this;
+        this.closeInfoAsync(function () {
+            obj.closeSquaresAsync(function() {
+                if (typeof whenDone === 'function' && whenDone()) {
+                    whenDone();
+                } 
+            });
+        });
+    }
+
+    this.openSquaresAsync = function(whenDone) {
         if (this.navAnimationIsRunning) {
             return;
         }
@@ -83,7 +152,7 @@ function NavbarSquares() {
         });
     }
 
-    this.showSquareInfoAsync = function() {
+    this.showSquareInfoAsync = function(whenDone) {
         const infoPromise = $.Deferred();
         const obj = this;
 
@@ -97,6 +166,9 @@ function NavbarSquares() {
 
         infoPromise.done(function() {
             obj.navAnimationIsRunning = false;
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
         });
     }
 
@@ -122,7 +194,7 @@ function NavbarSquares() {
         });
     }
 
-    this.closeMenuAsync = function() {
+    this.closeSquaresAsync = function(whenDone) {
         const slidePromise = $.Deferred();
         const obj = this;
 
@@ -137,26 +209,38 @@ function NavbarSquares() {
         slidePromise.done(function() {
             obj.navScreenElm.hidden = true;
             obj.navAnimationIsRunning = false;
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
         });
     }
 
     this.init();
 }
 
-function NavbarTopLeftSquare() {
+function NavbarTopLeftSquare(navBarSquares) {
+    this.navBarSquares = navBarSquares;
     this.square = document.getElementById("nav-square-small-top-container");
     this.aboutContainer = document.getElementById("about-info");
+    this.clickUrl = this.square.getAttribute("data-url");
     this.buzzword = document.getElementById("buzzword");
     this.buzzwords = ["Creator", "Innovator", "Environmentalist", "Leader", "Industrial Designer", "Cordwainer"];
     this.currentBuzzwordIndex = 0;
 
     this.init = function() {
+        var obj = this;
         this.square.addEventListener("mouseover", function() {
             focusChildrenUnderline(this);
         });
         this.square.addEventListener("mouseleave", function() {
             unFocusChildrenUnderline(this);
         });
+        this.square.onclick = function () {
+            obj.navBarSquares.navBar.hideRemoveableSections();
+            obj.navBarSquares.closeMenuBar(function() {
+                window.location.href = obj.clickUrl;
+            });
+        };
         this.writeBuzzwords();
     }
 
@@ -282,6 +366,8 @@ function NavbarBottomLeftSquare() {
 function NavbarRightSquare() {
     this.square = document.getElementById("nav-square-large-right-container");
     this.innerInfo = document.getElementById("projects-info");
+    this.cardContainer = document.getElementById("card-container");
+    this.projects = this.innerInfo.getElementsByClassName("projects-card");
 
     this.init = function() {
         this.square.addEventListener("mouseover", function() {
@@ -312,6 +398,22 @@ function NavbarRightSquare() {
             animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftOpacityUndo";
     }
 
+    this.scrollTo = function(projectName) {
+        for (let i = 0; i < this.projects.length; i++) {
+            const project = this.projects[i];
+            
+            if (projectName == project.getAttribute("data-page-name")) {
+                const $project = $(project);
+                const $cardContainer = $(this.cardContainer);
+                $cardContainer.animate({
+                    scrollTop: $project.offset().top - $cardContainer.offset().top + $cardContainer.scrollTop()
+                  },'slow', function() {
+                      project.style.animation = "bounceIn 1.2s";
+                  });
+            }
+        }
+    }
+
     this.init();
 }
 
@@ -335,7 +437,14 @@ function unFocusChildrenUnderline(elm) {
     }
 }
 
-$(document).ready(function() {
-    const nav = new NavBar();
-    nav.navBackground.toggleMenuBar();
-});
+function reloadPageIfBackButtonHit() {
+    window.addEventListener( "pageshow", function ( event ) {
+        var historyTraversal = 
+            event.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2);
+        if (historyTraversal) {
+          window.location.reload();
+        }
+    });
+}
+
+reloadPageIfBackButtonHit();

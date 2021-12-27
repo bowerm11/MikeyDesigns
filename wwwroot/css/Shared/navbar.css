@@ -112,6 +112,7 @@
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 200;
+    min-width: 270px;
     max-width: 450px;
     transform: translate(-135%, 0%);
 }
@@ -132,6 +133,7 @@
     display: inline-block;
     vertical-align: middle;
     color: #ffffff;
+    font-weight: 100;
     font-size: 16px;
 }
 
@@ -172,7 +174,7 @@
 }
 
 .about-buzzword-line {
-    margin-left: 15%;
+    margin-left: 10%;
     font-size: 26px;
     display: inline-block;
 }
@@ -187,10 +189,6 @@
 
 .projects-container {
     width: 90%;
-    min-height: 200px;
-    height: 75vh;
-    height: calc(100vh - 75px);
-    overflow: auto;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
@@ -200,6 +198,10 @@
 .card-container {
     padding-bottom: 20px;
     padding-top: 20px;
+    overflow: auto;
+    min-height: 200px;
+    height: 75vh;
+    height: calc(100vh - 75px);
 }
 
 .projects-card {
@@ -542,5 +544,18 @@
 @keyframes blink {
     50% {
         opacity: 0;
+    }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
     }
 }

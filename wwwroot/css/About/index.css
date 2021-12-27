@@ -1,0 +1,17 @@
+#html {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0px 0px 0px 0px;
+    overflow: hidden;
+}
+
+#aboutContainer {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}

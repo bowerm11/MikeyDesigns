@@ -70,6 +70,7 @@ class CoverAnimation {
     constructor(THREE, Assets, OrbitControls) {
         this.THREE = THREE;
         this.Assets = Assets;
+        this.canvasContainer = document.getElementById("canvas-container");
         this.handHelperElm = document.getElementById("hand-helper");
         this.Renderer = new THREE.WebGLRenderer({ antialias: true });
         this.Camera = new THREE.PerspectiveCamera(75, $(window).width() / $(window).height(), 1, 500); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
@@ -93,7 +94,7 @@ class CoverAnimation {
     }
 
     run() {
-        document.body.appendChild(this.Renderer.domElement);
+        this.canvasContainer.appendChild(this.Renderer.domElement);
         this.setListeners();
         runAnimationLoop(this);
     };
