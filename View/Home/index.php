@@ -1,11 +1,11 @@
 <?php 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
-    include_once("../../Controller/Home/HomeConstant.php");
+    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Home/HomeConstants.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/Logger.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
 
-    Logger::Log("This is a test.", "Index_Home");
+    Logger::Log("IP Remote/Forwarded (" . GlobalConstants::$ipRemote . "/" . GlobalConstants::$ipForwarded . ") entered the home screen.", "Index_Home");
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +19,13 @@
         <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
     <body>
-        <div></div>
-        <div id="homeContainer" class="removeable-section">
+        <div id="loading-container">
+            <div class="loading-elements">
+                <img src="<?php echo $homeConst->loadingImg?>" alt="Dog Image">
+                <p class="text-center">Hello, I'm Holly and I'm loading your screen...</p>
+            </div>
+        </div>
+        <div id="home-container" class="navbar-removeable-section">
             <div id="hand-helper" class="hand-graphic">
                 <img class="hand-img" src="<?php echo $homeConst->handImg?>" alt="">
             </div>

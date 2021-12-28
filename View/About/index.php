@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="<?php echo $aboutConst->navbarCss?>">
     </head>
     <body>
-        <div id="aboutContainer" class="removeable-section">
+        <div id="aboutContainer" class="navbar-removeable-section">
             <p>test</p>
         </div>    
         <?php include_once($aboutConst->navBarPhp) ?>

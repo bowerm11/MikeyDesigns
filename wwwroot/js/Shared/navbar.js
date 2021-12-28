@@ -1,6 +1,6 @@
 function NavBar() {
     this.hamburgerElm = document.getElementById("hamburgerClickable");
-    this.removeableSections = document.getElementsByClassName("removeable-section");
+    this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
     this.navBackground = new NavbarSquares(this);
 

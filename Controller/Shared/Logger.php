@@ -27,7 +27,7 @@
 
         private static function WriteHeader() {
             static::WriteLog("Log File Created At: " . date("Y-m-d") . ", " . date("h:i:sa"));
-            static::WriteLog("Version: " . GlobalConstants::$version);
+            static::WriteLog("Website Version: " . GlobalConstants::$version);
             static::WriteLog("================================================================");
         }
 

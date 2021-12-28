@@ -19,6 +19,7 @@
 
         //IMG
         public $handImg;
+        public $loadingImg;
 
         //View
         public $navBarPhp;
@@ -37,6 +38,7 @@
             $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/index.js");
 
             $this->handImg = GlobalConstants::AppendVersion("/wwwroot/images/Home/hand-pointer.svg");
+            $this->loadingImg = GlobalConstants::AppendVersion("/wwwroot/images/Home/hollysface.svg");
 
             $this->navBarPhp = GlobalConstants::$rootPath . "/View/Shared/_navbar.php";
         }
