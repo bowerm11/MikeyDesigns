@@ -2,7 +2,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
-    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    font-family: sans-serif, Arial, Helvetica;
 }
 
 body {
@@ -10,8 +10,156 @@ body {
     overflow: hidden;
 }
 
+.monospace-font {
+    font-family: Monaco, 'Courier New', monospace;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.margin-none {
+    margin: 0;
+}
+
+.me-img {
+    background-image: url("/wwwroot/images/About/me.jpg");
+}
+
+.parallax-container {
+    position: relative;
+    display: block;
+    height: 100vh;
+}
+
+.parallax {
+    height: inherit;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(0px);
+  }
+
+.about-title-box-container {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    z-index: 1;
+}
+
+.about-title-box {
+    text-align: center;
+    display: block;
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border: solid;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.animated-dot-container {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    z-index: 1;
+}
+
+.animated-dot {
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 5px;
+    border: solid;
+    border-color: white;
+    border-radius: 25px;
+}
+
+.dot {
+    width: 20%;
+    height: 20%;
+    transform: translateY(-100%);
+    animation: dotMove 1.7s infinite;
+}
+
+.black-box {
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: solid;
+    border-color: #c7c7c7;
+    border-width: 1px;
+}
+
+.black-box-header {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.black-box-content {
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.shuttle-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 350px;
+}
+
+.shuttle-img {
+    width: 100%;
+    display: block;
+}
+
+.shuttle-mid-line-container {
+    width: 50%;
+}
+
+.shuttle-max-line-container {
+    width: 100%;
+}
+
+.shuttle-dot {
+    width: 3%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.shuttle-max-line {
+    width: 94%;
+    vertical-align: middle;
+}
+
+.highlight-yellow {
+    background-color: #999900;
+}
+
 #aboutContainer {
     position: absolute;
+    overflow: auto;
+    opacity: 0;
     width: 100vw;
     height: 100vh;
+}
+
+@keyframes dotMove {
+    0% {
+        transform: scale(1) translateY(-100%);
+    }
+    20% {
+        transform: scale(1.4) translateY(100%);
+    }
+    100% {
+        transform: scale(1) translateY(-100%);
+    }
 }

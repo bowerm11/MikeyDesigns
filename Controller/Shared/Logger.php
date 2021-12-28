@@ -2,37 +2,46 @@
     include_once(__DIR__ . "/_GlobalConstants.php");
 
     class Logger {
+        public static $date;
         public static $logName;
         public static $logPath;
         public static $logFullPath;
         private static $logTsSpacing = 30;
+        private static $logArchiveLenDays = 14;
 
         public static function __constructStatic()
         {
-            static::$logName = "Log_" . date("Y-m-d") . ".txt";
-            static::$logPath = GlobalConstants::$rootPath . "/Logs";
-            static::$logFullPath = static::$logPath . "/" . static::$logName;
+            static::$date = new DateTime("now", new DateTimeZone('America/New_York'));
+            static::$logName = "Log_" . static::$date->format("Y-m-d") . ".txt";
+            static::$logPath = GlobalConstants::$rootPath . "/Logs/";
+            static::$logFullPath = static::$logPath . static::$logName;
         }
 
         public static function Log($message, $pageName) {
-            if (!file_exists(Logger::$logFullPath)) 
-            {
+            //Make base path if dir doesnt exist
+            if (!file_exists(Logger::$logPath)) {
                 mkdir(Logger::$logPath, 0777, true);
-                static::WriteHeader();
             }
 
-            $message = static::GetTimeStamp($pageName) . $message;
-            static::WriteLog($message);
+            //If file need to get created, do a dir scan and remove old logs
+            if (!file_exists(Logger::$logFullPath)) 
+            {
+                static::WriteHeader();
+                static::CleanLogDir();
+            }
+
+            static::WriteLog(static::GetTimeStamp($pageName) . $message);
         }
 
         private static function WriteHeader() {
-            static::WriteLog("Log File Created At: " . date("Y-m-d") . ", " . date("h:i:sa"));
+            static::WriteLog("Log File Created At: " . static::$date->format("Y-m-d") . ", " . static::$date->format("h:i:sa"));
+            static::WriteLog("Timezone As Of File Creation: " . static::GetTZName());
             static::WriteLog("Website Version: " . GlobalConstants::$version);
             static::WriteLog("================================================================");
         }
 
         private static function GetTimeStamp($pageName) {
-            $ts = "[" . $pageName . ", " . date("h:i:sa") . "]";
+            $ts = "[" . $pageName . ", " . static::$date->format("h:i:sa") . "]";
             $tsLen = strlen($ts);
             $spacingDifference = static::$logTsSpacing - $tsLen;
 
@@ -45,6 +54,34 @@
 
                 return $ts;
             }   
+        }
+
+        private static function CleanLogDir() {
+            $files = array_diff(scandir(static::$logPath), array('.', '..'));
+            $archiveDateTime = new DateTime("now", new DateTimeZone('America/New_York'));
+            $archiveDateTime->sub(new DateInterval("P". static::$logArchiveLenDays . "D"));
+            $archiveDate = $archiveDateTime->format("Y-m-d");
+
+            foreach($files as $file) {
+                $filePath = pathinfo($file);
+                $fileName = $filePath["filename"];
+
+                if(str_contains($fileName, "Log_")) {
+                    $logDate = str_replace("Log_", "", $fileName);
+
+                    if ($logDate <= $archiveDate) {
+                        $fileToDelete = static::$logPath . $file;
+                        static::WriteLog(static::GetTimeStamp("Logger") . "Deleting archive file: " . $fileToDelete);
+                        unlink($fileToDelete);
+                    }
+                }
+            }
+        }
+
+        private static function GetTZName()
+        {
+            $tz = static::$date->getTimezone();
+            return $tz->getName();
         }
 
         private static function WriteLog($message) {

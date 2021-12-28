@@ -15,7 +15,9 @@
         public $indexJs;
 
         //IMG
-        
+        public $dotImg;
+        public $shuttleImg;
+        public $lineImg;
         
         //View
         public $navBarPhp;
@@ -29,6 +31,10 @@
             $this->attractableBtnJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/AttractableBtn.js");
             $this->navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navBar.js");
             $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/About/index.js");
+
+            $this->dotImg = GlobalConstants::AppendVersion("/wwwroot/images/About/circle.svg");
+            $this->shuttleImg = GlobalConstants::AppendVersion("/wwwroot/images/About/shuttle.svg");
+            $this->lineImg = GlobalConstants::AppendVersion("/wwwroot/images/About/line.svg");
 
             $this->navBarPhp = GlobalConstants::$rootPath . "/View/Shared/_navbar.php";
         }

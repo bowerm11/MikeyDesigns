@@ -1,6 +1,8 @@
-Log File Created At: 2021-12-28, 12:05:59am
-Version: 1.0.0
+Log File Created At: 2021-12-28, 02:58:27pm
+Timezone As Of File Creation: America/New_York
+Website Version: 1.0.0
 ================================================================
+<<<<<<< HEAD
 [Index_Home, 12:05:59am]      This is a test.
 [Index_Home, 12:08:52am]      This is a test.
 [Index_Home, 12:09:02am]      This is a test.
@@ -60,3 +62,123 @@ Version: 1.0.0
 [Index_Home, 01:32:03am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
 [Index_Home, 01:32:17am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
 [Index_Home, 01:32:29am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+=======
+[Index_Home, 02:58:27pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 02:58:35pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:00:57pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:02:24pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:02:51pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:05:03pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[generalErrorHandler, 03:19:08pm]A general uncaught error has occured. Error Number: 2, Error Str: Undefined variable $archiveDate, Error Line: 72, Error File: /Users/ethanbower/Documents/MikeyDesigns/Controller/Shared/Logger.php
+[generalErrorHandler, 03:19:08pm]A general uncaught error has occured. Error Number: 2, Error Str: Undefined variable $archiveDate, Error Line: 72, Error File: /Users/ethanbower/Documents/MikeyDesigns/Controller/Shared/Logger.php
+[Index_Home, 03:20:17pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:20:31pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:20:46pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:21:02pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:23:40pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:23:52pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:25:17pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:26:33pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:26:43pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:27:29pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+Deleting archive file: /Users/ethanbower/Documents/MikeyDesigns/Logs/Log_2021-12-01.txt
+[Index_Home, 03:29:18pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Logger, 03:30:59pm]          Deleting archive file: /Users/ethanbower/Documents/MikeyDesigns/Logs/Log_2021-12-01.txt
+[Index_Home, 03:30:59pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:32:47pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 03:35:22pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 03:55:55pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:59:27pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 03:59:33pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 03:59:35pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 03:59:46pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 03:59:51pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:59:55pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:59:56pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 03:59:57pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:04:14pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:04:42pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:06:10pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:06:43pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:08:50pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:08:51pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:08:52pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 04:08:53pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 04:08:59pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 04:20:47pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 04:21:35pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:25:35pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:27:02pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:28:18pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:28:31pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:29:51pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 04:30:11pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 04:30:51pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 04:30:53pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 04:31:22pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:47:50pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:48:38pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:49:35pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:49:47pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:51:53pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 04:52:36pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:02:18pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:03:26pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:07:35pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:08:02pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:09:22pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:09:33pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:11:11pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:11:24pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:12:04pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:12:30pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:13:02pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:15:12pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:16:22pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:20:36pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:25:05pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:26:36pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:27:31pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:27:45pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:27:56pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:29:47pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:34:25pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:36:24pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:37:15pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:37:55pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:38:32pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:39:42pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:49:49pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 05:50:00pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:00:00pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:06:35pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:06:45pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:09:33pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:09:50pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:10:04pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:12:53pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:13:40pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:17:57pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:18:29pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:19:45pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:19:57pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:21:13pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:23:21pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:24:10pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:24:35pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:25:48pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:30:13pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:33:17pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:34:48pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:35:06pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:35:27pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:36:23pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:36:38pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:36:49pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:38:03pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:38:50pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:39:30pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:39:41pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:39:50pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 06:40:01pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+>>>>>>> 2d28034df0d676e27372de4d2501dca169ca016b
