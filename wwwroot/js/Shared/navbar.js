@@ -21,11 +21,57 @@ function NavBar() {
         }  
     }
 
-    this.hideRemoveableSections = function() {
+    this.showRemovableSections = function (whenDone) {
+        const obj = this;
+        const fadeOutLenSec = 1;
+        const promises = [];
+        
         for (let i = 0; i < this.removeableSections.length; i++) {
             const section = this.removeableSections[i];
-            section.style.opacity = "0";
+            const defer = $.Deferred();
+            section.style.animation = "fadeOut " + fadeOutLenSec + "s forwards reverse";
+
+            setTimeout(function() {
+                defer.resolve();
+            }, fadeOutLenSec * 1000);
+
+            promises.push(defer);
         }
+
+        $.when.apply($, promises).then(function () {
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
+        });  
+    }
+
+    this.hideRemoveableSections = function(whenDone) {
+        const obj = this;
+        const fadeOutLenSec = 1;
+        const promises = [];
+
+        for (let i = 0; i < this.removeableSections.length; i++) {
+            const section = this.removeableSections[i];
+            const defer = $.Deferred();
+            section.style.animation = "fadeOut " + fadeOutLenSec + "s forwards";
+
+            setTimeout(function() {
+                defer.resolve();
+            }, fadeOutLenSec * 1000);
+
+            promises.push(defer);
+        }
+
+        $.when.apply($, promises).then(function () {
+            for (let i = 0; i < obj.removeableSections.length; i++) {
+                const section = obj.removeableSections[i];
+                $(section).remove();
+            }
+
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
+        });    
     }
 
     this.scrollToProject = function(projectName) {
@@ -236,10 +282,11 @@ function NavbarTopLeftSquare(navBarSquares) {
             unFocusChildrenUnderline(this);
         });
         this.square.onclick = function () {
-            obj.navBarSquares.navBar.hideRemoveableSections();
             obj.navBarSquares.closeMenuBar(function() {
-                window.location.href = obj.clickUrl;
-            });
+                obj.navBarSquares.navBar.hideRemoveableSections(function() {
+                    window.location.href = obj.clickUrl;
+                });  
+            });            
         };
         this.writeBuzzwords();
     }

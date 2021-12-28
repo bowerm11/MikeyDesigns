@@ -5,8 +5,6 @@ import { OrbitControls } from "../src/threeJs/OrbitControls.js";
 $(document).ready(function() {
     const loadingContainer = document.getElementById("loading-container");
     const nav = new NavBar();
-    //nav.navBackground.toggleMenuBar();
-    //nav.scrollToProject('test8');
 
     const assets = new AssetLoader(GLTFLoader, THREE);
     assets.startLoadingAssetsAsync();
