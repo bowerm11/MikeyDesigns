@@ -1,4 +1,5 @@
 <?php 
+    include_once(__DIR__ . "/preventDirectCall.php");
     include_once(__DIR__ . "/Logger.php");
 
     function globalErrorHandler($errno, $errstr, $errfile, $errline)
