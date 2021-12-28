@@ -14,9 +14,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>About</title>
-        <link rel="stylesheet" href="<?php echo $aboutConst->bootstrapCss?>">
-        <link rel="stylesheet" href="<?php echo $aboutConst->aboutCss?>">
-        <link rel="stylesheet" href="<?php echo $aboutConst->navbarCss?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->bootstrapCss?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->navbarCss?>">
     </head>
     <body>
         <div id="aboutContainer" class="navbar-removeable-section">
@@ -24,6 +24,7 @@
                 <div class="about-title-box-container">
                     <div class="about-title-box">
                         <p class="margin-none">Hi, I'm Michael.</p>
+                        <p class="margin-none monospace-font font-size-18">Industrial Designer</p>
                     </div>
                 </div>
                 <div class="animated-dot-container">
@@ -33,8 +34,29 @@
                 </div>
                 <div class="parallax me-img"></div>
             </div> 
-            <div>
-                <p>Make dive black, typewriter text. Place graph.</p>
+            <div class="black-box monospace-font">
+                <div class="black-box-header">
+                    <p class="d-inline">Always Designing</p>
+                </div>
+                <div class="black-box-content">
+                    <div class="shuttle-container">
+                        <img class="shuttle-img" src="<?php echo $aboutConst->shuttleImg?>">
+                        <div class="shuttle-mid-line-container">
+                            <img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>"><img class="shuttle-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>">
+                        </div>
+                        <div class="shuttle-max-line-container">
+                            <img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>"><img class="shuttle-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>">
+                            <p class="margin-none">20in</p>
+                        </div>
+                    </div>
+                    <p class="margin-none">Make dive black, typewriter text. Place graph.Add black box to every paragraph</p>
+                </div>
+            </div>   
+            <div class="black-box monospace-font">
+                <div class="black-box-header">
+                    <p class="d-inline">Skills that Make Design Last and Stay Functional</p>
+                </div>
+                <p class="margin-none">Make dive black, typewriter text. Place graph.</p>
             </div>   
         </div>    
         <?php include_once($aboutConst->navBarPhp) ?>
