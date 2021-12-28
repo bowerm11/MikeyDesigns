@@ -11,8 +11,10 @@
 
         // $errstr may need to be escaped
         $errstr = htmlspecialchars($errstr);
-        Logger::Log("A global uncaught error has occured. Error Number: " . $errno . ", Error Str: " . $errstr . ", Error Line: " . $errline . ", Error File: ". $errfile,
-            "GlobalErrorHandler");     
+        Logger::Log(
+            "A global uncaught error has occured. Error Number: " . $errno . ", Error Str: " . $errstr . ", Error Line: " . $errline . ", Error File: ". $errfile,
+            "GlobalErrorHandler"
+        );     
         echo "An unknown error has occured. Please refresh.";
         exit(1);
     }
