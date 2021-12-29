@@ -11,6 +11,6 @@ RewriteEngine On
 # Force HTTPS and WWW
 RewriteCond %{HTTP_HOST} !^www\.(.*)$ [OR,NC]
 RewriteCond %{https} off  
-RewriteRule ^(.*)$ https://www.mikeydesigns.com/$1 [R=301,L]
+RewriteRule ^(.*)$ https://www.mikeydesigns.net/$1 [R=301,L]
 
 # php -- END cPanel-generated handler, do not edit
