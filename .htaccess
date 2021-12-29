@@ -4,8 +4,13 @@
 <IfModule mime_module>
   AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
 </IfModule>
-<IfModule mod_rewrite.c>  
-  RewriteEngine On  
-  RewriteRule ^/.htaccess$ /View/Home/index.php [L]
-</IfModule>
+
+# Turn on the rewrite engine
+RewriteEngine On
+
+# Force HTTPS and WWW
+RewriteCond %{HTTP_HOST} !^www\.(.*)$ [OR,NC]
+RewriteCond %{https} off  
+RewriteRule ^(.*)$ https://www.test-website.com/$1 [R=301,L]
+
 # php -- END cPanel-generated handler, do not edit
