@@ -57,7 +57,7 @@
                 <div class="black-box-header">
                     <p class="d-inline">Skills that Make Design Last and Stay Functional</p>
                 </div>
-                <p class="margin-none">Make dive black, typewriter text. Place graph.</p>
+                <p class="margin-none">Make div black, typewriter text. Place graph.</p>
             </div>   
         </div>    
         <?php include_once($aboutConst->navBarPhp) ?>
