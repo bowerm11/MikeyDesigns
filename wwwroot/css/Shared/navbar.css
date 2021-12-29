@@ -391,6 +391,10 @@
         height: auto;
     }
 
+    #card-container {
+        height: auto;
+    }
+
     #nav-screen {
         overflow: auto;
     }

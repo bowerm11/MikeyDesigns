@@ -7,8 +7,8 @@ function NavBar() {
 
     this.init = function() {
         var navObj = this;
-        this.navElm.style.width = window.innerWidth + " px";
-        this.navElm.style.height = window.innerHeight+ " px";
+        this.navElm.style.width = window.innerWidth + "px";
+        this.navElm.style.height = window.innerHeight + "px";
 
         this.movingHamburgerbtn.onActivation = function () {
             navObj.hamburgerElm.style.background = "#818181";
@@ -489,7 +489,7 @@ function unFocusChildrenUnderline(elm) {
 }
 
 function reloadPageIfBackButtonHit() {
-    window.addEventListener( "pageshow", function ( event ) {
+    window.addEventListener("pageshow", function ( event ) {
         var historyTraversal = 
             event.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2);
         if (historyTraversal) {
