@@ -5,7 +5,7 @@
 <div id="hamburgerClickable" class="hamburger-wrapper">
     <img class="hamburger-icon" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">
 </div>  
-<div id="nav-screen" class="container-fluid" hidden>
+<div id="nav-screen" class="container-fluid 100-Vw-Vh" hidden>
     <div class="row stretch-to-screen margin-none">
         <div class="col-12 col-md-5 no-padding">
             <div class="row stretch-to-screen margin-none">

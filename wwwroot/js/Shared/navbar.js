@@ -1,5 +1,4 @@
 function NavBar() {
-    this.navElm = document.getElementById("nav-screen");
     this.hamburgerElm = document.getElementById("hamburgerClickable");
     this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
@@ -7,8 +6,6 @@ function NavBar() {
 
     this.init = function() {
         var navObj = this;
-        this.navElm.style.width = window.innerWidth + "px";
-        this.navElm.style.height = window.innerHeight + "px";
 
         this.movingHamburgerbtn.onActivation = function () {
             navObj.hamburgerElm.style.background = "#818181";
@@ -505,6 +502,11 @@ function setAllVWVHMax() {
         const viewportElm = viewportsToMax[i];
         viewportElm.style.width = window.innerWidth + "px";
         viewportElm.style.height = window.innerHeight + "px";
+
+        window.addEventListener('resize', function() {
+            viewportElm.style.width = window.innerWidth + "px";
+            viewportElm.style.height = window.innerHeight + "px";
+        });
     }
 }
 
