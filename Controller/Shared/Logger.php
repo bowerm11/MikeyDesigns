@@ -66,7 +66,7 @@
                 $filePath = pathinfo($file);
                 $fileName = $filePath["filename"];
 
-                if(str_contains($fileName, "Log_")) {
+                if(strpos($fileName, "Log_") !== false) {
                     $logDate = str_replace("Log_", "", $fileName);
 
                     if ($logDate <= $archiveDate) {

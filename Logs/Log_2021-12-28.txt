@@ -217,3 +217,7 @@ Deleting archive file: /Users/ethanbower/Documents/MikeyDesigns/Logs/Log_2021-12
 [Index_Home, 11:03:06pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
 [Index_Home, 11:03:08pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
 [Index_Home, 11:28:27pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 11:30:41pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 11:30:46pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 11:30:51pm]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_Home, 11:31:00pm]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
