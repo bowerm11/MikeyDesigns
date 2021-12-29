@@ -12,7 +12,7 @@
 <html id="html">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <title>Mikey Designs</title>
         <link rel="stylesheet" href="<?php echo $homeConst->bootstrapCss?>">
         <link rel="stylesheet" href="<?php echo $homeConst->homeCss?>">
