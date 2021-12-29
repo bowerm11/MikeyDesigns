@@ -3,10 +3,13 @@ import { GLTFLoader } from '../src/threeJs/GLTFLoader.js';
 import { OrbitControls } from "../src/threeJs/OrbitControls.js";
 
 $(document).ready(function() {
+    const homeContainer = document.getElementById("home-container");
     const loadingContainer = document.getElementById("loading-container");
     const nav = new NavBar();
-
     const assets = new AssetLoader(GLTFLoader, THREE);
+
+    homeContainer.style.height = window.innerHeight;
+
     assets.startLoadingAssetsAsync();
     assets.doneLoadingAssets(() => {
         const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls);
