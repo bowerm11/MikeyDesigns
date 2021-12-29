@@ -46,7 +46,10 @@ body {
     background: #e0e0e0;
     z-index: 1;
 }
-
+.t{
+    width: 100vw;
+    height: 100vh;
+}
 #home-container {
     position: absolute;
     z-index: 0;
