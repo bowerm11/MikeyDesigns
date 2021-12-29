@@ -13,6 +13,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <title>About</title>
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->bootstrapCss?>">
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
