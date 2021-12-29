@@ -33,7 +33,7 @@
     border-width: 2px;
     padding: 6px;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 10px;
     z-index: 1000;
@@ -251,7 +251,7 @@
 
 #nav-screen {
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     padding: 0px;
 }

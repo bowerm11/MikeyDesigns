@@ -1,4 +1,5 @@
 function NavBar() {
+    this.parentElm = document.getElementById("nav-screen").parentElement;
     this.hamburgerElm = document.getElementById("hamburgerClickable");
     this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
@@ -154,6 +155,7 @@ function NavbarSquares(navBar) {
 
     this.openMenu = function(whenDone) {
         var obj = this;
+        this.navBar.parentElm.style.overflow = "hidden";
         this.openSquaresAsync(function() {
             obj.showSquareInfoAsync(function () {
                 if (typeof whenDone === 'function' && whenDone()) {
@@ -165,6 +167,7 @@ function NavbarSquares(navBar) {
 
     this.closeMenu = function(whenDone) {
         var obj = this;
+        this.navBar.parentElm.style.overflow = "auto";
         this.closeInfoAsync(function () {
             obj.closeSquaresAsync(function() {
                 if (typeof whenDone === 'function' && whenDone()) {
