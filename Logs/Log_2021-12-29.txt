@@ -1,0 +1,18 @@
+Log File Created At: 2021-12-29, 12:57:00am
+Timezone As Of File Creation: America/New_York
+Website Version: 1.0.0
+================================================================
+[Index_Home, 12:57:00am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:07:39am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:07:45am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:08:15am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:08:18am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:08:58am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:09:10am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:09:45am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:10:37am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:10:58am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:11:10am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_Home, 01:13:06am]      IP Remote/Forwarded (::1/Unknown) entered the home screen.
+[Index_About, 01:13:29am]     IP Remote/Forwarded (::1/Unknown) entered the about screen.
+[Index_About, 01:14:22am]     IP Remote/Forwarded (::1/Unknown) entered the about screen.

@@ -19,13 +19,13 @@
         <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
     <body>
-        <div id="loading-container">
+        <div id="loading-container" class="100-Vw-Vh">
             <div class="loading-elements">
                 <img src="<?php echo $homeConst->loadingImg?>" alt="Dog Image">
                 <p class="text-center">Hello, I'm Holly and I'm loading your screen...</p>
             </div>
         </div>
-        <div id="home-container" class="navbar-removeable-section">
+        <div id="home-container" class="navbar-removeable-section 100-Vw-Vh">
             <div id="hand-helper" class="hand-graphic">
                 <img class="hand-img" src="<?php echo $homeConst->handImg?>" alt="">
             </div>

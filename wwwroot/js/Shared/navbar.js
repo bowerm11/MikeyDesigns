@@ -1,4 +1,5 @@
 function NavBar() {
+    this.navElm = document.getElementById("nav-screen");
     this.hamburgerElm = document.getElementById("hamburgerClickable");
     this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
@@ -6,6 +7,9 @@ function NavBar() {
 
     this.init = function() {
         var navObj = this;
+        this.navElm.style.width = window.innerWidth + " px";
+        this.navElm.style.height = window.innerHeight+ " px";
+
         this.movingHamburgerbtn.onActivation = function () {
             navObj.hamburgerElm.style.background = "#818181";
             navObj.hamburgerElm.style.animation = ".3s scaleUp ease-out forwards";
@@ -492,6 +496,16 @@ function reloadPageIfBackButtonHit() {
           window.location.reload();
         }
     });
+}
+
+function setAllVWVHMax() {
+    const viewportsToMax = document.getElementsByClassName("100-Vw-Vh");
+
+    for (let i = 0; i < viewportsToMax.length; i++) {
+        const viewportElm = viewportsToMax[i];
+        viewportElm.style.width = window.innerWidth + "px";
+        viewportElm.style.height = window.innerHeight + "px";
+    }
 }
 
 reloadPageIfBackButtonHit();

@@ -20,7 +20,7 @@
     </head>
     <body>
         <div id="aboutContainer" class="navbar-removeable-section">
-            <div class="parallax-container">
+            <div class="parallax-container 100-Vw-Vh">
                 <div class="about-title-box-container">
                     <div class="about-title-box">
                         <p class="margin-none">Hi, I'm Michael.</p>

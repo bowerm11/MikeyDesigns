@@ -8,10 +8,7 @@ $(document).ready(function() {
     const nav = new NavBar();
     const assets = new AssetLoader(GLTFLoader, THREE);
 
-    homeContainer.style.height = window.innerHeight + "px";
-    homeContainer.style.width = window.innerWidth + "px";
-    loadingContainer.style.height = window.innerHeight + "px";
-    loadingContainer.style.width = window.innerWidth + "px";
+    setAllVWVHMax();
 
     assets.startLoadingAssetsAsync();
     assets.doneLoadingAssets(() => {
