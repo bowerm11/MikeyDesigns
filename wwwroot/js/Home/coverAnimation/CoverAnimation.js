@@ -67,13 +67,14 @@ class AssetLoader {
 }
 
 class CoverAnimation {
-    constructor(THREE, Assets, OrbitControls) {
+    constructor(THREE, Assets, OrbitControls, homeConatiner) {
         this.THREE = THREE;
         this.Assets = Assets;
+        this.homeConatiner = homeConatiner;
         this.canvasContainer = document.getElementById("canvas-container");
         this.handHelperElm = document.getElementById("hand-helper");
         this.Renderer = new THREE.WebGLRenderer({ antialias: true });
-        this.Camera = new THREE.PerspectiveCamera(75, $(window).width() / $(window).height(), 1, 500); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
+        this.Camera = new THREE.PerspectiveCamera(75, $(homeConatiner).width() / $(homeConatiner).height(), 1, 500); //(FOV, Aspect Ratio, Near Clipping, Far Clipping ie -> Dont Render at X Distance) 
         this.CameraOrbitControl = new OrbitControls(this.Camera, this.Renderer.domElement);
         this.RayCaster = new THREE.Raycaster();
         this.MousePositionVector = new THREE.Vector2();
@@ -88,7 +89,7 @@ class CoverAnimation {
         //Set size will set size of canvas. Add third param and set to false to change resolution.
         //Add css canvas style to 100% for same render size but lower res.
         this.Renderer.setClearColor(0xffffff, 0.15);
-        this.Renderer.setSize($(window).width(), $(window).height());
+        this.Renderer.setSize($(homeConatiner).width(), $(homeConatiner).height());
         this.Renderer.setPixelRatio(1.5);
         this.Renderer.autoClear = false;
     }
@@ -118,7 +119,7 @@ class CoverAnimation {
         });
 
         window.addEventListener('resize', function(e) {
-            coverAnimationObj.Renderer.setSize($(window).width(), $(window).height());
+            coverAnimationObj.Renderer.setSize($(coverAnimationObj.homeConatiner).width(), $(coverAnimationObj.homeConatiner).height());
             coverAnimationObj.Camera.aspect = $(window).width() / $(window).height();
             coverAnimationObj.Camera.updateProjectionMatrix();
         });

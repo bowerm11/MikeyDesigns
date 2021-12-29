@@ -8,11 +8,11 @@ $(document).ready(function() {
     const nav = new NavBar();
     const assets = new AssetLoader(GLTFLoader, THREE);
 
-    homeContainer.style.height = window.innerHeight;
+    homeContainer.style.height = window.innerHeight + "px";
 
     assets.startLoadingAssetsAsync();
     assets.doneLoadingAssets(() => {
-        const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls);
+        const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls, homeContainer);
         coverAnimation.run();
         deleteFadeOutElm(loadingContainer, 1);
     });
