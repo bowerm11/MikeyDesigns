@@ -48,6 +48,7 @@ body {
 }
 
 #home-container {
+    position: absolute;
     z-index: 0;
 }
 
