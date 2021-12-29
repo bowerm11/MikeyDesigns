@@ -4,20 +4,20 @@ import { OrbitControls } from "../src/threeJs/OrbitControls.js";
 
 $(document).ready(function() {
     const homeContainer = document.getElementById("home-container");
-    //const loadingContainer = document.getElementById("loading-container");
+    const loadingContainer = document.getElementById("loading-container");
     const nav = new NavBar();
     const assets = new AssetLoader(GLTFLoader, THREE);
 
     homeContainer.style.height = window.innerHeight + "px";
     homeContainer.style.width = window.innerWidth + "px";
-    //loadingContainer.style.height = window.innerHeight + "px";
-    //loadingContainer.style.width = window.innerWidth + "px";
+    loadingContainer.style.height = window.innerHeight + "px";
+    loadingContainer.style.width = window.innerWidth + "px";
 
     assets.startLoadingAssetsAsync();
     assets.doneLoadingAssets(() => {
         const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls, homeContainer);
         coverAnimation.run();
-        //deleteFadeOutElm(loadingContainer, 1);
+        deleteFadeOutElm(loadingContainer, 1);
     });
 });
 
