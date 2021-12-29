@@ -9,6 +9,9 @@ $(document).ready(function() {
     const assets = new AssetLoader(GLTFLoader, THREE);
 
     homeContainer.style.height = window.innerHeight + "px";
+    homeContainer.style.width = window.innerWidth + "px";
+    loadingContainer.style.height = window.innerHeight + "px";
+    loadingContainer.style.width = window.innerWidth + "px";
 
     assets.startLoadingAssetsAsync();
     assets.doneLoadingAssets(() => {
