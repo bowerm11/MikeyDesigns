@@ -15,6 +15,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <title>About</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->bootstrapCss?>">
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->navbarCss?>">

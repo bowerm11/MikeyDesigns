@@ -67,7 +67,7 @@
 
 .block-title {
     font-size: 50px;
-    font-weight: bold;
+    font-weight: 300;
 }
 
 .text-right {
@@ -167,7 +167,6 @@
 
 .about-inner-header {
     font-size: 34px;
-    font-weight: bold;
     margin-left: 5%;
     margin-top: 15px;
     margin-bottom: 0px;
