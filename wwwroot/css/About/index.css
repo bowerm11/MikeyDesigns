@@ -18,19 +18,30 @@ body {
     margin: 0;
 }
 
+.me-background-img {
+    background-image: url("/wwwroot/images/About/selfPortraitBackground.jpg");
+}
+
 .me-img {
-    background-image: url("/wwwroot/images/About/me.jpg");
+    background-image: url("/wwwroot/images/About/selfPortrait.png");
+}
+
+.front-cover-container {
+    position: relative;
 }
 
 .parallax-container {
-    position: relative;
     display: block;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .parallax {
     height: inherit;
-    background-attachment: fixed;
+    width: inherit;
+    position: fixed;
+    top: 0;
+    z-index: -1;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -85,7 +96,7 @@ body {
 }
 
 .black-box {
-    background-color: #000000;
+    background-color: #303030;
     color: #ffffff;
     border-bottom: solid;
     border-color: #c7c7c7;
@@ -104,7 +115,7 @@ body {
     font-size: 13px;
 }
 
-.shuttle-container {
+.key-container {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -112,32 +123,50 @@ body {
     max-width: 350px;
 }
 
-.shuttle-img {
+.key-img {
     width: 100%;
     display: block;
 }
 
-.shuttle-mid-line-container {
+.key-mid-line-container {
     width: 50%;
 }
 
-.shuttle-max-line-container {
+.key-max-line-container {
     width: 100%;
 }
 
-.shuttle-dot {
+.key-dot {
     width: 3%;
     display: inline-block;
     vertical-align: middle;
 }
 
-.shuttle-max-line {
+.key-max-line {
     width: 94%;
     vertical-align: middle;
 }
 
 .highlight-yellow {
     background-color: #999900;
+}
+
+.chart-container {
+    display: block;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chart-axis {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.chart-x-axis {
 }
 
 #aboutContainer {

@@ -7,6 +7,7 @@ function NavBar() {
 
     this.init = function() {
         var navObj = this;
+        setAllVWVHMax();
 
         this.movingHamburgerbtn.onActivation = function () {
             navObj.hamburgerElm.style.background = "#818181";
@@ -24,14 +25,13 @@ function NavBar() {
     }
 
     this.showRemovableSections = function (whenDone) {
-        const obj = this;
         const fadeOutLenSec = 1;
         const promises = [];
         
         for (let i = 0; i < this.removeableSections.length; i++) {
             const section = this.removeableSections[i];
             const defer = $.Deferred();
-            section.style.animation = "fadeOut " + fadeOutLenSec + "s forwards reverse";
+            section.style.animation = "navfadeOut " + fadeOutLenSec + "s forwards reverse";
 
             setTimeout(function() {
                 defer.resolve();
@@ -97,7 +97,7 @@ NavBar.isInLargeView = function() {
 function NavbarSquares(navBar) {
     this.navBar = navBar;
     this.navAnimationIsRunning = false;
-    this.navAnimationSpeedSec = 0.5;
+    this.navAnimationSpeedSec = 0.4;
     this.navAnimationSpeedMs = this.navAnimationSpeedSec * 1000;
 
     this.navScreenElm = document.getElementById("nav-screen");

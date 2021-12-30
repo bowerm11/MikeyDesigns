@@ -21,7 +21,7 @@
     </head>
     <body>
         <div id="aboutContainer" class="navbar-removeable-section">
-            <div class="parallax-container 100-Vw-Vh">
+            <div class="front-cover-container 100-Vw-Vh">
                 <div class="about-title-box-container">
                     <div class="about-title-box">
                         <p class="margin-none">Hi, I'm Michael.</p>
@@ -33,20 +33,23 @@
                         <img class="dot" src="<?php echo $aboutConst->dotImg?>" alt="Click Below">
                     </div>
                 </div>
-                <div class="parallax me-img"></div>
+                <div id="front-page-parrallax" class="parallax-container">
+                    <div class="parallax me-background-img"></div>
+                    <div class="parallax me-img"></div>
+                </div>
             </div> 
             <div class="black-box monospace-font">
                 <div class="black-box-header">
                     <p class="d-inline">Always Designing</p>
                 </div>
                 <div class="black-box-content">
-                    <div class="shuttle-container">
-                        <img class="shuttle-img" src="<?php echo $aboutConst->shuttleImg?>">
-                        <div class="shuttle-mid-line-container">
-                            <img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>"><img class="shuttle-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>">
+                    <div class="key-container">
+                        <img class="key-img" src="<?php echo $aboutConst->keyImg?>">
+                        <div class="key-mid-line-container">
+                            <img class="key-dot" src="<?php echo $aboutConst->dotImg?>"><img class="key-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="key-dot" src="<?php echo $aboutConst->dotImg?>">
                         </div>
-                        <div class="shuttle-max-line-container">
-                            <img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>"><img class="shuttle-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="shuttle-dot" src="<?php echo $aboutConst->dotImg?>">
+                        <div class="key-max-line-container">
+                            <img class="key-dot" src="<?php echo $aboutConst->dotImg?>"><img class="key-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="key-dot" src="<?php echo $aboutConst->dotImg?>">
                             <p class="margin-none">20in</p>
                         </div>
                     </div>
@@ -58,11 +61,17 @@
                     <p class="d-inline">Skills that Make Design Last and Stay Functional</p>
                 </div>
                 <p class="margin-none">Make div black, typewriter text. Place graph.</p>
+                <div class="chart-container">
+                    <div class="chart-axis">
+                        <img class="chart-x-axis" src="<?php echo $aboutConst->lineUpImg?>">
+                    </div>
+                </div>
             </div>   
         </div>    
         <?php include_once($aboutConst->navBarPhp) ?>
     </body>
     <script type="text/javascript" src="<?php echo $aboutConst->jQueryJs?>"></script>
+    <script type="text/javascript" src="<?php echo $aboutConst->gchartJs?>"></script>
     <script type="text/javascript" src="<?php echo $aboutConst->attractableBtnJs?>"></script>
     <script type="text/javascript" src="<?php echo $aboutConst->navBarJs?>"></script>
     <script type="module" src="<?php echo $aboutConst->indexJs?>"></script>

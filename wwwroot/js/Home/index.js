@@ -7,9 +7,7 @@ $(document).ready(function() {
     const loadingContainer = document.getElementById("loading-container");
     const nav = new NavBar();
     const assets = new AssetLoader(GLTFLoader, THREE);
-
-    setAllVWVHMax();
-
+    
     assets.startLoadingAssetsAsync();
     assets.doneLoadingAssets(() => {
         const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls, homeContainer);

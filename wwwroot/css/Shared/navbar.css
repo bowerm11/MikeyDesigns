@@ -562,7 +562,7 @@
     }
 }
 
-@keyframes fadeOut {
+@keyframes navfadeOut {
     0% {
         opacity: 1;
     }
