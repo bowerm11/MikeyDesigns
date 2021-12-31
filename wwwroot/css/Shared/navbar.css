@@ -38,6 +38,7 @@
     top: 10px;
     z-index: 1000;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .hamburger-wrapper:active:hover {
@@ -265,6 +266,7 @@
     background-color: #303030;
     background-color: #303030e6;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     border-radius: 0px 10px 10px 0px;
 }
 
@@ -286,8 +288,9 @@
     overflow: auto;
     background-color: #3b8cb5;
     background-color: #3b8cb5e6;
-    backdrop-filter: blur(5px);
     border-radius: 10px 0px 0px 0px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 #nav-square-small-top:hover {
@@ -302,6 +305,7 @@
     transform: translate(0%, 100%);
     padding: 0px;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     height: 60vh;
 }
 
