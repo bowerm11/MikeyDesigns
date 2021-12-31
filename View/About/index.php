@@ -1,4 +1,6 @@
 <?php 
+    $pageTitle = "About";
+
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/About/AboutConstants.php");
@@ -11,14 +13,7 @@
 <!DOCTYPE html>
 <html id="html">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <title>About</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->bootstrapCss?>">
+        <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->navbarCss?>">
     </head>
@@ -27,8 +22,8 @@
             <div class="front-cover-container 100-Vw-Vh">
                 <div class="about-title-box-container">
                     <div class="about-title-box">
-                        <p class="margin-none">Hi, I'm Michael.</p>
-                        <p class="margin-none monospace-font font-size-18">Industrial Designer</p>
+                        <p class="margin-none header">Hi, I'm Michael.</p>
+                        <p class="margin-none font-size-18">Industrial Designer</p>
                     </div>
                 </div>
                 <div class="animated-dot-container">
@@ -49,14 +44,15 @@
                     <div class="key-container">
                         <img class="key-img" src="<?php echo $aboutConst->keyImg?>">
                         <div class="key-mid-line-container">
-                            <img class="key-dot" src="<?php echo $aboutConst->dotImg?>"><img class="key-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="key-dot" src="<?php echo $aboutConst->dotImg?>">
+                            <img class="key-max-line" src="<?php echo $aboutConst->lineImg?>">
                         </div>
                         <div class="key-max-line-container">
-                            <img class="key-dot" src="<?php echo $aboutConst->dotImg?>"><img class="key-max-line" src="<?php echo $aboutConst->lineImg?>"><img class="key-dot" src="<?php echo $aboutConst->dotImg?>">
+                            <img class="key-max-line" src="<?php echo $aboutConst->lineImg?>">
                             <p class="margin-none">20in</p>
                         </div>
                     </div>
-                    <p class="margin-none">Make dive black, typewriter text. Place graph.Add black box to every paragraph</p>
+                    <p class="content-text">Hello! My name is Michael Bower, and as an Industrial Designer my passion is to design a better quality of living by challenging what can be done. Pushing design boundaries while maintaining design integrity throughout the development process. Very engaging and hands on from concept to product launch. I am self-motivated with a willingness to go the extra mile.</p>
+                    <p class="margin-none content-text">I had the opportunity to develop products for the home, sporting goods, outdoor living although the majority of my experience has been in medical devices.  Integrating innovative materials and processes for consumer products in many industries. I have worked with a diversity of team members consisting of engineers, marketing, associates and management as well as other designers.</p>
                 </div>
             </div>   
             <div class="black-box monospace-font">
@@ -73,8 +69,7 @@
         </div>    
         <?php include_once($aboutConst->navBarPhp) ?>
     </body>
-    <script type="text/javascript" src="<?php echo $aboutConst->jQueryJs?>"></script>
-    <script type="text/javascript" src="<?php echo $aboutConst->gchartJs?>"></script>
+    <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
     <script type="text/javascript" src="<?php echo $aboutConst->attractableBtnJs?>"></script>
     <script type="text/javascript" src="<?php echo $aboutConst->navBarJs?>"></script>
     <script type="module" src="<?php echo $aboutConst->indexJs?>"></script>

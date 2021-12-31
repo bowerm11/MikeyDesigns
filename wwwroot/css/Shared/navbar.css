@@ -37,6 +37,7 @@
     left: 10px;
     top: 10px;
     z-index: 1000;
+    backdrop-filter: blur(5px);
 }
 
 .hamburger-wrapper:active:hover {
@@ -262,6 +263,8 @@
 #nav-square-large-right {
     height: 100%;
     background-color: #303030;
+    background-color: #303030e6;
+    backdrop-filter: blur(5px);
     border-radius: 0px 10px 10px 0px;
 }
 
@@ -282,6 +285,8 @@
     height: 100%;
     overflow: auto;
     background-color: #3b8cb5;
+    background-color: #3b8cb5e6;
+    backdrop-filter: blur(5px);
     border-radius: 10px 0px 0px 0px;
 }
 
@@ -296,12 +301,14 @@
 #nav-square-small-bottom-container {
     transform: translate(0%, 100%);
     padding: 0px;
+    backdrop-filter: blur(5px);
     height: 60vh;
 }
 
 #nav-square-small-bottom {
     height: 100%;
     background-color: #007ab5;
+    background-color: #0077b3f2;
     overflow: auto;
     border-radius: 0px 0px 0px 10px;
 }

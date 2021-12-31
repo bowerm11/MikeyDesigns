@@ -11,6 +11,10 @@ body {
     font-family: Monaco, 'Courier New', monospace;
 }
 
+.header {
+    font-weight: 300;
+}
+
 .font-size-18 {
     font-size: 18px;
 }
@@ -57,7 +61,8 @@ body {
 }
 
 .about-title-box {
-    background: #03030494;
+    background: #585858;
+    background: #58585894;
     text-align: center;
     display: block;
     width: 330px;
@@ -69,6 +74,7 @@ body {
     color: white;
     font-size: 36px;
     font-weight: bold;
+    backdrop-filter: blur(5px);
 }
 
 .animated-dot-container {
@@ -99,9 +105,7 @@ body {
 }
 
 .black-box {
-    background-color: #303030;
-    box-shadow: 0 0px 5px #000000;
-    color: #ffffff;
+    background-color: #f9f9f9;
     border-bottom: solid;
     border-color: #c7c7c7;
     border-width: 1px;
@@ -124,10 +128,10 @@ body {
 
 .key-container {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px;
     width: 50%;
-    max-width: 350px;
+    max-width: 500px;
+    float: right;
 }
 
 .key-img {
@@ -143,14 +147,8 @@ body {
     width: 100%;
 }
 
-.key-dot {
-    width: 3%;
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .key-max-line {
-    width: 94%;
+    width: 100%;
     vertical-align: middle;
 }
 
@@ -158,23 +156,10 @@ body {
     background-color: #999900;
 }
 
-.chart-container {
-    display: block;
-    position: relative;
-    width: 600px;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.chart-axis {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.chart-x-axis {
-    height: 100%;
+.content-text {
+    font-size: 20px;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
 }
 
 #aboutContainer {

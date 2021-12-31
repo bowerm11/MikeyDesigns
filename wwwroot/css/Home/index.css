@@ -41,7 +41,9 @@ body {
 
 #loading-container {
     position: absolute;
-    background: #575757;
+    left: 0;
+    right: 0;
+    background: #f1f1f1;
     z-index: 1;
 }
 

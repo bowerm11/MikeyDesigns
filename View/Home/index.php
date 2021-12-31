@@ -1,4 +1,6 @@
 <?php 
+    $pageTitle = "Mikey Designs";
+
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Home/HomeConstants.php");
@@ -11,10 +13,7 @@
 <!DOCTYPE html>
 <html id="html">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mikey Designs</title>
-        <link rel="stylesheet" href="<?php echo $homeConst->bootstrapCss?>">
+        <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" href="<?php echo $homeConst->homeCss?>">
         <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
@@ -33,7 +32,7 @@
         </div>    
         <?php include_once($homeConst->navBarPhp) ?>
     </body>
-    <script type="text/javascript" src="<?php echo $homeConst->jQueryJs?>"></script>
+    <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
     <script type="text/javascript" src="<?php echo $homeConst->coverAnimationJs?>"></script>
     <script type="text/javascript" src="<?php echo $homeConst->starBackgroundJs?>"></script>
     <script type="text/javascript" src="<?php echo $homeConst->islandJs?>"></script>

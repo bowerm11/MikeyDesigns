@@ -10,12 +10,12 @@ function NavBar() {
         setAllVWVHMax();
 
         this.movingHamburgerbtn.onActivation = function () {
-            navObj.hamburgerElm.style.background = "#818181";
+            //navObj.hamburgerElm.style.background = "#818181";
             navObj.hamburgerElm.style.animation = ".3s scaleUp ease-out forwards";
         }
         
         this.movingHamburgerbtn.onDeactivation = function () {
-            navObj.hamburgerElm.style.background = "none";
+            //navObj.hamburgerElm.style.background = "none";
             navObj.hamburgerElm.style.animation = ".3s scaleDown ease-out forwards";
         }
         

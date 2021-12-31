@@ -9,7 +9,6 @@
         public $navbarCss;
 
         //JS
-        public $jQueryJs;
         public $coverAnimationJs;
         public $starBackgroundJs;
         public $islandJs;
@@ -29,7 +28,6 @@
             $this->homeCss = GlobalConstants::AppendVersion("/wwwroot/css/Home/index.css");
             $this->navbarCss = GlobalConstants::AppendVersion("/wwwroot/css/Shared/navbar.css");
 
-            $this->jQueryJs = GlobalConstants::AppendVersion("/wwwroot/js/src/jQuery/jQuery.min.js");
             $this->coverAnimationJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/CoverAnimation.js");
             $this->starBackgroundJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/StarBackground.js");
             $this->islandJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/island/Island.js");
