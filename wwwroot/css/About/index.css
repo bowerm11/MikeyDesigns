@@ -7,8 +7,8 @@ body {
     margin: 0px 0px 0px 0px;
 }
 
-.monospace-font {
-    font-family: Monaco, 'Courier New', monospace;
+.white-bg {
+    background-color: #f9f9f9;
 }
 
 .header {
@@ -45,7 +45,6 @@ body {
     height: inherit;
     width: inherit;
     position: fixed;
-    top: 0;
     z-index: -1;
     background-position: center;
     background-repeat: no-repeat;
@@ -97,6 +96,7 @@ body {
     border-radius: 25px;
     background: #03030494;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .dot {
@@ -106,15 +106,24 @@ body {
     animation: dotMove 1.7s infinite;
 }
 
-.black-box {
-    background-color: #f9f9f9;
+.box-seperator {
     border-bottom: solid;
     border-color: #c7c7c7;
     border-width: 1px;
+    width: 95%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box {
     padding-bottom: 15px;
 }
 
-.black-box-header {
+.box-header {
+    position: relative;
+    z-index: 3;
     font-size: 36px;
     margin-bottom: 15px;
     font-weight: bold;
@@ -122,7 +131,9 @@ body {
     font-family: 'Yantramanav', Helvetica, sans-serif;
 }
 
-.black-box-content {
+.box-content {
+    position: relative;
+    z-index: 3;
     font-weight: 100;
     font-size: 13px;
     max-width: 1000px;
@@ -174,6 +185,86 @@ body {
     margin-right: 15px !important;
 }
 
+.awards-icon-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.award-star {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 26%;
+    bottom: 4%;
+    animation: float 7.5s .5s ease-out infinite alternate-reverse;
+}
+
+.award-star2 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 65%;
+    bottom: 35%;
+    animation: float 6.5s 0s ease-out infinite alternate-reverse;
+}
+
+.award-award {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 1%;
+    bottom: 25%;
+    animation: float 6s .8s ease-out infinite alternate-reverse;
+}
+
+.award-medal {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 85%;
+    bottom: 56%;
+    animation: float 7s 1s ease-out infinite alternate-reverse;
+}
+
+.award-medal2 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 31%;
+    bottom: 68%;
+    animation: float 6s 1.5s ease-out infinite alternate-reverse;
+}
+
+.award-trophy {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 12%;
+    bottom: 37%;
+    animation: float 9s 1s ease-out infinite alternate-reverse;
+}
+
+.award-trophy2 {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 72%;
+    bottom: 7%;
+    animation: float 5s .2s ease-out infinite alternate-reverse;
+}
+
+.award-trophy3 {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    left: 85%;
+    bottom: 22%;
+    animation: float 8s .35s ease-out infinite alternate-reverse;
+}
+
 .styled-table {
     border-collapse: collapse;
     min-width: 400px;
@@ -186,6 +277,8 @@ body {
 .styled-table thead tr {
     background-color: #aadeff;
     background-color: #a8deffe6;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     color: #000000;
     text-align: left;
 }
@@ -200,12 +293,17 @@ body {
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+    background-color: #f9f9f9;
+    background-color: #fafafae6;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .styled-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
     background-color: #f2f2f2e6;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 #aboutContainer {
@@ -277,5 +375,23 @@ body {
     100% {
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    20% {
+        transform: translate(-2px, -5px);
+    }
+    50% {
+        transform: translate(1px, 5px);
+    }
+    80% {
+        transform: translate(-1px, 3px);
+    }
+    100% {
+        transform: translate(0px, 0px);
     }
 }

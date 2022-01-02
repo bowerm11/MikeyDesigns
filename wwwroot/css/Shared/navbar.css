@@ -29,8 +29,10 @@
 .hamburger-wrapper {
     border-radius: 53px;
     border-style: solid;
-    border-color: white;
     border-width: 2px;
+    border-color: #aadeff;
+    background: #585858;
+    background: #58585882;
     padding: 6px;
     cursor: pointer;
     position: fixed;
@@ -49,6 +51,26 @@
     width: 25px;
     height: 25px;
     display: block;
+}
+
+.nav-logo-wrapper {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #aadeff;
+    background: #a1a1a1;
+    background: #a1a1a182;
+    padding: 2px;
+    border-radius: 10px 10px 0px 0px;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.nav-logo-img {
+    height: 45px;
 }
 
 .nav-menu-bar {
@@ -167,6 +189,13 @@
     transform: translate(-135%, 0%);
 }
 
+.about-tidbit {
+    position: absolute;
+    bottom: 0%;
+    right: 1%;
+    font-style: italic;
+}
+
 .about-inner-header {
     font-size: 34px;
     margin-left: 5%;
@@ -243,11 +272,6 @@
     display: inline-block;
     width: 100%;
     border-radius: 3px;
-}
-
-.card-info {
-    display: inline-block;
-    color: #919191;
 }
 
 #nav-screen {

@@ -79,14 +79,15 @@ function InViewAnimator(elm) {
     }
 
     this.checkPosition = function() {
-        var positionFromTop = this.elm.getBoundingClientRect().bottom;
+        var positionFromBottom = this.elm.getBoundingClientRect().bottom;
+        var positionFromTop = this.elm.getBoundingClientRect().top;
 
-        if (positionFromTop - this.windowHeight <= 0) {
+        if (positionFromBottom - this.windowHeight <= 0) {
             if (!this.elm.classList.contains("in-view-animator-ran")) {
                 this.elm.classList.add("in-view-animator-ran");
                 this.inViewportEvent();
             } 
-        } else {
+        } else if (positionFromTop - this.windowHeight >= 0) {
             if (this.elm.classList.contains("in-view-animator-ran")) {
                 this.elm.classList.remove("in-view-animator-ran");
                 this.outViewportEvent();
@@ -123,7 +124,7 @@ function KeyRotisserie(hightlightFieldElm, wordsElm) {
                 if (obj.wordsElm.length <= obj.currentWordIndex) {
                     obj.currentWordIndex = 0;
                 }
-                
+
                 obj.rotateWord();
             });
         });

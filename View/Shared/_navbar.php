@@ -5,6 +5,9 @@
 <div id="hamburgerClickable" class="hamburger-wrapper">
     <img class="hamburger-icon" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">
 </div>  
+<div class="nav-logo-wrapper">
+    <img class="nav-logo-img" src="<?php echo $navConst->logoImg?>" alt="Menu">
+</div>
 <div id="nav-screen" class="container-fluid 100-Vw-Vh" hidden>
     <div class="row stretch-to-screen margin-none">
         <div class="col-12 col-md-5 no-padding">
@@ -20,6 +23,7 @@
                             <p class="about-inner-header color-white">Hi, I'm Michael</p>
                             <p class="about-buzzword-line color-white">a... <span id="buzzword"></span></p><div class="cursor-blinker"></div>
                         </div> 
+                        <p class="about-tidbit color-white margin-none">Click for more info...</p>
                     </div>
                 </div>
                 <div id="nav-square-small-bottom-container" class="col-12">
@@ -72,91 +76,11 @@
                 <div id="projects-info" class="projects-container">
                     <div id="card-container" class="card-container">
                         <div class="row projects-card" data-page-name="test1">
+                            <div class="col-12 card-img-container">
+                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                            </div>
                             <div class="col-12">
                                 <p class="project-card-header">test1</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test2">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test3">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test4">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test5">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test6">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test7">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
-                            </div>
-                        </div>
-                        <div class="row projects-card" data-page-name="test8">
-                            <div class="col-12">
-                                <p class="project-card-header">Header</p>
-                            </div>
-                            <div class="col-3 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
-                            </div>
-                            <div class="col-9 card-info">
-                                <p>this is a testthis is a test</p>
                             </div>
                         </div>
                     </div>

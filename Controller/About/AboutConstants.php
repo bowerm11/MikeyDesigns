@@ -17,7 +17,10 @@
         public $keyImg;
         public $lineImg;
         public $lineUpImg;
-        public $rectImg;
+        public $starImg;
+        public $awardImg;
+        public $medalImg;
+        public $trophyImg;
         
         //View
         public $navBarPhp;
@@ -34,7 +37,10 @@
             $this->keyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/gunmetal.svg");
             $this->lineImg = GlobalConstants::AppendVersion("/wwwroot/images/About/line.svg");
             $this->lineUpImg = GlobalConstants::AppendVersion("/wwwroot/images/About/lineUp.svg");
-            $this->rectImg = GlobalConstants::AppendVersion("/wwwroot/images/About/rect.svg");
+            $this->starImg = GlobalConstants::AppendVersion("/wwwroot/images/About/star.svg");
+            $this->awardImg = GlobalConstants::AppendVersion("/wwwroot/images/About/award.svg");
+            $this->medalImg = GlobalConstants::AppendVersion("/wwwroot/images/About/medal.svg");
+            $this->trophyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/trophy.svg");
 
             $this->navBarPhp = GlobalConstants::$rootPath . "/View/Shared/_navbar.php";
         }
