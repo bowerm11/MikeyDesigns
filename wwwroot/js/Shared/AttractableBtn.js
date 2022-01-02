@@ -1,6 +1,7 @@
 function AttractableBtn(actionElement) {
     this.actionElement = actionElement;
     this.absolutePosition = true;
+    this.isMobile = false;
     this.wasActivated = false;
     this.coords = this.actionElement.getBoundingClientRect();
     this.elmX = this.coords.left;
@@ -20,25 +21,29 @@ function AttractableBtn(actionElement) {
 
     this.init = function () {
         var attractObj = this;
-        window.addEventListener('mousemove', function(e) {
-            if (attractObj.absolutePosition) {
-                attractObj.mouseX = e.pageX - $(window).scrollLeft();
-                attractObj.mouseY = e.pageY - $(window).scrollTop();
-            } else {
-                attractObj.mouseX = e.pageX;
-                attractObj.mouseY = e.pageY;
-            }
-            
-            var iswithinRadius = attractObj.isWithinRadius();
-            if (iswithinRadius && attractObj.animationReq == null) {
-                attractObj.wasActivated = true;
-                attractObj.onActivation();
-                followCursorAnimation(attractObj);
-            } else if (!iswithinRadius && attractObj.animationReq == null && attractObj.wasActivated) {
-                attractObj.onDeactivation();
-                returnToDefaulAnimation(attractObj);
-            }
-        });
+        this.isMobile = this.isMobile();
+        
+        if(!this.isMobile) {
+            window.addEventListener('mousemove', function(e) {
+                if (attractObj.absolutePosition) {
+                    attractObj.mouseX = e.pageX - $(window).scrollLeft();
+                    attractObj.mouseY = e.pageY - $(window).scrollTop();
+                } else {
+                    attractObj.mouseX = e.pageX;
+                    attractObj.mouseY = e.pageY;
+                }
+                
+                var iswithinRadius = attractObj.isWithinRadius();
+                if (iswithinRadius && attractObj.animationReq == null) {
+                    attractObj.wasActivated = true;
+                    attractObj.onActivation();
+                    followCursorAnimation(attractObj);
+                } else if (!iswithinRadius && attractObj.animationReq == null && attractObj.wasActivated) {
+                    attractObj.onDeactivation();
+                    returnToDefaulAnimation(attractObj);
+                }
+            });
+        }    
     };
 
     this.isWithinRadius = function() {
@@ -53,6 +58,23 @@ function AttractableBtn(actionElement) {
     this.clearAnimationReq = function() {
         cancelAnimationFrame(this.animationReq);
         this.animationReq = null;
+    }
+
+    this.isMobile = function() {
+        switch(navigator.userAgent) {
+            case "Android":
+            case "webOS":
+            case "iPhone":
+            case "iPad":
+            case "iPod":
+            case "BlackBerry":
+            case "IEMobile":
+            case "Opera Mini":
+                return true;
+
+            default:
+                return false;
+        }
     }
 
     this.onActivation = function() {
