@@ -1,12 +1,13 @@
 function AttractableBtn(actionElement) {
     this.actionElement = actionElement;
+    this.absolutePosition = true;
     this.wasActivated = false;
     this.coords = this.actionElement.getBoundingClientRect();
     this.elmX = this.coords.left;
     this.elmY = this.coords.top;
     this.elmCenterPoints = { x: ((this.coords.right - this.coords.left) / 2), y: ((this.coords.bottom - this.coords.top) / 2)};
 
-    this.actionRadiusPx = 15;
+    this.actionRadiusPx = 10;
     this.leftRadMax = this.coords.left - this.actionRadiusPx;
     this.rightRadMax = this.coords.right + this.actionRadiusPx;
     this.topRadMax = this.coords.top - this.actionRadiusPx;
@@ -20,9 +21,14 @@ function AttractableBtn(actionElement) {
     this.init = function () {
         var attractObj = this;
         window.addEventListener('mousemove', function(e) {
-            attractObj.mouseX = e.pageX;
-            attractObj.mouseY = e.pageY;
-
+            if (attractObj.absolutePosition) {
+                attractObj.mouseX = e.pageX - $(window).scrollLeft();
+                attractObj.mouseY = e.pageY - $(window).scrollTop();
+            } else {
+                attractObj.mouseX = e.pageX;
+                attractObj.mouseY = e.pageY;
+            }
+            
             var iswithinRadius = attractObj.isWithinRadius();
             if (iswithinRadius && attractObj.animationReq == null) {
                 attractObj.wasActivated = true;

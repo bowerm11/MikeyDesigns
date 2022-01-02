@@ -65,7 +65,7 @@
                     <div class="box-header">
                         <p class="d-inline header">Skills that Make Design Last and Stay Functional</p>
                     </div> 
-                    <div class="box-content">
+                    <div class="box-content container-fluid">
                         <div class="row">    
                             <div class="col-6 position-relative">
                                 <p id="rotate-word-highlight">Photoshop</p>

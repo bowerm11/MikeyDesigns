@@ -12,6 +12,7 @@
         public $gitImg;        
         public $linkedInImg;        
         public $logoImg;        
+        public $homeImg;        
 
         //File Path
         public $resumePath;
@@ -30,6 +31,7 @@
             $this->gitImg = GlobalConstants::AppendVersion("/wwwroot/images/Shared/github.svg");
             $this->linkedInImg = GlobalConstants::AppendVersion("/wwwroot/images/Shared/linkedin.svg");
             $this->logoImg = GlobalConstants::AppendVersion("/wwwroot/images/Shared/logo.svg");
+            $this->homeImg = GlobalConstants::AppendVersion("/wwwroot/images/Shared/house.svg");
 
             $this->resumePath = GlobalConstants::AppendVersion("/wwwroot/images/Shared/Michael_Bower_Resume.pdf");
             $this->aboutUrl = "/View/About/index.php";

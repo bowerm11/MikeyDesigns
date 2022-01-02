@@ -1,8 +1,10 @@
 function NavBar() {
     this.parentElm = document.getElementById("nav-screen").parentElement;
     this.hamburgerElm = document.getElementById("hamburgerClickable");
+    this.homeElm = document.getElementById("homeClickable");
     this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
+    this.movingHomebtn = new AttractableBtn(this.homeElm);
     this.navBackground = new NavbarSquares(this);
 
     this.init = function() {
@@ -10,18 +12,28 @@ function NavBar() {
         setAllVWVHMax();
 
         this.movingHamburgerbtn.onActivation = function () {
-            //navObj.hamburgerElm.style.background = "#818181";
             navObj.hamburgerElm.style.animation = ".3s scaleUp ease-out forwards";
         }
         
         this.movingHamburgerbtn.onDeactivation = function () {
-            //navObj.hamburgerElm.style.background = "none";
             navObj.hamburgerElm.style.animation = ".3s scaleDown ease-out forwards";
         }
         
         this.hamburgerElm.onclick = function() {
             navObj.navBackground.toggleMenuBar();
         }  
+
+        this.movingHomebtn.onActivation = function () {
+            navObj.homeElm.style.animation = ".3s scaleUp ease-out forwards";
+        }
+        
+        this.movingHomebtn.onDeactivation = function () {
+            navObj.homeElm.style.animation = ".3s scaleDown ease-out forwards";
+        }
+        
+        this.homeElm.onclick = function() {
+            window.location.href = navObj.homeElm.getAttribute("data-url");
+        } 
     }
 
     this.showRemovableSections = function (whenDone) {

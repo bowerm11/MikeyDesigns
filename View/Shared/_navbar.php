@@ -2,11 +2,14 @@
     include_once("../../Controller/Shared/NavbarConstants.php");
     include_once(GlobalConstants::$rootPath."/Controller/Shared/preventDirectCall.php");
 ?>
-<div id="hamburgerClickable" class="hamburger-wrapper">
+<div id="hamburgerClickable" class="consistent-btn hamburger-wrapper">
     <img class="hamburger-icon" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">
 </div>  
+<div id="homeClickable" class="consistent-btn home-wrapper" data-url="/View/Home/index.php">
+    <img class="hamburger-icon" src="<?php echo $navConst->homeImg?>" alt="Home">
+</div>  
 <div class="nav-logo-wrapper">
-    <img class="nav-logo-img" src="<?php echo $navConst->logoImg?>" alt="Menu">
+    <img class="nav-logo-img" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
 </div>
 <div id="nav-screen" class="container-fluid 100-Vw-Vh" hidden>
     <div class="row stretch-to-screen margin-none">
