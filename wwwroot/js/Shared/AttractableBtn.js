@@ -21,7 +21,8 @@ function AttractableBtn(actionElement) {
 
     this.init = function () {
         var attractObj = this;
-        this.isMobile = this.isMobile();
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        alert(this.isMobile + " " + navigator.userAgent);
         
         if(!this.isMobile) {
             window.addEventListener('mousemove', function(e) {
