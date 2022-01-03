@@ -243,7 +243,7 @@
 }
 
 .projects-card {
-    width: 90%;
+    width: 80%;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -259,7 +259,7 @@
 
 .project-card-header {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 300;
     color: #6c6c6c;
     text-align: center;
     margin: 0;
@@ -267,18 +267,12 @@
 
 .card-img-container {
     margin-top: 10px;
-    margin-bottom: 10px;
-    border-right-style: solid;
-    border-right-width: 2px;
-    border-color: #dddddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 .card-img-container img {
     display: inline-block;
-    width: 100%;
+    width: 300px;
     border-radius: 3px;
 }
 

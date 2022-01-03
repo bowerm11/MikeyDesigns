@@ -11,3 +11,4 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="<?php echo GlobalConstants::$bootstrapCss?>">
+<link rel="stylesheet" href="<?php echo GlobalConstants::$navbarCss?>">

@@ -78,12 +78,12 @@
                 </p>    
                 <div id="projects-info" class="projects-container">
                     <div id="card-container" class="card-container">
-                        <div class="row projects-card" data-page-name="test1">
+                        <div class="row projects-card" data-card-name="footwear" data-page-url="<?php echo $navConst->footwearUrl?>">
                             <div class="col-12 card-img-container">
-                                <img src="/wwwroot/images/Shared/fiberglass.png" alt="Project">
+                                <img src="<?php echo $navConst->footwearImg?>" alt="Footwear Project">
                             </div>
                             <div class="col-12">
-                                <p class="project-card-header">test1</p>
+                                <p class="project-card-header">Footwear Design</p>
                             </div>
                         </div>
                     </div>

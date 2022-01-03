@@ -15,7 +15,6 @@
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" href="<?php echo $homeConst->homeCss?>">
-        <link rel="stylesheet" href="<?php echo $homeConst->navbarCss?>">
     </head>
     <body>
         <div id="loading-container" class="100-Vw-Vh">
@@ -30,13 +29,12 @@
             </div>
             <div id="canvas-container"></div>
         </div>    
-        <?php include_once($homeConst->navBarPhp) ?>
+        <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
     </body>
     <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
     <script type="text/javascript" src="<?php echo $homeConst->coverAnimationJs?>"></script>
     <script type="text/javascript" src="<?php echo $homeConst->starBackgroundJs?>"></script>
     <script type="text/javascript" src="<?php echo $homeConst->islandJs?>"></script>
-    <script type="text/javascript" src="<?php echo $homeConst->attractableBtnJs?>"></script>
-    <script type="text/javascript" src="<?php echo $homeConst->navBarJs?>"></script>
+    <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
     <script type="module" src="<?php echo $homeConst->indexJs?>"></script>
 </html>

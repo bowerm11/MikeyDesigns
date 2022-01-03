@@ -15,7 +15,6 @@
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
-        <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->navbarCss?>">
     </head>
     <body>
         <div id="aboutContainer" class="navbar-removeable-section">
@@ -145,10 +144,9 @@
                 </div>  
             </div>
         </div>    
-        <?php include_once($aboutConst->navBarPhp) ?>
+        <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
     </body>
     <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
-    <script type="text/javascript" src="<?php echo $aboutConst->attractableBtnJs?>"></script>
-    <script type="text/javascript" src="<?php echo $aboutConst->navBarJs?>"></script>
+    <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
     <script type="module" src="<?php echo $aboutConst->indexJs?>"></script>
 </html>

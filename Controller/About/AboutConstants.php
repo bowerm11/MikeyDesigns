@@ -5,10 +5,8 @@
     class AboutConstants {
         //CSS
         public $aboutCss;
-        public $navbarCss;
 
         //JS
-        public $attractableBtnJs;
         public $navBarJs;
         public $indexJs;
 
@@ -23,13 +21,10 @@
         public $trophyImg;
         
         //View
-        public $navBarPhp;
         
         function __construct() {
             $this->aboutCss = GlobalConstants::AppendVersion("/wwwroot/css/About/index.css");
-            $this->navbarCss = GlobalConstants::AppendVersion("/wwwroot/css/Shared/navbar.css");
 
-            $this->attractableBtnJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/AttractableBtn.js");
             $this->navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
             $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/About/index.js");
 
@@ -41,8 +36,6 @@
             $this->awardImg = GlobalConstants::AppendVersion("/wwwroot/images/About/award.svg");
             $this->medalImg = GlobalConstants::AppendVersion("/wwwroot/images/About/medal.svg");
             $this->trophyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/trophy.svg");
-
-            $this->navBarPhp = GlobalConstants::$rootPath . "/View/Shared/_navbar.php";
         }
     }
 

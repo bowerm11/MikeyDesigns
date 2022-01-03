@@ -21,6 +21,8 @@
         public $aboutUrl;
 
         //Projects
+        public $footwearUrl;
+        public $footwearImg;
 
         function __construct() {
             $this->hamburgerImg = GlobalConstants::AppendVersion("/wwwroot/images/Shared/bars.svg");
@@ -35,6 +37,9 @@
 
             $this->resumePath = GlobalConstants::AppendVersion("/wwwroot/images/Shared/Michael_Bower_Resume.pdf");
             $this->aboutUrl = "/View/About/index.php";
+
+            $this->footwearUrl = "/View/Projects/footweardesign.php";
+            $this->footwearImg = GlobalConstants::AppendVersion("/wwwroot/images/Projects/Footwear/titlepic.jpg");
         }
     }
 

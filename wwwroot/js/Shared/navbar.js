@@ -113,7 +113,7 @@ function NavbarSquares(navBar) {
     this.navAnimationSpeedMs = this.navAnimationSpeedSec * 1000;
 
     this.navScreenElm = document.getElementById("nav-screen");
-    this.rightSquare = new NavbarRightSquare();
+    this.rightSquare = new NavbarRightSquare(this);
     this.bottomLeftSquare= new NavbarBottomLeftSquare();
     this.topLeftSquare = new NavbarTopLeftSquare(this);
 
@@ -426,18 +426,28 @@ function NavbarBottomLeftSquare() {
     this.init();
 }
 
-function NavbarRightSquare() {
+function NavbarRightSquare(navSquares) {
+    this.navSquares = navSquares;
     this.square = document.getElementById("nav-square-large-right-container");
     this.innerInfo = document.getElementById("projects-info");
     this.cardContainer = document.getElementById("card-container");
     this.projects = this.innerInfo.getElementsByClassName("projects-card");
 
     this.init = function() {
+        const obj = this;
         this.square.addEventListener("mouseover", function() {
             focusChildrenUnderline(this);
         });
         this.square.addEventListener("mouseleave", function() {
             unFocusChildrenUnderline(this);
+        });
+        $(".projects-card").on("click", function() {
+            const elm = this;
+            obj.navSquares.closeMenuBar(function() {
+                obj.navSquares.navBar.hideRemoveableSections(function() {
+                    window.location.href = $(elm).attr("data-page-url");
+                }); 
+            });
         });
     }
 
@@ -465,7 +475,7 @@ function NavbarRightSquare() {
         for (let i = 0; i < this.projects.length; i++) {
             const project = this.projects[i];
             
-            if (projectName == project.getAttribute("data-page-name")) {
+            if (projectName == project.getAttribute("data-card-name")) {
                 const $project = $(project);
                 const $cardContainer = $(this.cardContainer);
                 $cardContainer.animate({
@@ -478,6 +488,112 @@ function NavbarRightSquare() {
     }
 
     this.init();
+}
+
+function AttractableBtn(actionElement) {
+    this.actionElement = actionElement;
+    this.absolutePosition = true;
+    this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    this.wasActivated = false;
+    this.coords = this.actionElement.getBoundingClientRect();
+    this.elmX = this.coords.left;
+    this.elmY = this.coords.top;
+    this.elmCenterPoints = { x: ((this.coords.right - this.coords.left) / 2), y: ((this.coords.bottom - this.coords.top) / 2)};
+
+    this.actionRadiusPx = 10;
+    this.leftRadMax = this.coords.left - this.actionRadiusPx;
+    this.rightRadMax = this.coords.right + this.actionRadiusPx;
+    this.topRadMax = this.coords.top - this.actionRadiusPx;
+    this.bottomRadMax = this.coords.bottom + this.actionRadiusPx;
+
+    this.speed = 0.05;
+    this.mouseX = null;
+    this.mouseY = null;
+    this.animationReq = null;
+    
+    this.init = function () {
+        var attractObj = this;
+        
+        if(!this.isMobile) {
+            window.addEventListener('mousemove', function(e) {
+                if (attractObj.absolutePosition) {
+                    attractObj.mouseX = e.pageX - $(window).scrollLeft();
+                    attractObj.mouseY = e.pageY - $(window).scrollTop();
+                } else {
+                    attractObj.mouseX = e.pageX;
+                    attractObj.mouseY = e.pageY;
+                }
+                
+                var iswithinRadius = attractObj.isWithinRadius();
+                if (iswithinRadius && attractObj.animationReq == null) {
+                    attractObj.wasActivated = true;
+                    attractObj.onActivation();
+                    followCursorAnimation(attractObj);
+                } else if (!iswithinRadius && attractObj.animationReq == null && attractObj.wasActivated) {
+                    attractObj.onDeactivation();
+                    returnToDefaulAnimation(attractObj);
+                }
+            });
+        }    
+    };
+
+    this.isWithinRadius = function() {
+        if ((this.mouseX >= this.leftRadMax && this.mouseX <= this.rightRadMax)
+            && (this.mouseY >= this.topRadMax && this.mouseY <= this.bottomRadMax)) {
+                return true;
+        }
+
+        return false;
+    }
+
+    this.clearAnimationReq = function() {
+        cancelAnimationFrame(this.animationReq);
+        this.animationReq = null;
+    }
+
+    this.onActivation = function() {
+
+    }
+
+    this.onDeactivation = function() {
+
+    }
+
+    this.init();
+}
+
+function followCursorAnimation(obj) {
+    var distX = obj.mouseX - obj.elmX - obj.elmCenterPoints.x;
+    var distY = obj.mouseY - obj.elmY - obj.elmCenterPoints.y;
+
+    obj.elmX += (distX * obj.speed);
+    obj.elmY += (distY * obj.speed);
+
+    obj.actionElement.style.left = obj.elmX + "px";
+    obj.actionElement.style.top = obj.elmY + "px";
+
+    if (obj.isWithinRadius()) {
+        obj.animationReq = requestAnimationFrame(function() {return followCursorAnimation(obj)});
+    } else {
+        obj.clearAnimationReq();
+    }
+}
+
+function returnToDefaulAnimation(obj) {
+    var distX = obj.coords.left - obj.elmX;
+    var distY = obj.coords.top - obj.elmY;
+
+    obj.elmX += (distX * obj.speed);
+    obj.elmY += (distY * obj.speed);
+
+    obj.actionElement.style.left = obj.elmX + "px";
+    obj.actionElement.style.top = obj.elmY + "px";
+
+    if (!obj.isWithinRadius()) {
+        obj.animationReq = requestAnimationFrame(function() {return returnToDefaulAnimation(obj)});
+    } else {
+        obj.clearAnimationReq();
+    }
 }
 
 function getRandomInt(min, max) {
