@@ -145,8 +145,8 @@
             </div>
         </div>    
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
+        <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
+        <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
+        <script type="module" src="<?php echo $aboutConst->indexJs?>"></script>
     </body>
-    <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
-    <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
-    <script type="module" src="<?php echo $aboutConst->indexJs?>"></script>
 </html>

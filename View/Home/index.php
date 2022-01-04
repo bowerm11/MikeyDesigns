@@ -30,11 +30,11 @@
             <div id="canvas-container"></div>
         </div>    
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
-    </body>
-    <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
-    <script type="text/javascript" src="<?php echo $homeConst->coverAnimationJs?>"></script>
-    <script type="text/javascript" src="<?php echo $homeConst->starBackgroundJs?>"></script>
-    <script type="text/javascript" src="<?php echo $homeConst->islandJs?>"></script>
-    <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
-    <script type="module" src="<?php echo $homeConst->indexJs?>"></script>
+        <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
+        <script type="text/javascript" src="<?php echo $homeConst->coverAnimationJs?>"></script>
+        <script type="text/javascript" src="<?php echo $homeConst->starBackgroundJs?>"></script>
+        <script type="text/javascript" src="<?php echo $homeConst->islandJs?>"></script>
+        <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
+        <script type="module" src="<?php echo $homeConst->indexJs?>"></script>
+    </body>   
 </html>
