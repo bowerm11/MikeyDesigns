@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     setKeyAnimation();
 
-    window.onload = function() {
+    window.onload = new function() {
         nav.showRemovableSections();
     }
 });
