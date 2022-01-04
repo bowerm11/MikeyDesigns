@@ -11,7 +11,7 @@
 ?>
 
 <!DOCTYPE html>
-<html id="html" lang="en">
+<html lang="en">
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
@@ -36,7 +36,7 @@
                 </div>
             </div> 
             <div class="white-bg">
-                <div class="box">
+                <div class="box box-top-shadow">
                     <div class="box-header">
                         <p class="d-inline header">About</p>
                     </div>
@@ -145,6 +145,7 @@
             </div>
         </div>    
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
+        <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>
         <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
         <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
         <script type="text/javascript" src="<?php echo $aboutConst->indexJs?>"></script>

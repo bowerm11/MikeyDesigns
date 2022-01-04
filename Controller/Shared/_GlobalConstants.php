@@ -12,6 +12,8 @@
 
         public static $defaultHtmlHeadersLocation;
         public static $navbarPhpLocation;
+        public static $noscriptPhpLocation;
+        public static $noscriptCssLocation;
         public static $navbarJsLocation;
 
         public static function __constructStatic() {
@@ -25,6 +27,8 @@
 
             static::$defaultHtmlHeadersLocation = __DIR__ . "/_defaultHtmlHeaders.php";
             static::$navbarPhpLocation = $_SERVER['DOCUMENT_ROOT'] . "/View/Shared/_navbar.php";
+            static::$noscriptPhpLocation = $_SERVER['DOCUMENT_ROOT'] . "/View/Shared/_noscript.php";
+            static::$noscriptCssLocation = GlobalConstants::AppendVersion("/wwwroot/css/Shared/noscript.css");
             static::$navbarJsLocation = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
         }
 

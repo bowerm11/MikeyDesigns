@@ -1,13 +1,27 @@
-.center-middle-screen {
-    width: 160px;
-    height: 160px;
+.loading-elements {
     position: absolute;
-    top:0;
-    bottom: 0;
+    top: 5%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.loading-elements img {
+    width: 60%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    animation: loadingScale 2s infinite alternate-reverse, loadingRotate 1s infinite alternate-reverse;
+}
+
+#loading-container {
+    position: absolute;
     left: 0;
-    right: 0;    
-    z-index: 20;
-    margin: auto;
+    right: 0;
+    background: #f1f1f1;
+    z-index: 1;
 }
 
 .stretch-to-screen {
@@ -604,5 +618,23 @@
     }
     100% {
         opacity: 0;
+    }
+}
+
+@keyframes loadingScale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes loadingRotate {
+    0% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: scale(10deg);
     }
 }

@@ -3,6 +3,7 @@ function NavBar() {
     this.hamburgerElm = document.getElementById("hamburgerClickable");
     this.homeElm = document.getElementById("homeClickable");
     this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
+    this.loadingScreen = new LoadingScreen();
     this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
     this.movingHomebtn = new AttractableBtn(this.homeElm);
     this.navBackground = new NavbarSquares(this);
@@ -59,33 +60,11 @@ function NavBar() {
         });  
     }
 
-    this.hideRemoveableSections = function(whenDone) {
-        const obj = this;
-        const fadeOutLenSec = 1;
-        const promises = [];
-
+    this.hideRemoveableSections = function() {
         for (let i = 0; i < this.removeableSections.length; i++) {
             const section = this.removeableSections[i];
-            const defer = $.Deferred();
-            section.style.animation = "fadeOut " + fadeOutLenSec + "s forwards";
-
-            setTimeout(function() {
-                defer.resolve();
-            }, fadeOutLenSec * 1000);
-
-            promises.push(defer);
-        }
-
-        $.when.apply($, promises).then(function () {
-            for (let i = 0; i < obj.removeableSections.length; i++) {
-                const section = obj.removeableSections[i];
-                $(section).remove();
-            }
-
-            if (typeof whenDone === 'function' && whenDone()) {
-                whenDone();
-            } 
-        });    
+            section.style.animation = "navfadeOut 1s forwards";
+        }  
     }
 
     this.scrollToProject = function(projectName) {
@@ -104,6 +83,28 @@ NavBar.isInLargeView = function() {
     }
 
     return false;
+}
+
+function LoadingScreen() {
+    this.loadingContainer = document.getElementById("loading-container");
+    this.fadeOutTimeSec = 1;
+
+    this.doneLoading = function(whenDone) {
+        const defer = $.Deferred();
+
+        this.loadingContainer.style.animation = "navfadeOut " + this.fadeOutTimeSec + "s forwards";
+    
+        setTimeout(function() {
+            defer.resolve();
+        }, this.fadeOutTimeSec * 1000);
+    
+        defer.done(function() {
+            $(this.loadingContainer).remove();
+            if (typeof whenDone === 'function' && whenDone()) {
+                whenDone();
+            } 
+        });
+    }
 }
 
 function NavbarSquares(navBar) {
@@ -298,10 +299,9 @@ function NavbarTopLeftSquare(navBarSquares) {
             unFocusChildrenUnderline(this);
         });
         this.square.onclick = function () {
+            obj.navBarSquares.navBar.hideRemoveableSections();  
             obj.navBarSquares.closeMenuBar(function() {
-                obj.navBarSquares.navBar.hideRemoveableSections(function() {
-                    window.location.href = obj.clickUrl;
-                });  
+                window.location.href = obj.clickUrl;
             });            
         };
         this.writeBuzzwords();
@@ -443,10 +443,9 @@ function NavbarRightSquare(navSquares) {
         });
         $(".projects-card").on("click", function() {
             const elm = this;
+            obj.navSquares.navBar.hideRemoveableSections(); 
             obj.navSquares.closeMenuBar(function() {
-                obj.navSquares.navBar.hideRemoveableSections(function() {
-                    window.location.href = $(elm).attr("data-page-url");
-                }); 
+                window.location.href = $(elm).attr("data-page-url");
             });
         });
     }

@@ -1,5 +1,6 @@
-#html {
-    font-family: sans-serif, Arial, Helvetica, sans-serif;
+* {
+    font-family: 'Yantramanav', sans-serif, Arial, Helvetica;
+    font-weight: 200;
 }
 
 body {
@@ -21,32 +22,6 @@ body {
     animation: wave-hand 2s infinite alternate-reverse;
 }
 
-.loading-elements {
-    position: absolute;
-    top: 5%;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.loading-elements img {
-    width: 60%;
-    max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    animation: loadingScale 2s infinite alternate-reverse, loadingRotate 1s infinite alternate-reverse;
-}
-
-#loading-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    background: #f1f1f1;
-    z-index: 1;
-}
-
 #home-container {
     position: absolute;
     z-index: 0;
@@ -58,32 +33,5 @@ body {
     }
     100% {
         transform: rotate(30deg) translate(30px, -10px);
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes loadingScale {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.2);
-    }
-}
-
-@keyframes loadingRotate {
-    0% {
-        transform: rotate(-10deg);
-    }
-    100% {
-        transform: scale(10deg);
     }
 }

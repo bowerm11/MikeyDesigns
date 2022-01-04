@@ -11,7 +11,7 @@
 ?>
 
 <!DOCTYPE html>
-<html id="html" lang="en">
+<html lang="en">
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" href="<?php echo $footConst->indexCss?>">
@@ -19,6 +19,7 @@
     <body>  
         <p>test</p>
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
+        <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>
         <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
         <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
         <script type="text/javascript" src="<?php echo $footConst->indexJs?>"></script>

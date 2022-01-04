@@ -4,7 +4,6 @@ import { OrbitControls } from "../src/threeJs/OrbitControls.js";
 
 $(document).ready(function() {
     const homeContainer = document.getElementById("home-container");
-    const loadingContainer = document.getElementById("loading-container");
     const nav = new NavBar();
     const assets = new AssetLoader(GLTFLoader, THREE);
     
@@ -12,20 +11,6 @@ $(document).ready(function() {
     assets.doneLoadingAssets(() => {
         const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls, homeContainer);
         coverAnimation.run();
-        deleteFadeOutElm(loadingContainer, 1);
+        nav.loadingScreen.doneLoading();
     });
 });
-
-function deleteFadeOutElm(elm, fadeOutLenSec) {
-    const defer = $.Deferred();
-
-    elm.style.animation = "fadeOut " + fadeOutLenSec + "s forwards";
-
-    setTimeout(function() {
-        defer.resolve();
-    }, fadeOutLenSec * 1000);
-
-    defer.done(function() {
-        $(elm).remove();
-    });
-}

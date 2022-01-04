@@ -6,7 +6,9 @@ $(document).ready(function() {
     setKeyAnimation();
 
     window.onload = new function() {
-        nav.showRemovableSections();
+        nav.loadingScreen.doneLoading(function () {
+            nav.showRemovableSections();
+        });
     }
 });
 

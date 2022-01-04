@@ -2,7 +2,7 @@
     include_once(__DIR__ . "/preventDirectCall.php");
     include_once(__DIR__ . "/Logger.php");
 
-    //ini_set('display_errors', false);
+    ini_set('display_errors', false);
 
     function generalErrorHandler($errno, $errstr, $errfile, $errline)
     {

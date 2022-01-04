@@ -14,7 +14,7 @@
         //View
         
         function __construct() {
-            $this->indexCss = GlobalConstants::AppendVersion("/wwwroot/css/Projects/Footwear/index.css");
+            $this->indexCss = GlobalConstants::AppendVersion("/wwwroot/css/Projects/index.css");
 
             $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/Projects/Footwear/index.js");
         }
