@@ -309,12 +309,12 @@ function NavbarTopLeftSquare(navBarSquares) {
 
     this.openSquareAsync = function(navAnimationSpeedSec, delay) {
         this.square.style.animation =
-            navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideTopDown";
+            navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideTopDown";
     }
 
     this.closeSquareAsync = function(navAnimationSpeedSec, delay) {
         this.square.style.animation = 
-            navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideTopDownUndo";
+            navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideTopDownUndo";
     }
 
     this.writeBuzzwords = function() {
@@ -330,12 +330,12 @@ function NavbarTopLeftSquare(navBarSquares) {
 
     this.showInfoAsync = function(animationSpeed, delay) {
         this.aboutContainer.style.animation = 
-            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRight";
+            animationSpeed + "s ease-out " + delay + "s 1 normal forwards slideRight";
     }
 
     this.closeInfoAsync = function(animationSpeed, delay) {
         this.aboutContainer.style.animation = 
-            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRightUndo";
+            animationSpeed + "s ease-out " + delay + "s 1 normal forwards slideRightUndo";
     }
 
     this.writeBuzzword = function(buzzword) {
@@ -396,31 +396,31 @@ function NavbarBottomLeftSquare() {
     this.openSquareAsync = function(navAnimationSpeedSec, delay) {
         if (NavBar.isInLargeView()) {
             this.square.style.animation =
-                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideBottomUp";
+                navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideBottomUp";
         } else {
             this.square.style.animation =
-                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRight";
+                navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideRight";
         } 
     }
 
     this.closeSquareAsync = function(navAnimationSpeedSec, delay) {
         if (NavBar.isInLargeView()) {
             this.square.style.animation = 
-                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideBottomUpUndo";
+                navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideBottomUpUndo";
         } else {
             this.square.style.animation = 
-                navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRightUndo";
+                navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideRightUndo";
         }
     }
 
     this.showInfoAsync = function(animationSpeed, delay) {
         this.innerInfo.style.animation = 
-            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRight";
+            animationSpeed + "s ease-out " + delay + "s 1 normal forwards slideRight";
     }
 
     this.closeInfoAsync = function(animationSpeed, delay) {
         this.innerInfo.style.animation = 
-            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideRightUndo";
+            animationSpeed + "s ease-out " + delay + "s 1 normal forwards slideRightUndo";
     }
 
     this.init();
@@ -453,22 +453,22 @@ function NavbarRightSquare(navSquares) {
 
     this.openSquareAsync = function(navAnimationSpeedSec, delay) {
         this.square.style.animation =
-            navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeft";
+            navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideLeft";
     }
 
     this.closeSquareAsync = function(navAnimationSpeedSec, delay) {
         this.square.style.animation = 
-            navAnimationSpeedSec + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftUndo";
+            navAnimationSpeedSec + "s ease-out " + delay + "s 1 normal forwards slideLeftUndo";
     }
 
     this.showInfoAsync = function(animationSpeed, delay) {
         this.innerInfo.style.animation = 
-            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftOpacity";
+            animationSpeed + "s ease-out " + delay + "s 1 normal forwards slideLeftOpacity";
     }
 
     this.closeInfoAsync = function(animationSpeed, delay) {
         this.innerInfo.style.animation = 
-            animationSpeed + "s cubic-bezier(0, 0, 0, 1) " + delay + "s 1 normal forwards running slideLeftOpacityUndo";
+            animationSpeed + "s ease-out " + delay + "s 1 normal forwards slideLeftOpacityUndo";
     }
 
     this.scrollTo = function(projectName) {
