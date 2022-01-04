@@ -1,3 +1,7 @@
+.no-select {
+    user-select: none;
+}
+
 .loading-elements {
     position: absolute;
     top: 5%;

@@ -90,6 +90,7 @@ function LoadingScreen() {
     this.fadeOutTimeSec = 1;
 
     this.doneLoading = function(whenDone) {
+        const obj = this;
         const defer = $.Deferred();
 
         this.loadingContainer.style.animation = "navfadeOut " + this.fadeOutTimeSec + "s forwards";
@@ -99,7 +100,7 @@ function LoadingScreen() {
         }, this.fadeOutTimeSec * 1000);
     
         defer.done(function() {
-            $(this.loadingContainer).remove();
+            $(obj.loadingContainer).remove();
             if (typeof whenDone === 'function' && whenDone()) {
                 whenDone();
             } 
