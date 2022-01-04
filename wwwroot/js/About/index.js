@@ -5,9 +5,9 @@ $(document).ready(function() {
 
     setKeyAnimation();
 
-    $(window).on('load', function() {
+    window.onload = function() {
         nav.showRemovableSections();
-    });
+    }
 });
 
 function setKeyAnimation() {

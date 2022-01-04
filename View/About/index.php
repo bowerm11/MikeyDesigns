@@ -11,7 +11,7 @@
 ?>
 
 <!DOCTYPE html>
-<html id="html">
+<html id="html" lang="en">
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">

@@ -307,6 +307,7 @@ body {
 #aboutContainer {
     overflow: auto;
     position: absolute;
+    width: 100%;
     opacity: 0;
 }
 
