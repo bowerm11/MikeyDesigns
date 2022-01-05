@@ -14,8 +14,10 @@
 <div id="homeClickable" class="consistent-btn home-wrapper" data-url="/View/Home/index.php">
     <img class="hamburger-icon no-select" src="<?php echo $navConst->homeImg?>" alt="Home">
 </div>  
-<div class="nav-logo-wrapper">
-    <img class="nav-logo-img no-select" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
+<div class="nav-logo-container">
+    <div class="nav-logo-wrapper">
+        <img class="nav-logo-img no-select" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
+    </div>
 </div>
 <div id="nav-screen" class="container-fluid 100-Vw-Vh" hidden>
     <div class="row stretch-to-screen margin-none">

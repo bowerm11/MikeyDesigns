@@ -4,40 +4,40 @@
 
     class AboutConstants {
         //CSS
-        public $aboutCss;
+        public static $aboutCss;
 
         //JS
-        public $navBarJs;
-        public $indexJs;
+        public static $navBarJs;
+        public static $indexJs;
 
         //IMG
-        public $dotImg;
-        public $keyImg;
-        public $lineImg;
-        public $lineUpImg;
-        public $starImg;
-        public $awardImg;
-        public $medalImg;
-        public $trophyImg;
+        public static $dotImg;
+        public static $keyImg;
+        public static $lineImg;
+        public static $lineUpImg;
+        public static $starImg;
+        public static $awardImg;
+        public static $medalImg;
+        public static $trophyImg;
         
         //View
         
-        function __construct() {
-            $this->aboutCss = GlobalConstants::AppendVersion("/wwwroot/css/About/index.css");
+        public static function __constructStatic() {
+            static::$aboutCss = GlobalConstants::AppendVersion("/wwwroot/css/About/index.css");
 
-            $this->navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
-            $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/About/index.js");
+            static::$navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
+            static::$indexJs = GlobalConstants::AppendVersion("/wwwroot/js/About/index.js");
 
-            $this->dotImg = GlobalConstants::AppendVersion("/wwwroot/images/About/circle.svg");
-            $this->keyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/gunmetal.svg");
-            $this->lineImg = GlobalConstants::AppendVersion("/wwwroot/images/About/line.svg");
-            $this->lineUpImg = GlobalConstants::AppendVersion("/wwwroot/images/About/lineUp.svg");
-            $this->starImg = GlobalConstants::AppendVersion("/wwwroot/images/About/star.svg");
-            $this->awardImg = GlobalConstants::AppendVersion("/wwwroot/images/About/award.svg");
-            $this->medalImg = GlobalConstants::AppendVersion("/wwwroot/images/About/medal.svg");
-            $this->trophyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/trophy.svg");
+            static::$dotImg = GlobalConstants::AppendVersion("/wwwroot/images/About/circle.svg");
+            static::$keyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/gunmetal.svg");
+            static::$lineImg = GlobalConstants::AppendVersion("/wwwroot/images/About/line.svg");
+            static::$lineUpImg = GlobalConstants::AppendVersion("/wwwroot/images/About/lineUp.svg");
+            static::$starImg = GlobalConstants::AppendVersion("/wwwroot/images/About/star.svg");
+            static::$awardImg = GlobalConstants::AppendVersion("/wwwroot/images/About/award.svg");
+            static::$medalImg = GlobalConstants::AppendVersion("/wwwroot/images/About/medal.svg");
+            static::$trophyImg = GlobalConstants::AppendVersion("/wwwroot/images/About/trophy.svg");
         }
     }
 
-    $aboutConst = new AboutConstants();
+    AboutConstants::__constructStatic();
 ?>

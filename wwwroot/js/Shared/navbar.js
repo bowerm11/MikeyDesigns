@@ -500,7 +500,7 @@ function AttractableBtn(actionElement) {
     this.elmY = this.coords.top;
     this.elmCenterPoints = { x: ((this.coords.right - this.coords.left) / 2), y: ((this.coords.bottom - this.coords.top) / 2)};
 
-    this.actionRadiusPx = 10;
+    this.actionRadiusPx = 2;
     this.leftRadMax = this.coords.left - this.actionRadiusPx;
     this.rightRadMax = this.coords.right + this.actionRadiusPx;
     this.topRadMax = this.coords.top - this.actionRadiusPx;

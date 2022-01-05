@@ -14,7 +14,7 @@
 <html lang="en">
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
-        <link rel="stylesheet" type="text/css" href="<?php echo $aboutConst->aboutCss?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo AboutConstants::$aboutCss?>">
     </head>
     <body>
         <div id="aboutContainer" class="navbar-removeable-section">
@@ -25,13 +25,7 @@
                         <p class="margin-none font-size-18">Industrial Designer</p>
                     </div>
                 </div>
-                <div class="animated-dot-container">
-                    <div class="animated-dot">
-                        <img class="dot" src="<?php echo $aboutConst->dotImg?>" alt="Click Below">
-                    </div>
-                </div>
-                <div id="front-page-parrallax" class="parallax-container">
-                    <div class="parallax me-background-img"></div>
+                <div class="parallax-container">
                     <div class="parallax me-img"></div>
                 </div>
             </div> 
@@ -43,15 +37,15 @@
                     <div class="box-content">
                         <div id="key-container" class="key-container">
                             <div>
-                                <img class="key-img" src="<?php echo $aboutConst->keyImg?>">
-                                <img id="key-up-line" class="key-up-line" src="<?php echo $aboutConst->lineUpImg?>">
+                                <img class="key-img" src="<?php echo AboutConstants::$keyImg?>">
+                                <img id="key-up-line" class="key-up-line" src="<?php echo AboutConstants::$lineUpImg?>">
                             </div>
                             <div id="key-mid-line" class="key-mid-line-container">
-                                <img class="key-max-line" src="<?php echo $aboutConst->lineImg?>">
+                                <img class="key-max-line" src="<?php echo AboutConstants::$lineImg?>">
                                 <p class="margin-none">10in</p>
                             </div>
                             <div id="key-max-line" class="key-max-line-container">
-                                <img class="key-max-line" src="<?php echo $aboutConst->lineImg?>">
+                                <img class="key-max-line" src="<?php echo AboutConstants::$lineImg?>">
                                 <p class="margin-none">20in</p>
                             </div>
                         </div>
@@ -93,14 +87,14 @@
                 <div class="box-seperator"></div>  
                 <div class="box position-relative">
                     <div class="awards-icon-container">
-                        <img class="award-star" src="<?php echo $aboutConst->starImg?>">
-                        <img class="award-star2" src="<?php echo $aboutConst->starImg?>">
-                        <img class="award-award" src="<?php echo $aboutConst->awardImg?>">
-                        <img class="award-medal" src="<?php echo $aboutConst->medalImg?>">
-                        <img class="award-medal2" src="<?php echo $aboutConst->medalImg?>">
-                        <img class="award-trophy" src="<?php echo $aboutConst->trophyImg?>">
-                        <img class="award-trophy2" src="<?php echo $aboutConst->trophyImg?>">
-                        <img class="award-trophy3" src="<?php echo $aboutConst->trophyImg?>">
+                        <img class="award-star" src="<?php echo AboutConstants::$starImg?>">
+                        <img class="award-star2" src="<?php echo AboutConstants::$starImg?>">
+                        <img class="award-award" src="<?php echo AboutConstants::$awardImg?>">
+                        <img class="award-medal" src="<?php echo AboutConstants::$medalImg?>">
+                        <img class="award-medal2" src="<?php echo AboutConstants::$medalImg?>">
+                        <img class="award-trophy" src="<?php echo AboutConstants::$trophyImg?>">
+                        <img class="award-trophy2" src="<?php echo AboutConstants::$trophyImg?>">
+                        <img class="award-trophy3" src="<?php echo AboutConstants::$trophyImg?>">
                     </div>
                     <div class="box-header">
                         <p class="d-inline header">Awards</p>
@@ -148,6 +142,6 @@
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>
         <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
         <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
-        <script type="text/javascript" src="<?php echo $aboutConst->indexJs?>"></script>
+        <script type="text/javascript" src="<?php echo AboutConstants::$indexJs?>"></script>
     </body>
 </html>

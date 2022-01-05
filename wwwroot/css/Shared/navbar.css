@@ -47,7 +47,7 @@
 .consistent-btn {
     border-radius: 53px;
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
     border-color: #aadeff;
     background: #585858;
     background: #58585882;
@@ -65,7 +65,7 @@
 }
 
 .home-wrapper {
-    left: 74px;
+    left: 60px;
     top: 10px;
 }
 
@@ -79,24 +79,30 @@
     display: block;
 }
 
+.nav-logo-container {
+    position: fixed;
+    bottom: 5px;
+    z-index: 1000;
+    width: 100%;
+}
+
 .nav-logo-wrapper {
     border-style: solid;
-    border-width: 2px;
+    border-width: 1px;
+    margin-left: auto;
+    width: 200px;
+    margin-right: auto;
     border-color: #aadeff;
     background: #a1a1a1;
     background: #a1a1a182;
     padding: 2px;
-    border-radius: 10px 10px 0px 0px;
-    position: fixed;
-    left: 0%;
-    bottom: 0%;
-    z-index: 1000;
+    border-radius: 10px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 
 .nav-logo-img {
-    height: 45px;
+    width: 195px;
 }
 
 .nav-menu-bar {
