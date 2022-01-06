@@ -44,6 +44,27 @@
     margin-top: 10px;
 }
 
+.hamburger-line {
+    cursor: pointer;
+    border-radius: 4px;
+    height: 5px;
+    width: 25px;
+    background: #fff;
+    position: relative;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: .5s;
+}
+
+.hamburger-top-line-rot {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger-bottom-line-rot {
+    transform: rotate(-45deg) translate(3px, -3px);
+}
+
 .consistent-btn {
     border-radius: 53px;
     border-style: solid;
@@ -73,7 +94,7 @@
     animation: .5s scaleDown ease-out backwards !important;
 }
 
-.hamburger-icon {
+.home-icon {
     width: 25px;
     height: 25px;
     display: block;

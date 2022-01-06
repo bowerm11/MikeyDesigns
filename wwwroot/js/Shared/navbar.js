@@ -1,40 +1,12 @@
 function NavBar() {
     this.parentElm = document.getElementById("nav-screen").parentElement;
-    this.hamburgerElm = document.getElementById("hamburgerClickable");
-    this.homeElm = document.getElementById("homeClickable");
     this.removeableSections = document.getElementsByClassName("navbar-removeable-section");
+    this.menuBtns = new MenuBtns(this);
     this.loadingScreen = new LoadingScreen();
-    this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
-    this.movingHomebtn = new AttractableBtn(this.homeElm);
     this.navBackground = new NavbarSquares(this);
 
     this.init = function() {
-        var navObj = this;
         setAllVWVHMax();
-
-        this.movingHamburgerbtn.onActivation = function () {
-            navObj.hamburgerElm.style.animation = ".3s scaleUp ease-out forwards";
-        }
-        
-        this.movingHamburgerbtn.onDeactivation = function () {
-            navObj.hamburgerElm.style.animation = ".3s scaleDown ease-out forwards";
-        }
-        
-        this.hamburgerElm.onclick = function() {
-            navObj.navBackground.toggleMenuBar();
-        }  
-
-        this.movingHomebtn.onActivation = function () {
-            navObj.homeElm.style.animation = ".3s scaleUp ease-out forwards";
-        }
-        
-        this.movingHomebtn.onDeactivation = function () {
-            navObj.homeElm.style.animation = ".3s scaleDown ease-out forwards";
-        }
-        
-        this.homeElm.onclick = function() {
-            window.location.href = navObj.homeElm.getAttribute("data-url");
-        } 
     }
 
     this.showRemovableSections = function (whenDone) {
@@ -85,6 +57,55 @@ NavBar.isInLargeView = function() {
     return false;
 }
 
+function MenuBtns(navBar) {
+    this.navBar = navBar;
+    this.hamburgerElm = document.getElementById("hamburgerClickable");
+    this.hamTopLine = document.getElementById("hamburger-top-line");
+    this.hamBottomLine = document.getElementById("hamburger-bottom-line");
+    this.homeElm = document.getElementById("homeClickable");
+    this.movingHamburgerbtn = new AttractableBtn(this.hamburgerElm);
+    this.movingHomebtn = new AttractableBtn(this.homeElm);
+
+    this.init = function() {
+        var obj = this;
+        this.movingHamburgerbtn.onActivation = function () {
+            obj.hamburgerElm.style.animation = ".3s scaleUp ease-out forwards";
+        }
+        
+        this.movingHamburgerbtn.onDeactivation = function () {
+            obj.hamburgerElm.style.animation = ".3s scaleDown ease-out forwards";
+        }
+        
+        this.hamburgerElm.onclick = function() {
+            obj.navBar.navBackground.toggleMenuBar();
+        }  
+
+        this.movingHomebtn.onActivation = function () {
+            obj.homeElm.style.animation = ".3s scaleUp ease-out forwards";
+        }
+        
+        this.movingHomebtn.onDeactivation = function () {
+            obj.homeElm.style.animation = ".3s scaleDown ease-out forwards";
+        }
+        
+        this.homeElm.onclick = function() {
+            window.location.href = obj.homeElm.getAttribute("data-url");
+        } 
+    }
+
+    this.turnHamburgerToX = function() {
+        this.hamTopLine.classList.add("hamburger-top-line-rot");
+        this.hamBottomLine.classList.add("hamburger-bottom-line-rot");
+    }
+
+    this.turnHamburgerToNormal = function() {
+        this.hamTopLine.classList.remove("hamburger-top-line-rot");
+        this.hamBottomLine.classList.remove("hamburger-bottom-line-rot");
+    }
+
+    this.init();
+}
+
 function LoadingScreen() {
     this.loadingContainer = document.getElementById("loading-container");
     this.fadeOutTimeSec = 1;
@@ -125,6 +146,7 @@ function NavbarSquares(navBar) {
 
     this.openMenuBar = function (whenDone) {
         if (this.navScreenElm.hidden) {
+            this.navBar.hamburgerElm.classList.add();
             this.openMenu(function () {
                 if (typeof whenDone === 'function' && whenDone()) {
                     whenDone();
@@ -169,7 +191,6 @@ function NavbarSquares(navBar) {
 
     this.openMenu = function(whenDone) {
         var obj = this;
-        this.navBar.parentElm.style.overflow = "hidden";
         this.openSquaresAsync(function() {
             obj.showSquareInfoAsync(function () {
                 if (typeof whenDone === 'function' && whenDone()) {
@@ -181,7 +202,6 @@ function NavbarSquares(navBar) {
 
     this.closeMenu = function(whenDone) {
         var obj = this;
-        this.navBar.parentElm.style.overflow = "auto";
         this.closeInfoAsync(function () {
             obj.closeSquaresAsync(function() {
                 if (typeof whenDone === 'function' && whenDone()) {
@@ -197,7 +217,9 @@ function NavbarSquares(navBar) {
         }
 
         const slidePromise = $.Deferred();
-        const obj = this;
+
+        this.navBar.parentElm.style.overflow = "hidden";
+        this.navBar.menuBtns.turnHamburgerToX();
 
         this.navAnimationIsRunning = true;
         this.navScreenElm.hidden = false;
@@ -242,6 +264,10 @@ function NavbarSquares(navBar) {
         }
 
         const infoPromise = $.Deferred();
+
+        this.navBar.parentElm.style.overflow = "auto";
+        this.navBar.menuBtns.turnHamburgerToNormal();
+
         this.navAnimationIsRunning = true;
         this.bottomLeftSquare.closeInfoAsync(this.navAnimationSpeedSec, 0);
         this.topLeftSquare.closeInfoAsync(this.navAnimationSpeedSec, 0);

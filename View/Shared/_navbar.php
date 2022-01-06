@@ -9,10 +9,11 @@
     </div>
 </div>
 <div id="hamburgerClickable" class="consistent-btn hamburger-wrapper">
-    <img class="hamburger-icon no-select" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">
+    <div id="hamburger-top-line" class="hamburger-line"></div>
+    <div id="hamburger-bottom-line" class="hamburger-line"></div>
 </div>  
 <div id="homeClickable" class="consistent-btn home-wrapper" data-url="/View/Home/index.php">
-    <img class="hamburger-icon no-select" src="<?php echo $navConst->homeImg?>" alt="Home">
+    <img class="home-icon no-select" src="<?php echo $navConst->homeImg?>" alt="Home">
 </div>  
 <div class="nav-logo-container">
     <div class="nav-logo-wrapper">
