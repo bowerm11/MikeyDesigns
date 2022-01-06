@@ -60,7 +60,8 @@ body {
     background: #58585894;
     text-align: center;
     display: block;
-    width: 330px;
+    width: 100%;
+    max-width: 330px;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
@@ -258,7 +259,6 @@ body {
 
 .styled-table {
     border-collapse: collapse;
-    min-width: 400px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 5px #00000026;

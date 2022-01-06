@@ -296,7 +296,8 @@
 
 .card-img-container img {
     display: inline-block;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 3px;
 }
 
