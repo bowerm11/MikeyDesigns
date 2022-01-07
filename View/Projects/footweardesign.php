@@ -8,6 +8,7 @@
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
 
     Logger::Log("IP Remote/Forwarded (" . GlobalConstants::$ipRemote . "/" . GlobalConstants::$ipForwarded . ") entered the Footwear Project screen.", "Project_Footwear");
+    SqlVisitors::SqlInsertVisitors();
 ?>
 
 <!DOCTYPE html>

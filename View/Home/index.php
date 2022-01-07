@@ -8,6 +8,7 @@
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
 
     Logger::Log("IP Remote/Forwarded (" . GlobalConstants::$ipRemote . "/" . GlobalConstants::$ipForwarded . ") entered the home screen.", "Index_Home");
+    SqlVisitors::SqlInsertVisitors();
 ?>
 
 <!DOCTYPE html>
