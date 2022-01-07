@@ -20,13 +20,14 @@
         public static function Log($message, $pageName) {
             //Make base path if dir doesnt exist
             if (!file_exists(Logger::$logPath)) {
-                mkdir(Logger::$logPath, 0777, true);
+                mkdir(Logger::$logPath, 0740, true);
             }
 
             //If file need to get created, do a dir scan and remove old logs
             if (!file_exists(Logger::$logFullPath)) 
             {
                 static::WriteHeader();
+                chmod(static::$logFullPath, 740);
                 static::CleanLogDir();
             }
 
