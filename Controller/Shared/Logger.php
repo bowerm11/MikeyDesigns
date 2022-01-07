@@ -27,7 +27,7 @@
             if (!file_exists(Logger::$logFullPath)) 
             {
                 static::WriteHeader();
-                chmod(static::$logFullPath, 740);
+                chmod(static::$logFullPath, 0740);
                 static::CleanLogDir();
             }
 
