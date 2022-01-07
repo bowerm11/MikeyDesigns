@@ -4,6 +4,7 @@
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Home/HomeConstants.php");
+    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/SqlVisitors.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/Logger.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
 
