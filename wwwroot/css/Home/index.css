@@ -13,7 +13,7 @@ body {
     left: 0;
     right: 0;
     text-align: center;
-    bottom: 50px;
+    bottom: 57px;
 }
 
 .hand-img {
@@ -32,6 +32,6 @@ body {
         transform: rotate(-50deg) translate(-30px, -40px);
     }
     100% {
-        transform: rotate(30deg) translate(30px, -10px);
+        transform: rotate(30deg) translate(35px, -10px);
     }
 }

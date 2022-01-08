@@ -1,6 +1,7 @@
 <?php 
     include_once("../../Controller/Shared/NavbarConstants.php");
     include_once(GlobalConstants::$rootPath."/Controller/Shared/preventDirectCall.php");
+    include_once(GlobalConstants::$rootPath."/Controller/Projects/_Projects.php");
 ?>
 <div id="loading-container" class="100-Vw-Vh">
     <div class="loading-elements">
@@ -9,13 +10,16 @@
     </div>
 </div>
 <div id="hamburgerClickable" class="consistent-btn hamburger-wrapper">
-    <img class="hamburger-icon no-select" src="<?php echo $navConst->hamburgerImg?>" alt="Menu">
+    <div id="hamburger-top-line" class="hamburger-line"></div>
+    <div id="hamburger-bottom-line" class="hamburger-line"></div>
 </div>  
 <div id="homeClickable" class="consistent-btn home-wrapper" data-url="/View/Home/index.php">
-    <img class="hamburger-icon no-select" src="<?php echo $navConst->homeImg?>" alt="Home">
+    <img class="home-icon no-select" src="<?php echo $navConst->homeImg?>" alt="Home">
 </div>  
-<div class="nav-logo-wrapper">
-    <img class="nav-logo-img no-select" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
+<div class="nav-logo-container">
+    <div class="nav-logo-wrapper">
+        <img class="nav-logo-img no-select" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
+    </div>
 </div>
 <div id="nav-screen" class="container-fluid 100-Vw-Vh" hidden>
     <div class="row stretch-to-screen margin-none">
@@ -84,14 +88,16 @@
                 </p>    
                 <div id="projects-info" class="projects-container">
                     <div id="card-container" class="card-container">
-                        <div class="row projects-card" data-card-name="footwear" data-page-url="<?php echo $navConst->footwearUrl?>">
-                            <div class="col-12 card-img-container">
-                                <img src="<?php echo $navConst->footwearImg?>" alt="Footwear Project">
+                        <?php foreach(Projects::$projects as &$project): ?>
+                            <div class="row projects-card" data-card-name="<?= $project->projectCardName; ?>" data-page-url="<?= $project->projectPageUrl; ?>">
+                                <div class="col-12 card-img-container">
+                                    <img src="<?= $project->projectImgUrl;?>" alt="Footwear Project">
+                                </div>
+                                <div class="col-12">
+                                    <p class="project-card-header"><?= $project->projectDisplayName; ?></p>
+                                </div>
                             </div>
-                            <div class="col-12">
-                                <p class="project-card-header">Footwear Design</p>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div> 
             </div>

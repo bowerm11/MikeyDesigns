@@ -7,6 +7,8 @@
         public static $bootstrapCss;
         public static $navbarCss;
         public static $jQueryJs;
+        public static $requestedPage;
+        public static $userAgent;
         public static $ipRemote;
         public static $ipForwarded;
 
@@ -22,6 +24,9 @@
             static::$bootstrapCss = GlobalConstants::AppendVersion("/wwwroot/css/src/bootstrap/bootstrap.min.css");;
             static::$navbarCss = GlobalConstants::AppendVersion("/wwwroot/css/Shared/navbar.css");
             static::$jQueryJs = GlobalConstants::AppendVersion("/wwwroot/js/src/jQuery/jQuery.min.js");
+
+            static::$requestedPage = GlobalConstants::GetRequestedPage();
+            static::$userAgent = GlobalConstants::GetUserAgent();
             static::$ipRemote = GlobalConstants::GetRemoteIP();
             static::$ipForwarded = GlobalConstants::GetForwardedIP();
 
@@ -34,6 +39,24 @@
 
         public static function AppendVersion($srcPath) {
             return $srcPath . "?" . GlobalConstants::$version;
+        }
+
+        private static function GetRequestedPage()
+        {
+            if (array_key_exists('SCRIPT_NAME', $_SERVER)) {
+                return $_SERVER['SCRIPT_NAME'];
+            } else {
+                return "Unknown";
+            }    
+        }
+
+        private static function GetUserAgent()
+        {
+            if (array_key_exists('HTTP_USER_AGENT', $_SERVER)) {
+                return $_SERVER['HTTP_USER_AGENT'];
+            } else {
+                return "Unknown";
+            }    
         }
 
         private static function GetRemoteIP()

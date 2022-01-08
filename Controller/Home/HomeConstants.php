@@ -4,32 +4,32 @@
 
     class HomeConstants {
         //CSS
-        public $homeCss;
+        public static $homeCss;
 
         //JS
-        public $coverAnimationJs;
-        public $starBackgroundJs;
-        public $islandJs;
-        public $navBarJs;
-        public $indexJs;
+        public static $coverAnimationJs;
+        public static $starBackgroundJs;
+        public static $islandJs;
+        public static $navBarJs;
+        public static $indexJs;
 
         //IMG
-        public $handImg;
+        public static $handImg;
 
         //View
         
-        function __construct() {
-            $this->homeCss = GlobalConstants::AppendVersion("/wwwroot/css/Home/index.css");
+        public static function __constructStatic() {
+            static::$homeCss = GlobalConstants::AppendVersion("/wwwroot/css/Home/index.css");
 
-            $this->coverAnimationJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/CoverAnimation.js");
-            $this->starBackgroundJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/StarBackground.js");
-            $this->islandJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/island/Island.js");
-            $this->navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
-            $this->indexJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/index.js");
+            static::$coverAnimationJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/CoverAnimation.js");
+            static::$starBackgroundJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/StarBackground.js");
+            static::$islandJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/island/Island.js");
+            static::$navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
+            static::$indexJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/index.js");
 
-            $this->handImg = GlobalConstants::AppendVersion("/wwwroot/images/Home/hand-pointer.svg");
+            static::$handImg = GlobalConstants::AppendVersion("/wwwroot/images/Home/hand-pointer.svg");
         }
     }
 
-    $homeConst = new HomeConstants();
+    HomeConstants::__constructStatic();
 ?>
