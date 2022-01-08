@@ -1,8 +1,13 @@
 <?php 
     include_once(__DIR__ . "/preventDirectCall.php");
+    include_once(__DIR__ . "/Config.php");
     include_once(__DIR__ . "/Logger.php");
 
-    ini_set('display_errors', false);
+    if (Config::$isProduction) {
+        ini_set('display_errors', false);
+    } else {
+        ini_set('display_errors', true);
+    }
 
     function generalErrorHandler($errno, $errstr, $errfile, $errline)
     {

@@ -7,6 +7,7 @@ function NavBar() {
 
     this.init = function() {
         setAllVWVHMax();
+        setAllMinVWVHMax();
     }
 
     this.showRemovableSections = function (whenDone) {
@@ -110,6 +111,10 @@ function LoadingScreen() {
     this.loadingContainer = document.getElementById("loading-container");
     this.fadeOutTimeSec = 1;
 
+    this.init = function() {
+        $(window).scrollTop(0);
+    }
+
     this.doneLoading = function(whenDone) {
         const obj = this;
         const defer = $.Deferred();
@@ -127,6 +132,8 @@ function LoadingScreen() {
             } 
         });
     }
+
+    this.init();
 }
 
 function NavbarSquares(navBar) {
@@ -663,6 +670,21 @@ function setAllVWVHMax() {
         window.addEventListener('resize', function() {
             viewportElm.style.width = window.innerWidth + "px";
             viewportElm.style.height = window.innerHeight + "px";
+        });
+    }
+}
+
+function setAllMinVWVHMax() {
+    const viewportsToMax = document.getElementsByClassName("100-min-Vw-Vh");
+
+    for (let i = 0; i < viewportsToMax.length; i++) {
+        const viewportElm = viewportsToMax[i];
+        viewportElm.style.minWidth = window.innerWidth + "px";
+        viewportElm.style.minHeight = window.innerHeight + "px";
+
+        window.addEventListener('resize', function() {
+            viewportElm.style.minWidth = window.innerWidth + "px";
+            viewportElm.style.minHeight = window.innerHeight + "px";
         });
     }
 }

@@ -1,6 +1,7 @@
 <?php 
     include_once("../../Controller/Shared/NavbarConstants.php");
     include_once(GlobalConstants::$rootPath."/Controller/Shared/preventDirectCall.php");
+    include_once(GlobalConstants::$rootPath."/Controller/Projects/_Projects.php");
 ?>
 <div id="loading-container" class="100-Vw-Vh">
     <div class="loading-elements">
@@ -87,14 +88,16 @@
                 </p>    
                 <div id="projects-info" class="projects-container">
                     <div id="card-container" class="card-container">
-                        <div class="row projects-card" data-card-name="footwear" data-page-url="<?php echo $navConst->footwearUrl?>">
-                            <div class="col-12 card-img-container">
-                                <img src="<?php echo $navConst->footwearImg?>" alt="Footwear Project">
+                        <?php foreach(Projects::$projects as &$project): ?>
+                            <div class="row projects-card" data-card-name="<?= $project->projectCardName; ?>" data-page-url="<?= $project->projectPageUrl; ?>">
+                                <div class="col-12 card-img-container">
+                                    <img src="<?= $project->projectImgUrl;?>" alt="Footwear Project">
+                                </div>
+                                <div class="col-12">
+                                    <p class="project-card-header"><?= $project->projectDisplayName; ?></p>
+                                </div>
                             </div>
-                            <div class="col-12">
-                                <p class="project-card-header">Footwear Design</p>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
                 </div> 
             </div>

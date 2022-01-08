@@ -1,4 +1,5 @@
 <?php 
+    include_once(__DIR__ . "/preventDirectCall.php");
     include_once(__DIR__ . "/_GlobalConstants.php");
 
     class Logger {

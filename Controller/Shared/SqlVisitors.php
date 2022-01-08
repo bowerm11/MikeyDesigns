@@ -1,5 +1,6 @@
 <?php 
     include_once(__DIR__ . "/_GlobalConstants.php");
+    include_once(__DIR__ . "/preventDirectCall.php");
     include_once(__DIR__ . "/Config.php");
     include_once(__DIR__ . "/Logger.php");
 
@@ -7,6 +8,10 @@
         public static $pdo = null;
 
         public static function __contructStatic() {
+            if (!Config::$isProduction) {
+                return;
+            }
+
             $dsn = "mysql:host=" . Config::$dbhost . ";dbname=" . Config::$db . ";charset=utf8mb4";
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
