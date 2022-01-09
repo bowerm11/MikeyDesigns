@@ -281,11 +281,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 h-100">
+                            <div class="col-12">
                                 <p class="margin-t-10 sub-title">Types of CVCs</p>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
-                                        <div class="border-blue padding-5">
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                        <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">Short-term</p>
                                             <p class="margin-none indent">A short-term CVC is inserted into a large central vein through the skin. Can be sutured in place.</p>
                                             <ul class="indent">
@@ -301,8 +301,8 @@
                                             </ul>
                                         </div>                    
                                     </div>
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
-                                        <div class="border-blue padding-5">
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                        <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">PICC</p>
                                             <p class="margin-none indent">A CVC which is inserted into an extremity, typically in the cephalic, basilica or brachial veins of the upper arm.</p>
                                             <ul class="indent">
@@ -316,47 +316,89 @@
                                             </ul>
                                         </div>                      
                                     </div>
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
-                                        <div class="border-blue padding-5">
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                        <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">Tunneled Catheter</p>
                                             <p class="indent">A long-term CVC whose proximal end is tunneled subcutaneously from the insertion site and brought out through the skin at an exit site. It is an external device inserted in the OR or under fluoroscopy, and must be removed by a physician.</p>   
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
-                                        <div class="border-blue padding-5">
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                        <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">Implanted Venous Access</p>
                                             <p class="indent">A long-term single or dual chamber “port” surgically implanted in the subcutaneous tissue usually in the upper chest. Needle access is required, and a surgical procedure is required to insert and remove.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>     
-                    </div>
-                </div>
-                <div class="section">
-                    <p class="margin-t-10 sub-title">Applications</p>
-                    <div class="seperator-line"></div>
-                    <div class="w-100 h-100 position-relative">
-                        <div class="position-absolute margin-l-r-auto max-width-500px horizontal-center-absolute top-15-per">
-                            <div class="border-blue background-blue blur">
-                                <ul>
-                                    <li>Administer intravenous fluid and blood products.</li>
-                                    <li>Administer Medication.</li>
-                                    <li>Administer hypertonic solution (Total Parental Nutrition [TPN]), vesicants (chemotherapy), and solutions with extreme pH values (vancomycin).</li>
-                                    <li>Venous blood samples.</li>
-                                    <li>Provide long-term intravenous therapy.</li>
-                                    <li>Provide hemodialysis.</li>
-                                    <li>Administer large volumes of intravenous fluid quickly.</li>
-                                    <li>Administer vasopressor or vasodilator therapy (dopamine).</li>
-                                    <li>Monitor central venous pressure (CVP).</li>
-                                    <li>Provides access for a trans venous pacemaker or pulmonary artery catheters.</li>
-                                    <li>Access venous circulation when a patient has difficult or impossible peripheral access.</li>
-                                </ul>
-                            </div>               
+                        </div> 
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">Applications</p>
+                                <div class="w-100 h-100">
+                                    <img class="w-100 border-r-5 d-block margin-l-r-auto max-width-500px" src="<?php echo CacoonhubConstants::$img2?>">
+                                    <div class="margin-l-r-auto max-width-500px">
+                                        <div class="border-blue background-blue blur">
+                                            <ul>
+                                                <li>Administer intravenous fluid and blood products.</li>
+                                                <li>Administer Medication.</li>
+                                                <li>Administer hypertonic solution (Total Parental Nutrition [TPN]), vesicants (chemotherapy), and solutions with extreme pH values (vancomycin).</li>
+                                                <li>Venous blood samples.</li>
+                                                <li>Provide long-term intravenous therapy.</li>
+                                                <li>Provide hemodialysis.</li>
+                                                <li>Administer large volumes of intravenous fluid quickly.</li>
+                                                <li>Administer vasopressor or vasodilator therapy (dopamine).</li>
+                                                <li>Monitor central venous pressure (CVP).</li>
+                                                <li>Provides access for a trans venous pacemaker or pulmonary artery catheters.</li>
+                                                <li>Access venous circulation when a patient has difficult or impossible peripheral access.</li>
+                                            </ul>
+                                        </div>               
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>    
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-none margin-t-10 sub-title">CVC Parts</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-md-6 margin-t-10 h-inherit">
+                                            <div class="border-blue padding-5 h-100 text-center">
+                                                <p class="font-weight-300 margin-none">Open/Luer Lock Valve</p>
+                                                <img class="w-100 max-width-500px" src="<?php echo CacoonhubConstants::$img4?>">
+                                            </div>                    
+                                        </div>
+                                        <div class="col-xs-12 col-md-6 margin-t-10 h-inherit">
+                                            <div class="border-blue padding-5 h-100 text-center">
+                                                <p class="font-weight-300 margin-none">Open/Luer Lock Valve</p>
+                                                <img class="w-100 max-width-500px" src="<?php echo CacoonhubConstants::$img3?>">
+                                            </div>                    
+                                        </div>
+                                    </div>
+                                </div>  
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 margin-t-10">
+                                            <div class="container-fluid row margin-l-r-auto border-blue row">
+                                                <div class="col-xs-12 col-md-6">
+                                                    <img class="img-fill-container-cover h-100 w-100 border-r-5" src="<?php echo CacoonhubConstants::$img22?>">
+                                                </div>
+                                                <div class="col-xs-12 col-md-6">
+                                                    <p class="font-weight-300 margin-none text-center margin-t-b-10">(These are in order to line up with the diagram)</p>
+                                                    <p>Durable, low-profile Luer lock adapter facilities cleaning and increases patient comfort.</p>
+                                                    <p>Permanent external clamping segment eliminates cost and inconvenience of extension sets; promotes aseptic care.</p>
+                                                    <p>Easy to use reattached clamp that helps prevent catheter damage.</p>
+                                                    <p>Soft silicone suture wing helps provide reliable securement and minimizes trauma at the catheter insertion site.</p>
+                                                    <p>Soft tip reduces potential of venous wall erosion and perforation.</p>
+                                                    <p>Exclusive VitaCuff Antimicrobial Cuff helps provide protection against catheter related infections.</p>
+                                                    <p>Medical grade radiopaque silicone construction for bio-compatibility.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img class="w-100 border-r-5 d-block margin-l-r-auto" src="<?php echo CacoonhubConstants::$img2?>">
                     </div>
-                    
                 </div>
             </div>      
         </div>

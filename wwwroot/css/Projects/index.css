@@ -67,6 +67,10 @@
     margin-top: 10px;
 }
 
+.margin-10 {
+    margin: 10px;
+}
+
 .indent {
     margin-left: 40px;
 }
@@ -180,7 +184,7 @@
 .project-main-container {
     overflow: auto;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     opacity: 0;
 }
 

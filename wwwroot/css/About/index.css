@@ -7,6 +7,10 @@ body {
     margin: 0px 0px 0px 0px;
 }
 
+.h-inherit {
+    height: inherit;
+}
+
 .white-bg {
     padding-bottom: 50px;
     background-color: #f9f9f9;
@@ -50,7 +54,7 @@ body {
 
 .about-title-box-container {
     position: absolute;
-    bottom: 65px;
+    bottom: 45px;
     width: 100%;
     z-index: 1;
 }

@@ -667,15 +667,18 @@ function setAllVWVHMax() {
         const viewportElm = viewportsToMax[i];
         viewportElm.style.width = window.innerWidth + "px";
         viewportElm.style.height = window.innerHeight + "px";
+    }
 
-        window.addEventListener('resize', function() {
-            if (initWidth != window.innerWidth) {
-                initWidth = window.innerWidth;
+    window.addEventListener('resize', function() {
+        if (initWidth != window.innerWidth) {
+            initWidth = window.innerWidth;
+            for (let i = 0; i < viewportsToMax.length; i++) {
+                const viewportElm = viewportsToMax[i];
                 viewportElm.style.width = window.innerWidth + "px";
                 viewportElm.style.height = window.innerHeight + "px";
-            }     
-        });
-    }
+            }
+        }     
+    });
 }
 
 function setAllMinVWVHMax() {
@@ -686,15 +689,18 @@ function setAllMinVWVHMax() {
         const viewportElm = viewportsToMax[i];
         viewportElm.style.minWidth = window.innerWidth + "px";
         viewportElm.style.minHeight = window.innerHeight + "px";
+    }
 
-        window.addEventListener('resize', function() {
-            if (initWidth != window.innerWidth) {
-                initWidth = window.innerWidth;
+    window.addEventListener('resize', function() {
+        if (initWidth != window.innerWidth) {
+            initWidth = window.innerWidth;
+            for (let i = 0; i < viewportsToMax.length; i++) {
+                const viewportElm = viewportsToMax[i];
                 viewportElm.style.minWidth = window.innerWidth + "px";
                 viewportElm.style.minHeight = window.innerHeight + "px";
-            }         
-        });
-    }
+            }
+        }     
+    });
 }
 
 function setAllMinVHMax() {
@@ -704,14 +710,17 @@ function setAllMinVHMax() {
     for (let i = 0; i < viewportsToMax.length; i++) {
         const viewportElm = viewportsToMax[i];
         viewportElm.style.minHeight = window.innerHeight + "px";
+    }
 
-        window.addEventListener('resize', function() {
-            if (initWidth != window.innerWidth) {
-                initWidth = window.innerWidth;
+    window.addEventListener('resize', function() {
+        if (initWidth != window.innerWidth) {
+            initWidth = window.innerWidth;
+            for (let i = 0; i < viewportsToMax.length; i++) {
+                const viewportElm = viewportsToMax[i];
                 viewportElm.style.minHeight = window.innerHeight + "px";
             }
-        });
-    }
+        }     
+    });
 }
 
 reloadPageIfBackButtonHit();
