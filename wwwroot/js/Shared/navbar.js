@@ -667,7 +667,10 @@ function setAllVWVHMax() {
         viewportElm.style.width = window.innerWidth + "px";
         viewportElm.style.height = window.innerHeight + "px";
 
-        
+        window.addEventListener('resize', function() {
+            viewportElm.style.width = window.innerWidth + "px";
+            viewportElm.style.height = window.innerHeight + "px";
+        });
     }
 }
 
@@ -679,7 +682,10 @@ function setAllMinVWVHMax() {
         viewportElm.style.minWidth = window.innerWidth + "px";
         viewportElm.style.minHeight = window.innerHeight + "px";
 
-       
+        window.addEventListener('resize', function() {
+            viewportElm.style.minWidth = window.innerWidth + "px";
+            viewportElm.style.minHeight = window.innerHeight + "px";
+        });
     }
 }
 
@@ -690,7 +696,9 @@ function setAllMinVHMax() {
         const viewportElm = viewportsToMax[i];
         viewportElm.style.minHeight = window.innerHeight + "px";
 
-        
+        window.addEventListener('resize', function() {
+            viewportElm.style.minHeight = window.innerHeight + "px";
+        });
     }
 }
 

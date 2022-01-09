@@ -314,6 +314,12 @@ body {
     font-weight: 300;
 }
 
+@media only screen and (hover: none) {
+    .parallax {
+        position: relative;
+    }
+}
+
 @keyframes dotMove {
     0% {
         transform: scale(1) translateY(-100%);
