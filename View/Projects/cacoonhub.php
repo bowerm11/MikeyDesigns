@@ -35,15 +35,15 @@
                                     <li>Need vs. Want</li>
                                     <li>Client: Donald Lombardi</li>
                                     <li>Profile: Peter Provonost</li>
-                                    <li>Initial Research</li>
-                                    <li>Market Research</li>
                                 </ol>
                             </div>
                             <div class="col-xs-12 col-md-6">
-                                <ol start="7">
-                                    <li>HACs vs HAIs 
+                                <ol start="5">
+                                    <li>Initial Research
                                         <ul>
-                                            <li>CLABSI Study</li>
+                                            <li>What's on Market</li>
+                                            <li>HACs vs HAIs</li>
+                                            <li>Meyer Children’s Hospital CLABSI Study</li>
                                             <li>CVC Classifications</li>
                                             <li>Types of CVCs</li>
                                             <li>Applications</li>
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section 100-min-Vw-Vh d-flex">
+                <div class="section d-flex">
                     <div class="container-fluid margin-t-b-10">
                         <div class="row h-100">
                             <div class="col-sm-12 col-md-6">
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section 100-min-Vw-Vh d-flex">
+                <div class="section d-flex">
                     <div class="container-fluid margin-t-b-10">
                         <div class="row h-100">
                             <div class="col-sm-12 col-md-6 order-1 order-md-0">
@@ -163,7 +163,202 @@
                         </div>
                     </div>
                 </div>
-            <div>      
+                <div class="section">
+                    <p class="title margin-none">Initial Research:</p>
+                    <div class="seperator-line"></div>
+                    <div class="container margin-t-b-10">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">What's on the Market</p>
+                                <img class="img-fill-container-cover border-r-5" src="<?php echo CacoonhubConstants::$img11?>">
+                                <p>Patent 0333680 presents a catheter protection device having a first housing portion and a second housing portion and a second housing portion define a hollow interior between them; A single use, germicide filled enclosure that can be clamped over the central line hub and any line that feeds into the hub.</p>
+                            </div>
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <img class="w-100 border-r-5 d-block margin-l-r-auto max-width-300px" src="<?php echo CacoonhubConstants::$img29?>">
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <img class="w-100 border-r-5" src="<?php echo CacoonhubConstants::$img12?>">
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <img class="w-100 border-r-5" src="<?php echo CacoonhubConstants::$img8?>">
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">HACs vs HAIs</p>
+                                <table class="blue-table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>HACs</th>
+                                            <th>HAIs</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>An undesired Situation or condition affecting patient that arises during a stay in a hospital or medical facility.</td>
+                                            <td>An infection that develops as a result of medical care. The most infections associated with healthcare can be divided into four categories; catheter-associated urinary tract infections, bloodstream infections, surgical site infections and pneumonia.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table class="blue-table">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>CLABSIs</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>A serious infection that occurs when germs (bacteria, viruses, fungi) enter the bloodstream through central line. Symptoms include a fever, red skin and soreness around the central line.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">Meyer Children's Hospital CLABSI Study</p>
+                                <ol>
+                                    <li>CLABSIs are the most common healthcare-associated infection in childhood.</li>
+                                    <li>CLABSI Rate 3.73 / 1,000.</li>
+                                    <li>Average Age: 21 Months.</li>
+                                    <li>Average CVC days: 4</li>
+                                    <li>Participants:
+                                        <ul>
+                                            <li>388 Children</li>
+                                            <li>7783 Catheter Observation Days</li>
+                                        </ul>
+                                    </li>
+                                    <li>CLABSI Cases:
+                                        <ul>
+                                            <li>29 Cases in 26 Children</li>
+                                        </ul>
+                                    </li>
+                                    <li>Average Cost to the Hospital:
+                                        <ul>
+                                            <li>$45,000</li>
+                                        </ul>
+                                    </li> 
+                                    <li>Most common Bacterial and viral causes of CLABSI:
+                                        <ul>
+                                            <li>Enterobacteriacae 20%</li>
+                                            <li>Candida spp 24.1%</li>
+                                            <li>Staphylococcus 13.8%</li>
+                                        </ul>
+                                    </li> 
+                                    <li>CLABSI rates are highest among females and patients with underlying medical conditions.</li>
+                                    <li>Underlying Condition Rate 5.42/1,000</li>
+                                    <li>Intensive Care Unit Rate 5.42/1,000</li>
+                                    <li>Medical Wards Rate 5.69/1,000</li>
+                                    <li>Most common underlying conditions:
+                                        <ul>
+                                            <li>Medical 34.8%</li>
+                                            <li>Oncological 30.4%</li>
+                                            <li>Surgical 29.9%</li>
+                                            <li>Prematurity 4.9%</li>
+                                        </ul>
+                                    </li> 
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 h-100">
+                                <p class="margin-t-10 sub-title">CVC Classifications</p>
+                                <img class="w-100 h-100 border-r-5 100-min-Vh img-cover" src="<?php echo CacoonhubConstants::$img1?>">
+                                <p class="font-weight-300 margin-none">Open Ended Catheters</p>
+                                <p class="margin-none indent">The catheter is open at the distal tip.</p>
+                                <p class="margin-none indent">The catheter requires clamping before entry into the system.</p>
+                                <p class="margin-none indent">Clamps are usually built into the catheter.</p>
+                                <p class="margin-none indent">Requires periodic flushing.</p>
+                                <p class="indent">Any type of CVC can be open ended.</p>
+                                <p class="font-weight-300 margin-none">Closed Ended Catheters</p>
+                                <p class="margin-none indent">Valves may be placed distally or proximally.</p>
+                                <p class="margin-none indent">Clamps are not required for built into the catheter since the valve is closed except during infusion or aspiration.</p>
+                                <p class="margin-none indent">Short term CVCs cannot be closed ended.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 h-100">
+                                <p class="margin-t-10 sub-title">Types of CVCs</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
+                                        <div class="border-blue padding-5">
+                                            <p class="font-weight-300 margin-none">Short-term</p>
+                                            <p class="margin-none indent">A short-term CVC is inserted into a large central vein through the skin. Can be sutured in place.</p>
+                                            <ul class="indent">
+                                                <li>Issues:
+                                                    <ul>
+                                                        <li>Highest risk for infection.</li>
+                                                        <li>Can not be used at home.</li>
+                                                        <li>High risk of insertion complications.</li>
+                                                        <li>Can not be used for more than 14 days.</li>
+                                                        <li>Easily dislodged.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>                    
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
+                                        <div class="border-blue padding-5">
+                                            <p class="font-weight-300 margin-none">PICC</p>
+                                            <p class="margin-none indent">A CVC which is inserted into an extremity, typically in the cephalic, basilica or brachial veins of the upper arm.</p>
+                                            <ul class="indent">
+                                                <li>Issues:
+                                                    <ul>
+                                                        <li>Requires a dressing and frequent assessments.</li>
+                                                        <li>External device.</li>
+                                                        <li>Not compatible with all medications.</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>                      
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
+                                        <div class="border-blue padding-5">
+                                            <p class="font-weight-300 margin-none">Tunneled Catheter</p>
+                                            <p class="indent">A long-term CVC whose proximal end is tunneled subcutaneously from the insertion site and brought out through the skin at an exit site. It is an external device inserted in the OR or under fluoroscopy, and must be removed by a physician.</p>   
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6 margin-t-b-10">
+                                        <div class="border-blue padding-5">
+                                            <p class="font-weight-300 margin-none">Implanted Venous Access</p>
+                                            <p class="indent">A long-term single or dual chamber “port” surgically implanted in the subcutaneous tissue usually in the upper chest. Needle access is required, and a surgical procedure is required to insert and remove.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                </div>
+                <div class="section">
+                    <p class="margin-t-10 sub-title">Applications</p>
+                    <div class="seperator-line"></div>
+                    <div class="w-100 h-100 position-relative">
+                        <div class="position-absolute margin-l-r-auto max-width-500px horizontal-center-absolute top-15-per">
+                            <div class="border-blue background-blue blur">
+                                <ul>
+                                    <li>Administer intravenous fluid and blood products.</li>
+                                    <li>Administer Medication.</li>
+                                    <li>Administer hypertonic solution (Total Parental Nutrition [TPN]), vesicants (chemotherapy), and solutions with extreme pH values (vancomycin).</li>
+                                    <li>Venous blood samples.</li>
+                                    <li>Provide long-term intravenous therapy.</li>
+                                    <li>Provide hemodialysis.</li>
+                                    <li>Administer large volumes of intravenous fluid quickly.</li>
+                                    <li>Administer vasopressor or vasodilator therapy (dopamine).</li>
+                                    <li>Monitor central venous pressure (CVP).</li>
+                                    <li>Provides access for a trans venous pacemaker or pulmonary artery catheters.</li>
+                                    <li>Access venous circulation when a patient has difficult or impossible peripheral access.</li>
+                                </ul>
+                            </div>               
+                        </div>
+                        <img class="w-100 border-r-5 d-block margin-l-r-auto" src="<?php echo CacoonhubConstants::$img2?>">
+                    </div>
+                    
+                </div>
+            </div>      
         </div>
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>

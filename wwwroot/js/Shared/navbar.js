@@ -8,6 +8,7 @@ function NavBar() {
     this.init = function() {
         setAllVWVHMax();
         setAllMinVWVHMax();
+        setAllMinVHMax();
     }
 
     this.showRemovableSections = function (whenDone) {
@@ -112,7 +113,6 @@ function LoadingScreen() {
     this.fadeOutTimeSec = 1;
 
     this.init = function() {
-        $(window).scrollTop(0);
     }
 
     this.doneLoading = function(whenDone) {
@@ -684,6 +684,19 @@ function setAllMinVWVHMax() {
 
         window.addEventListener('resize', function() {
             viewportElm.style.minWidth = window.innerWidth + "px";
+            viewportElm.style.minHeight = window.innerHeight + "px";
+        });
+    }
+}
+
+function setAllMinVHMax() {
+    const viewportsToMax = document.getElementsByClassName("100-min-Vh");
+
+    for (let i = 0; i < viewportsToMax.length; i++) {
+        const viewportElm = viewportsToMax[i];
+        viewportElm.style.minHeight = window.innerHeight + "px";
+
+        window.addEventListener('resize', function() {
             viewportElm.style.minHeight = window.innerHeight + "px";
         });
     }
