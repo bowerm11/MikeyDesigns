@@ -661,6 +661,7 @@ function reloadPageIfBackButtonHit() {
 
 function setAllVWVHMax() {
     const viewportsToMax = document.getElementsByClassName("100-Vw-Vh");
+    var initWidth = window.innerWidth;
 
     for (let i = 0; i < viewportsToMax.length; i++) {
         const viewportElm = viewportsToMax[i];
@@ -668,14 +669,18 @@ function setAllVWVHMax() {
         viewportElm.style.height = window.innerHeight + "px";
 
         window.addEventListener('resize', function() {
-            viewportElm.style.width = window.innerWidth + "px";
-            viewportElm.style.height = window.innerHeight + "px";
+            if (initWidth != window.innerWidth) {
+                initWidth = window.innerWidth;
+                viewportElm.style.width = window.innerWidth + "px";
+                viewportElm.style.height = window.innerHeight + "px";
+            }     
         });
     }
 }
 
 function setAllMinVWVHMax() {
     const viewportsToMax = document.getElementsByClassName("100-min-Vw-Vh");
+    var initWidth = window.innerWidth;
 
     for (let i = 0; i < viewportsToMax.length; i++) {
         const viewportElm = viewportsToMax[i];
@@ -683,21 +688,28 @@ function setAllMinVWVHMax() {
         viewportElm.style.minHeight = window.innerHeight + "px";
 
         window.addEventListener('resize', function() {
-            viewportElm.style.minWidth = window.innerWidth + "px";
-            viewportElm.style.minHeight = window.innerHeight + "px";
+            if (initWidth != window.innerWidth) {
+                initWidth = window.innerWidth;
+                viewportElm.style.minWidth = window.innerWidth + "px";
+                viewportElm.style.minHeight = window.innerHeight + "px";
+            }         
         });
     }
 }
 
 function setAllMinVHMax() {
     const viewportsToMax = document.getElementsByClassName("100-min-Vh");
+    var initWidth = window.innerWidth;
 
     for (let i = 0; i < viewportsToMax.length; i++) {
         const viewportElm = viewportsToMax[i];
         viewportElm.style.minHeight = window.innerHeight + "px";
 
         window.addEventListener('resize', function() {
-            viewportElm.style.minHeight = window.innerHeight + "px";
+            if (initWidth != window.innerWidth) {
+                initWidth = window.innerWidth;
+                viewportElm.style.minHeight = window.innerHeight + "px";
+            }
         });
     }
 }
