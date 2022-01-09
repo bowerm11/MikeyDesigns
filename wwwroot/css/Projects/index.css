@@ -1,4 +1,4 @@
-* {
+.project-main-container * {
     font-family: 'Yantramanav', sans-serif, Arial, Helvetica;
     font-weight: 200;
     font-size: 20px;
@@ -6,6 +6,23 @@
 
 .font-weight-300 {
     font-weight: 300;
+}
+
+.blur {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.top-15-per {
+    top: 15%;
+}
+
+.max-width-300px {
+    max-width: 300px;
+}
+
+.max-width-500px {
+    max-width: 500px;
 }
 
 .border-r-5 {
@@ -28,6 +45,10 @@
     padding: 0px;
 }
 
+.padding-5 {
+    padding: 5px;
+}
+
 .margin-none {
     margin: 0px;
 }
@@ -46,11 +67,26 @@
     margin-top: 10px;
 }
 
+.indent {
+    margin-left: 40px;
+}
+
 .vertical-align-middle {
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
+}
+
+.horizontal-center-absolute {
+    left: 0;
+    right: 0;
+}
+
+/*Backgrounds*/
+.background-blue {
+    background-color: #aadeff;
+    background-color: #a8deffb8;
 }
 
 /*UI Styles*/
@@ -92,6 +128,10 @@
 .img-fill-container-cover {
     width: inherit;
     height: inherit;
+    object-fit: cover;
+}
+
+.img-cover {
     object-fit: cover;
 }
 
@@ -152,4 +192,17 @@
 
 .section {
     margin-top: 15px;
+}
+
+/*Border styles*/
+.border-blue {
+    border: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #b1e1ff;
+    transition: .4s;
+}
+
+.border-blue:hover {
+    border-color: #3cb4ff;
 }
