@@ -206,3 +206,7 @@
 .border-blue:hover {
     border-color: #3cb4ff;
 }
+
+@media only screen and (hover: none) {
+
+}
