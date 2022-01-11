@@ -396,8 +396,43 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 margin-t-10">
+                                            <div class="container-fluid row margin-l-r-auto border-blue row">
+                                                <div class="col-xs-12 col-md-6 col-lg-3 order-1 order-md-1 order-lg-0 margin-t-10">
+                                                    <p class="margin-none margin-t-10 sub-title">Left side (top to bottom)</p>
+                                                    <ul>
+                                                        <li>Injection Cap</li>
+                                                        <li>Providone-lodine</li>
+                                                        <li>Swabsticks Dilator</li>
+                                                        <li>Providone-lodine Ointment</li>
+                                                        <li>Gauze Pads</li>
+                                                        <li>VitaCuff Cutter</li>
+                                                        <li>Fenestrated Drape</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-xs-12 col-md-12 col-lg-6 order-0 order-md-0 order-lg-1 margin-t-10 vertical-align-middle">
+                                                    <img class="w-100" src="<?php echo CacoonhubConstants::$img6?>">    
+                                                </div>
+                                                <div class="col-xs-12 col-md-6 col-lg-3 order-2 order-md-2 order-lg-2 margin-t-10">
+                                                    <p class="margin-none margin-t-10 sub-title">Right side (Top to bottom)</p>
+                                                    <ul>
+                                                        <li>Guidewire</li>
+                                                        <li>Needles and Syringes</li>
+                                                        <li>Lidocaine HCI</li>
+                                                        <li>Catheter</li>
+                                                        <li>Scalpel</li>
+                                                        <li>VitaCuff Cutter</li>
+                                                        <li>Non-absorbable Suture</li>
+                                                    </ul>        
+                                                </div>
+                                            </div>
+                                        </div>         
+                                    </div>
+                                </div>  
                             </div>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>      
