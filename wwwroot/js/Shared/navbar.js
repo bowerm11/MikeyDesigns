@@ -6,9 +6,8 @@ function NavBar() {
     this.navBackground = new NavbarSquares(this);
 
     this.init = function() {
+        setAllVWVHMaxNoScroll();
         setAllVWVHMax();
-        setAllMinVWVHMax();
-        setAllMinVHMax();
     }
 
     this.showRemovableSections = function (whenDone) {
@@ -684,49 +683,23 @@ function setAllVWVHMax() {
     });
 }
 
-function setAllMinVWVHMax() {
-    const viewportsToMax = document.getElementsByClassName("100-min-Vw-Vh");
-    var $window = $(window);
-    var initWidth = $window.width();
+function setAllVWVHMaxNoScroll() {
+    const viewportsToMax = document.getElementsByClassName("100-Vw-Vh-no-scroll");
+    var initWidth = window.innerWidth;
 
     for (let i = 0; i < viewportsToMax.length; i++) {
         const viewportElm = viewportsToMax[i];
-        viewportElm.style.minWidth = $window.width() + "px";
-        viewportElm.style.minHeight = $window.height() + "px";
+        viewportElm.style.width = window.innerWidth + "px";
+        viewportElm.style.height = window.innerHeight + "px";
     }
 
     window.addEventListener('resize', function() {
-        var $width = $window.width();
-        var $height = $window.height();
-        if (initWidth != $width) {
-            initWidth = $width;
+        if (initWidth != window.innerWidth) {
+            initWidth = window.innerWidth;
             for (let i = 0; i < viewportsToMax.length; i++) {
                 const viewportElm = viewportsToMax[i];
-                viewportElm.style.minWidth = $width + "px";
-                viewportElm.style.minHeight = $height + "px";
-            }
-        }     
-    });
-}
-
-function setAllMinVHMax() {
-    const viewportsToMax = document.getElementsByClassName("100-min-Vh");
-    var $window = $(window);
-    var initWidth = $window.width();
-
-    for (let i = 0; i < viewportsToMax.length; i++) {
-        const viewportElm = viewportsToMax[i];
-        viewportElm.style.minHeight = $window.height() + "px";
-    }
-
-    window.addEventListener('resize', function() {
-        var $width = $window.width();
-        var $height = $window.height();
-        if (initWidth != $width) {
-            initWidth = $width;
-            for (let i = 0; i < viewportsToMax.length; i++) {
-                const viewportElm = viewportsToMax[i];
-                viewportElm.style.minHeight = $height + "px";
+                viewportElm.style.width = window.innerWidth + "px";
+                viewportElm.style.height = window.innerHeight + "px";
             }
         }     
     });

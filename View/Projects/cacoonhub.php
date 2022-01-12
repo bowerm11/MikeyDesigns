@@ -50,6 +50,7 @@
                                             <li>CVC Parts</li>
                                             <li>CVC Kits</li>
                                             <li>Luer Fittings</li>
+                                            <li>Stem Types</li>
                                             <li>Product Reference </li>
                                         </ul>
                                     </li>
@@ -117,7 +118,7 @@
                     </div>
                 </div>
                 <div class="section d-flex">
-                    <div class="container-fluid margin-t-b-10">
+                    <div class="container margin-t-b-10">
                         <div class="row h-100">
                             <div class="col-sm-12 col-md-6">
                                 <p class="title margin-none">Client: Donald Lombardi</p>
@@ -137,7 +138,7 @@
                     </div>
                 </div>
                 <div class="section d-flex">
-                    <div class="container-fluid margin-t-b-10">
+                    <div class="container margin-t-b-10">
                         <div class="row h-100">
                             <div class="col-sm-12 col-md-6 order-1 order-md-0">
                                 <img class="img-fill-container-cover h-100 w-100 border-r-5" src="<?php echo CacoonhubConstants::$img28?>">
@@ -267,7 +268,7 @@
                         <div class="row">
                             <div class="col-12 h-100">
                                 <p class="margin-t-10 sub-title">CVC Classifications</p>
-                                <img class="w-100 h-100 border-r-5 100-min-Vh img-cover" src="<?php echo CacoonhubConstants::$img1?>">
+                                <img class="w-100 border-r-5 margin-l-r-auto 100-Vw-Vh img-cover" src="<?php echo CacoonhubConstants::$img1?>">
                                 <p class="font-weight-300 margin-none">Open Ended Catheters</p>
                                 <p class="margin-none indent">The catheter is open at the distal tip.</p>
                                 <p class="margin-none indent">The catheter requires clamping before entry into the system.</p>
@@ -401,7 +402,8 @@
                                         <div class="col-12 margin-t-10">
                                             <div class="container-fluid row margin-l-r-auto border-blue row">
                                                 <div class="col-xs-12 col-md-6 col-lg-3 order-1 order-md-1 order-lg-0 margin-t-10">
-                                                    <p class="margin-none margin-t-10 sub-title">Left side (top to bottom)</p>
+                                                    <p class="margin-none margin-t-10 sub-title">Left side</p>
+                                                    <p class="margin-none sub-title">(top to bottom)</p>
                                                     <ul>
                                                         <li>Injection Cap</li>
                                                         <li>Providone-lodine</li>
@@ -416,7 +418,8 @@
                                                     <img class="w-100" src="<?php echo CacoonhubConstants::$img6?>">    
                                                 </div>
                                                 <div class="col-xs-12 col-md-6 col-lg-3 order-2 order-md-2 order-lg-2 margin-t-10">
-                                                    <p class="margin-none margin-t-10 sub-title">Right side (Top to bottom)</p>
+                                                    <p class="margin-none margin-t-10 sub-title">Right side</p>
+                                                    <p class="margin-none sub-title">(Top to bottom)</p>
                                                     <ul>
                                                         <li>Guidewire</li>
                                                         <li>Needles and Syringes</li>
@@ -430,9 +433,65 @@
                                             </div>
                                         </div>         
                                     </div>
-                                </div>  
+                                </div>   
                             </div>
                         </div>  
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-none margin-t-10 sub-title">Luer Fittings</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 margin-t-10">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p class="margin-t-10 sub-title">Luer Lock Fittings:</p>
+                                                    <p class="margin-10">The hub is attached to the syringe by twisting it into the threads of the syringe tip to “lock” it into place. The Luer lock is designed to be leak proof and prevent the syringe from slipping off.</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p class="margin-t-10 sub-title">Luer Slip Fittings:</p>
+                                                    <p class="margin-10">You “slip” the needle onto the syringe tip and rely on friction to keep it in place.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <img class="w-100 max-width-700px margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$img5?>">    
+                                        </div>         
+                                    </div>
+                                </div> 
+                            </div>              
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-none margin-t-10 sub-title">Stem Types</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p class="margin-none margin-t-10 sub-title">Deformable Stem</p>
+                                            <img class="w-100 max-width-300px margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$img24?>">    
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="margin-none margin-t-10 sub-title">Rigid Stem</p>
+                                            <img class="w-100 max-width-500px margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$titlePicImg?>">    
+                                        </div>                                          
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <img class="w-100 margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$img9?>">    
+                                        </div>  
+                                        <div class="col-12">
+                                            <p class="margin-none margin-t-10 sub-title">From Left to Right</p>
+                                            <ul class="w-100 max-width-300px margin-l-r-auto">
+                                                <li>Align Luer of syringe with Luer on access site.</li>
+                                                <li>Engage syringe to seal against silicone.</li>
+                                                <li>Push plunger on syringe to inject fluid.</li>
+                                                <li>Unscrew syringe and silicone valve closes.</li>
+                                                <li>Medication is injected; fluid pathway reseals.</li>
+                                            </ul> 
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>              
+                        </div>
                     </div>
                 </div>
             </div>      

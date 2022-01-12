@@ -21,7 +21,7 @@
         <img class="nav-logo-img no-select" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
     </div>
 </div>
-<div id="nav-screen" class="container-fluid 100-Vw-Vh" hidden>
+<div id="nav-screen" class="container-fluid 100-Vw-Vh-no-scroll" hidden>
     <div class="row stretch-to-screen margin-none">
         <div class="col-12 col-md-5 no-padding">
             <div class="row stretch-to-screen margin-none">

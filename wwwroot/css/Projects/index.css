@@ -25,6 +25,10 @@
     max-width: 500px;
 }
 
+.max-width-700px {
+    max-width: 700px;
+}
+
 .border-r-5 {
     border-radius: 5px;
 }
