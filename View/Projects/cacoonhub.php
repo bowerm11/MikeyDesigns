@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="<?php echo ProjectConstants::$indexCss?>">
     </head>
     <body>  
+        <div id="table-of-contents-container"></div>
         <div class="project-main-container navbar-removeable-section">
             <div class="100-Vw-Vh">
                 <img class="img-fill-container-cover" src="<?php echo CacoonhubConstants::$img21?>">
@@ -51,7 +52,7 @@
                                             <li>CVC Kits</li>
                                             <li>Luer Fittings</li>
                                             <li>Stem Types</li>
-                                            <li>Product Reference </li>
+                                            <li>Product Reference</li>
                                         </ul>
                                     </li>
                                     <li>Product Overview</li>
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
+                <div class="section js-toc-content-item" data-toc-title="Mission Statement">
                     <p class="title margin-none">Mission Statement:</p>
                     <div class="seperator-line"></div>
                     <div class="container margin-t-b-10">
@@ -73,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
+                <div class="section js-toc-content-item" data-toc-title="Need vs Want">
                     <p class="title margin-none">Need vs Want:</p>
                     <div class="seperator-line"></div>
                     <div class="container margin-t-b-10">
@@ -500,6 +501,7 @@
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>
         <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
         <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
+        <script type="text/javascript" src="<?php echo ProjectConstants::$tocJs?>"></script>
         <script type="text/javascript" src="<?php echo ProjectConstants::$indexJs?>"></script>
     </body>
 </html>
