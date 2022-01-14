@@ -373,7 +373,7 @@
                                         </div>
                                         <div class="col-sm-12 col-md-6 margin-t-10 h-inherit">
                                             <div class="border-blue padding-5 h-100 text-center">
-                                                <p class="font-weight-300 margin-none">Open/Luer Lock Valve</p>
+                                                <p class="font-weight-300 margin-none">Three Way Stopcocke</p>
                                                 <img class="w-100 max-width-500px" src="<?php echo CacoonhubConstants::$img3?>">
                                             </div>                    
                                         </div>
@@ -501,10 +501,10 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-6">
-                                            <img class="h-100 max-width-300px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img15?>">    
+                                            <img class="w-100 h-100 max-width-300px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img15?>">    
                                         </div>
                                         <div class="col-6">
-                                            <img class="h-100 max-width-300px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img10?>">    
+                                            <img class="w-100 h-100 max-width-300px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img10?>">    
                                         </div>                                           
                                     </div>
                                 </div> 
