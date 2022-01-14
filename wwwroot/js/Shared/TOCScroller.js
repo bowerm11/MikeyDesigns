@@ -1,6 +1,7 @@
 function TOCScroller(tocContainerElm) {
     this.containerElm = tocContainerElm;
     this.t_contentItems = [];
+    this.gotoHandler = null;
 
     this.init = function() {
         var contentItemElms = document.getElementsByClassName("js-toc-content-item");
@@ -13,6 +14,8 @@ function TOCScroller(tocContainerElm) {
             const contentItem = this.t_contentItems[i];
             this.containerElm.appendChild(contentItem.contentItemContainerElm);
         }
+
+        this.gotoHandler = new TocGoto(this.t_contentItems);
     }
 
     this.init();
@@ -77,9 +80,7 @@ function TableContentItem(containerElm, contentItemElm) {
         });
 
         this.contentBtnElm.addEventListener("click", function() {
-            $([document.documentElement, document.body]).animate({
-                scrollTop: obj.$contentItemElm.offset().top
-            }, 80);
+            obj.scrollToElm();
         });
 
         $window.scroll(function() {
@@ -91,6 +92,12 @@ function TableContentItem(containerElm, contentItemElm) {
         });
     }
 
+    this.scrollToElm = function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: this.$contentItemElm.offset().top
+        }, 80);
+    }
+
     this.contentElmInView = function() {
         var elementTop = this.$contentItemElm.offset().top;
         var elementBottom = elementTop + this.$contentItemElm.outerHeight();
@@ -99,6 +106,28 @@ function TableContentItem(containerElm, contentItemElm) {
         var viewportBottom = viewportTop + $window.height();
 
         return elementBottom > viewportTop && elementTop < viewportBottom;
+    }
+
+    this.init();
+}
+
+function TocGoto(t_contentItems) {
+    this.t_contentItems = t_contentItems;
+
+    this.init = function() {
+        var obj = this;
+
+        $(".js-toc-goto").click(function () {
+            const gotoName = this.getAttribute("data-goto-content-item");
+
+            for (let i = 0; i < obj.t_contentItems.length; i++) {
+                const contentItem = obj.t_contentItems[i];
+                if (contentItem.contentTitle == gotoName) {
+                    contentItem.scrollToElm();
+                    break;
+                }
+            }
+        });
     }
 
     this.init();

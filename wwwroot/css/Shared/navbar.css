@@ -21,7 +21,7 @@
 }
 
 #loading-container {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     background: #f1f1f1;

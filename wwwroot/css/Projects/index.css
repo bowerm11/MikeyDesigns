@@ -92,11 +92,21 @@
 }
 
 /*TOC Style*/
+.js-toc-goto {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+}
+
+.toc-list {
+    color: #0099ff;
+}
+
 #table-of-contents-container {
-    z-index: 9999;
+    z-index: 998;
     position: fixed;
     right: 0;
-    margin: 10px;
+    margin: 10px 20px 0px 0px;
     border-radius: 5px;
     border: solid;
     border-width: 1px;
@@ -144,7 +154,7 @@
     vertical-align: middle;
     border: solid;
     border-color: #686868;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 100%;
     background-color: #aadeff;
     background-color: #a8deffb8;
@@ -157,6 +167,8 @@
 
 #table-of-contents-container .content-btn.in-viewport {
     transform: scale(1.15);
+    background-color: #57bdff;
+    background-color: #57bdffb8;
 }
 
 /*Backgrounds*/

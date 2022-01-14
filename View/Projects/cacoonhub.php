@@ -30,33 +30,35 @@
                     <div class="seperator-line"></div>
                     <div class="container margin-t-b-10">
                         <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-sm-12 col-md-6">
                                 <ol class="margin-none">
-                                    <li>Mission Statement</li>
-                                    <li>Need vs. Want</li>
-                                    <li>Client: Donald Lombardi</li>
-                                    <li>Profile: Peter Provonost</li>
-                                </ol>
-                            </div>
-                            <div class="col-xs-12 col-md-6">
-                                <ol start="5">
-                                    <li>Initial Research
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Mission Statement">Mission Statement</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Need vs Want">Need vs. Want</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Client: Donald Lombardi">Client: Donald Lombardi</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Profile: Peter Provonost">Profile: Peter Provonost</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Initial Research">Initial Research</span>
                                         <ul>
-                                            <li>What's on Market</li>
-                                            <li>HACs vs HAIs</li>
-                                            <li>Meyer Children’s Hospital CLABSI Study</li>
-                                            <li>CVC Classifications</li>
-                                            <li>Types of CVCs</li>
-                                            <li>Applications</li>
-                                            <li>CVC Parts</li>
-                                            <li>CVC Kits</li>
-                                            <li>Luer Fittings</li>
-                                            <li>Stem Types</li>
-                                            <li>Product Reference</li>
+                                            <li><span class="toc-list">What's on Market</span></li>
+                                            <li><span class="toc-list">HACs vs HAIs</span></li>
+                                            <li><span class="toc-list">Meyer Children’s Hospital CLABSI Study</span></li>
+                                            <li><span class="toc-list">CVC Classifications</span></li>
+                                            <li><span class="toc-list">Types of CVCs</span></li>
+                                            <li><span class="toc-list">Applications</span></li>
+                                            <li><span class="toc-list">CVC Parts</span></li>
+                                            <li><span class="toc-list">CVC Kits</span></li>
+                                            <li><span class="toc-list">Luer Fittings</span></li>
+                                            <li><span class="toc-list">Stem Types</span></li>
+                                            <li><span class="toc-list">Cap Based Concepts</span></li>
                                         </ul>
                                     </li>
-                                    <li>Product Overview</li>
-                                    <li>Product Features</li>
+                                </ol>
+                            </div>
+                            <div class="col-sm-12 col-md-6">
+                                <ol start="6">
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Product Overview">Product Overview</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Justification">Justification</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Concept Sketches">Concept Sketches</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Recap">Recap</span></li>
                                 </ol>
                             </div>
                         </div>
@@ -118,7 +120,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section d-flex">
+                <div class="section d-flex js-toc-content-item" data-toc-title="Client: Donald Lombardi">
                     <div class="container margin-t-b-10">
                         <div class="row h-100">
                             <div class="col-sm-12 col-md-6">
@@ -138,7 +140,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section d-flex">
+                <div class="section d-flex js-toc-content-item" data-toc-title="Profile: Peter Provonost">
                     <div class="container margin-t-b-10">
                         <div class="row h-100">
                             <div class="col-sm-12 col-md-6 order-1 order-md-0">
@@ -165,7 +167,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="section">
+                <div class="section js-toc-content-item" data-toc-title="Initial Research">
                     <p class="title margin-none">Initial Research:</p>
                     <div class="seperator-line"></div>
                     <div class="container margin-t-b-10">
@@ -180,10 +182,10 @@
                                     <div class="col-12">
                                         <img class="w-100 border-r-5 d-block margin-l-r-auto max-width-300px" src="<?php echo CacoonhubConstants::$img29?>">
                                     </div>
-                                    <div class="col-xs-12 col-md-6">
+                                    <div class="col-sm-12 col-md-6">
                                         <img class="w-100 border-r-5" src="<?php echo CacoonhubConstants::$img12?>">
                                     </div>
-                                    <div class="col-xs-12 col-md-6">
+                                    <div class="col-sm-12 col-md-6">
                                         <img class="w-100 border-r-5" src="<?php echo CacoonhubConstants::$img8?>">
                                     </div>  
                                 </div>
@@ -269,7 +271,7 @@
                         <div class="row">
                             <div class="col-12 h-100">
                                 <p class="margin-t-10 sub-title">CVC Classifications</p>
-                                <img class="w-100 border-r-5 margin-l-r-auto 100-Vw-Vh img-cover" src="<?php echo CacoonhubConstants::$img1?>">
+                                <img class="w-100 border-r-5 margin-l-r-auto 100-Vw-Vh max-height-900px img-cover" src="<?php echo CacoonhubConstants::$img1?>">
                                 <p class="font-weight-300 margin-none">Open Ended Catheters</p>
                                 <p class="margin-none indent">The catheter is open at the distal tip.</p>
                                 <p class="margin-none indent">The catheter requires clamping before entry into the system.</p>
@@ -286,7 +288,7 @@
                             <div class="col-12">
                                 <p class="margin-t-10 sub-title">Types of CVCs</p>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                    <div class="col-sm-12 col-md-6 margin-t-b-10 h-inherit">
                                         <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">Short-term</p>
                                             <p class="margin-none indent">A short-term CVC is inserted into a large central vein through the skin. Can be sutured in place.</p>
@@ -303,7 +305,7 @@
                                             </ul>
                                         </div>                    
                                     </div>
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                    <div class="col-sm-12 col-md-6 margin-t-b-10 h-inherit">
                                         <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">PICC</p>
                                             <p class="margin-none indent">A CVC which is inserted into an extremity, typically in the cephalic, basilica or brachial veins of the upper arm.</p>
@@ -318,13 +320,13 @@
                                             </ul>
                                         </div>                      
                                     </div>
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                    <div class="col-sm-12 col-md-6 margin-t-b-10 h-inherit">
                                         <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">Tunneled Catheter</p>
                                             <p class="indent">A long-term CVC whose proximal end is tunneled subcutaneously from the insertion site and brought out through the skin at an exit site. It is an external device inserted in the OR or under fluoroscopy, and must be removed by a physician.</p>   
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-md-6 margin-t-b-10 h-inherit">
+                                    <div class="col-sm-12 col-md-6 margin-t-b-10 h-inherit">
                                         <div class="border-blue padding-5 h-100">
                                             <p class="font-weight-300 margin-none">Implanted Venous Access</p>
                                             <p class="indent">A long-term single or dual chamber “port” surgically implanted in the subcutaneous tissue usually in the upper chest. Needle access is required, and a surgical procedure is required to insert and remove.</p>
@@ -338,7 +340,7 @@
                                 <p class="margin-t-10 sub-title">Applications</p>
                                 <div class="w-100 h-100">
                                     <img class="w-100 border-r-5 d-block margin-l-r-auto max-width-500px" src="<?php echo CacoonhubConstants::$img2?>">
-                                    <div class="margin-l-r-auto max-width-500px">
+                                    <div class="margin-l-r-auto max-width-700px">
                                         <div class="border-blue background-blue blur">
                                             <ul>
                                                 <li>Administer intravenous fluid and blood products.</li>
@@ -363,13 +365,13 @@
                                 <p class="margin-none margin-t-10 sub-title">CVC Parts</p>
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col-xs-12 col-md-6 margin-t-10 h-inherit">
+                                        <div class="col-sm-12 col-md-6 margin-t-10 h-inherit">
                                             <div class="border-blue padding-5 h-100 text-center">
                                                 <p class="font-weight-300 margin-none">Open/Luer Lock Valve</p>
                                                 <img class="w-100 max-width-500px" src="<?php echo CacoonhubConstants::$img4?>">
                                             </div>                    
                                         </div>
-                                        <div class="col-xs-12 col-md-6 margin-t-10 h-inherit">
+                                        <div class="col-sm-12 col-md-6 margin-t-10 h-inherit">
                                             <div class="border-blue padding-5 h-100 text-center">
                                                 <p class="font-weight-300 margin-none">Open/Luer Lock Valve</p>
                                                 <img class="w-100 max-width-500px" src="<?php echo CacoonhubConstants::$img3?>">
@@ -381,10 +383,10 @@
                                     <div class="row">
                                         <div class="col-12 margin-t-10">
                                             <div class="container-fluid row margin-l-r-auto border-blue row">
-                                                <div class="col-xs-12 col-md-6">
+                                                <div class="col-sm-12 col-md-6">
                                                     <img class="img-fill-container-cover h-100 w-100 border-r-5" src="<?php echo CacoonhubConstants::$img22?>">
                                                 </div>
-                                                <div class="col-xs-12 col-md-6">
+                                                <div class="col-sm-12 col-md-6">
                                                     <p class="font-weight-300 margin-none text-center margin-t-b-10">(These are in order to line up with the diagram)</p>
                                                     <p>Durable, low-profile Luer lock adapter facilities cleaning and increases patient comfort.</p>
                                                     <p>Permanent external clamping segment eliminates cost and inconvenience of extension sets; promotes aseptic care.</p>
@@ -402,7 +404,7 @@
                                     <div class="row">
                                         <div class="col-12 margin-t-10">
                                             <div class="container-fluid row margin-l-r-auto border-blue row">
-                                                <div class="col-xs-12 col-md-6 col-lg-3 order-1 order-md-1 order-lg-0 margin-t-10">
+                                                <div class="col-sm-12 col-md-6 col-lg-3 order-1 order-md-1 order-lg-0 margin-t-10">
                                                     <p class="margin-none margin-t-10 sub-title">Left side</p>
                                                     <p class="margin-none sub-title">(top to bottom)</p>
                                                     <ul>
@@ -415,10 +417,10 @@
                                                         <li>Fenestrated Drape</li>
                                                     </ul>
                                                 </div>
-                                                <div class="col-xs-12 col-md-12 col-lg-6 order-0 order-md-0 order-lg-1 margin-t-10 vertical-align-middle">
-                                                    <img class="w-100" src="<?php echo CacoonhubConstants::$img6?>">    
+                                                <div class="col-sm-12 col-md-12 col-lg-6 order-0 order-md-0 order-lg-1 margin-t-10 vertical-align-middle">
+                                                    <img class="w-100 border-r-5" src="<?php echo CacoonhubConstants::$img6?>">    
                                                 </div>
-                                                <div class="col-xs-12 col-md-6 col-lg-3 order-2 order-md-2 order-lg-2 margin-t-10">
+                                                <div class="col-sm-12 col-md-6 col-lg-3 order-2 order-md-2 order-lg-2 margin-t-10">
                                                     <p class="margin-none margin-t-10 sub-title">Right side</p>
                                                     <p class="margin-none sub-title">(Top to bottom)</p>
                                                     <ul>
@@ -455,7 +457,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <img class="w-100 max-width-700px margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$img5?>">    
+                                            <img class="w-100 max-width-700px margin-l-r-auto d-block border-r-5" src="<?php echo CacoonhubConstants::$img5?>">    
                                         </div>         
                                     </div>
                                 </div> 
@@ -468,30 +470,146 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <p class="margin-none margin-t-10 sub-title">Deformable Stem</p>
-                                            <img class="w-100 max-width-300px margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$img24?>">    
+                                            <img class="w-100 max-width-300px margin-l-r-auto d-block border-r-5" src="<?php echo CacoonhubConstants::$img24?>">    
                                         </div>
                                         <div class="col-6">
                                             <p class="margin-none margin-t-10 sub-title">Rigid Stem</p>
-                                            <img class="w-100 max-width-500px margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$titlePicImg?>">    
+                                            <img class="w-100 max-width-500px margin-l-r-auto d-block border-r-5" src="<?php echo CacoonhubConstants::$titlePicImg?>">    
                                         </div>                                          
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <img class="w-100 margin-l-r-auto d-block" src="<?php echo CacoonhubConstants::$img9?>">    
+                                            <img class="w-100 margin-l-r-auto d-block border-r-5" src="<?php echo CacoonhubConstants::$img9?>">    
                                         </div>  
                                         <div class="col-12">
                                             <p class="margin-none margin-t-10 sub-title">From Left to Right</p>
-                                            <ul class="w-100 max-width-300px margin-l-r-auto">
+                                            <ol class="w-100 max-width-300px margin-l-r-auto">
                                                 <li>Align Luer of syringe with Luer on access site.</li>
                                                 <li>Engage syringe to seal against silicone.</li>
                                                 <li>Push plunger on syringe to inject fluid.</li>
                                                 <li>Unscrew syringe and silicone valve closes.</li>
                                                 <li>Medication is injected; fluid pathway reseals.</li>
-                                            </ul> 
+                                            </ol> 
                                         </div>
                                     </div>
                                 </div> 
                             </div>              
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-none margin-t-10 sub-title">Cap Based Concepts</p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <img class="h-100 max-width-300px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img15?>">    
+                                        </div>
+                                        <div class="col-6">
+                                            <img class="h-100 max-width-300px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img10?>">    
+                                        </div>                                           
+                                    </div>
+                                </div> 
+                            </div>              
+                        </div>
+                    </div>
+                </div>
+                <div class="section js-toc-content-item" data-toc-title="Product Overview">
+                    <p class="title margin-none">Product Overview:</p>
+                    <div class="seperator-line"></div>
+                    <div class="container margin-t-b-10">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-none">The Cocoon Hub is a simple yet affordable solution that minimizes any risk for infection providing the nurse has sterilized the injection site. Securing the existing catheter/ lumens by an antibacterial housing and 3M dressing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section js-toc-content-item" data-toc-title="Justification">
+                    <p class="title margin-none">Justification:</p>
+                    <div class="seperator-line"></div>
+                    <div class="container margin-t-b-10">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-none">The intent of securing the once dangling lumens by an antibacterial housing.</p>
+                                <p class="margin-none">Keeping the appearance simple and completely contained around the area of the catheter injection site, minimizing the risk of any infection.</p>
+                                <p class="margin-none">The use of existing locking mechanisms on the catheter/ lumens, 3M dressing, self sealing silicone.</p>
+                                <p class="margin-none">Suggesting the use of the Foster Antimicrobial Technologies.</p>
+                                <p>Plastic housing that protects the lumens from dangling and exposure.</p>
+                            </div>
+                            <div class="col-12 text-center">
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5" src="<?php echo CacoonhubConstants::$img16?>">    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section js-toc-content-item" data-toc-title="Concept Sketches">
+                    <p class="title margin-none">Concept Sketches:</p>
+                    <div class="seperator-line"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img14?>">          
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img25?>">          
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img17?>">          
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img19?>">          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-6 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-700px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img18?>">          
+                            </div>
+                            <div class="col-12 col-lg-6 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-700px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img21?>">          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img20?>">          
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img26?>">          
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img27?>">          
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 margin-t-b-10">  
+                                <img class="w-100 h-100 max-width-500px margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo CacoonhubConstants::$img23?>">          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section js-toc-content-item" data-toc-title="Recap">
+                    <p class="title margin-none">Recap:</p>
+                    <div class="seperator-line"></div>
+                    <div class="container margin-t-b-10">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">Mission</p>
+                                <p>Design a simple, affordable, sanitary, universal, and mass producible device for preventing infections with potential applications that go beyond the initial intended function.</p>
+                            </div>
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">Statistics</p>
+                                <p class="margin-none">CLABSIs are the most common HAI in childhood. According to an extensive study by Meyer Children's Hospital.</p>
+                                <ul class="margin-none">
+                                    <li>3.73/1,000 Average/ Central Line Days </li>
+                                    <li>5.69/1,000 Peak with ULC/ Central Line Days</li>
+                                </ul>
+                            </div>
+                            <div class="col-12">
+                                <p class="margin-t-10 sub-title">Research</p>
+                                <p class="margin-none">Types of Central Venous Catheters</p>
+                                <ul class="margin-none">
+                                    <li>Short-Term: Highest risk of infection. Can be easily dislodged.</li>
+                                    <li>PICC: Requires frequent dressing changes.</li>
+                                    <li>Tunneled: Installation requires an operating theater.</li>
+                                    <li>Implanted: The skin must be punctured each time the port is accessed. </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
