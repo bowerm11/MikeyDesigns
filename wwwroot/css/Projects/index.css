@@ -17,6 +17,10 @@
     top: 15%;
 }
 
+.max-height-900px {
+    max-height: 900px;
+}
+
 .max-width-300px {
     max-width: 300px;
 }
@@ -106,7 +110,7 @@
     z-index: 998;
     position: fixed;
     right: 0;
-    margin: 10px 20px 0px 0px;
+    margin: 5px 5px 0px 0px;
     border-radius: 5px;
     border: solid;
     border-width: 1px;
@@ -141,6 +145,7 @@
     cursor: pointer;
     transition: .2s;
     font-weight: 200;
+    font-size: 15px;;
 }
 
 #table-of-contents-container .content-title-btn-active {
@@ -166,7 +171,7 @@
 }
 
 #table-of-contents-container .content-btn.in-viewport {
-    transform: scale(1.15);
+    transform: scale(1.10);
     background-color: #57bdff;
     background-color: #57bdffb8;
 }

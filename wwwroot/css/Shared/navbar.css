@@ -192,6 +192,7 @@
     font-weight: 200;
     min-width: 270px;
     max-width: 450px;
+    opacity: 0;
     transform: translate(-135%, 0%);
 }
 
