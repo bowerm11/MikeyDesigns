@@ -118,7 +118,9 @@
     padding: 5px;
     background-color: transparent;
     transition: .2s;
+    opacity: 0;
     pointer-events: none;
+    animation: toc_slideIn .7s 2s ease-out forwards;
 }
 
 #table-of-contents-container.toc-container-btn-active {
@@ -174,6 +176,20 @@
     transform: scale(1.10);
     background-color: #57bdff;
     background-color: #57bdffb8;
+}
+
+@keyframes toc_slideIn {
+    0% {
+        opacity: 0;
+        transform: translate(20px, 0%);
+    }
+    40% {
+        transform: translate(-20px, 0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0%);
+    }
 }
 
 /*Backgrounds*/
@@ -281,6 +297,7 @@
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 40px;
 }
 
 .section {
