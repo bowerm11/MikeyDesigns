@@ -1,5 +1,5 @@
 <?php 
-    $pageTitle = "Cocoon Hub";
+    $pageTitle = "Hand Tool";
 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
