@@ -19,7 +19,7 @@
         public static $navbarJsLocation;
 
         public static function __constructStatic() {
-            static::$version = "1.0.0";
+            static::$version = "1.0.0-beta1";
             static::$rootPath = $_SERVER['DOCUMENT_ROOT'];
             static::$bootstrapCss = GlobalConstants::AppendVersion("/wwwroot/css/src/bootstrap/bootstrap.min.css");;
             static::$navbarCss = GlobalConstants::AppendVersion("/wwwroot/css/Shared/navbar.css");
