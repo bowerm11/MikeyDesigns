@@ -1,5 +1,5 @@
 <?php 
-    $pageTitle = "Hand Tool";
+    $pageTitle = "Cora IOT";
 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
@@ -8,7 +8,7 @@
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/Logger.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
 
-    Logger::Log("IP Remote/Forwarded (" . GlobalConstants::$ipRemote . "/" . GlobalConstants::$ipForwarded . ") entered the Handtool Project screen.", "Project_Handtool");
+    Logger::Log("IP Remote/Forwarded (" . GlobalConstants::$ipRemote . "/" . GlobalConstants::$ipForwarded . ") entered the Cora IoT Project screen.", "Project_CoraIot");
     SqlVisitors::SqlInsertVisitors();
 ?>
 
