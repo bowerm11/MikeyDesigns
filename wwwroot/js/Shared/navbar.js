@@ -11,7 +11,7 @@ function NavBar() {
     }
 
     this.showRemovableSections = function (whenDone) {
-        const fadeOutLenSec = 1;
+        const fadeOutLenSec = 0.6;
         const promises = [];
         
         for (let i = 0; i < this.removeableSections.length; i++) {
@@ -109,10 +109,7 @@ function MenuBtns(navBar) {
 
 function LoadingScreen() {
     this.loadingContainer = document.getElementById("loading-container");
-    this.fadeOutTimeSec = 1;
-
-    this.init = function() {
-    }
+    this.fadeOutTimeSec = 0.6;
 
     this.doneLoading = function(whenDone) {
         const obj = this;
@@ -131,14 +128,12 @@ function LoadingScreen() {
             } 
         });
     }
-
-    this.init();
 }
 
 function NavbarSquares(navBar) {
     this.navBar = navBar;
     this.navAnimationIsRunning = false;
-    this.navAnimationSpeedSec = 0.4;
+    this.navAnimationSpeedSec = 0.35;
     this.navAnimationSpeedMs = this.navAnimationSpeedSec * 1000;
 
     this.navScreenElm = document.getElementById("nav-screen");

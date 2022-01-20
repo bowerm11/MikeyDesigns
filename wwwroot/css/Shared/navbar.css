@@ -103,7 +103,7 @@
 .nav-logo-container {
     position: fixed;
     bottom: 0%;
-    z-index: 1000;
+    z-index: 999;
     width: 100%;
 }
 
@@ -342,11 +342,10 @@
     background-color: #303030e6;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border-radius: 0px 10px 10px 0px;
 }
 
 #nav-square-large-right:hover {
-    background-color: #1f1f1f;
+    background-color: #363636;
     -webkit-transition: background-color 200ms ease-out;
     -ms-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
@@ -363,7 +362,6 @@
     overflow: auto;
     background-color: #3b8cb5;
     background-color: #3b8cb5e6;
-    border-radius: 10px 0px 0px 0px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -389,7 +387,6 @@
     background-color: #007ab5;
     background-color: #0077b3f2;
     overflow: auto;
-    border-radius: 0px 0px 0px 10px;
 }
 
 #nav-square-small-bottom:hover {
@@ -465,6 +462,28 @@
 
 .underline-animate::before {
     transform: scaleX(1);
+}
+
+/*ScrollBar*/
+.nav-scroll-style::-webkit-scrollbar {
+    width: 8px;
+}
+
+/*The Scrollbar container*/
+.nav-scroll-style::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    background: #686868;
+}
+
+/*Style of bar*/
+.nav-scroll-style::-webkit-scrollbar-thumb {
+    background: #eaeaea; 
+    border-radius: 10px;
+}
+
+.nav-scroll-style::-webkit-scrollbar-thumb:hover {
+    background: #9c9c9c;
 }
 
 @media (max-width: 767px) {

@@ -9,7 +9,8 @@
             static::$projects = array(
                 new Project("/View/Projects/footweardesign.php", "footwear", "/wwwroot/images/Projects/Footwear/titlepic.jpg", "Footwear Design"),
                 new Project("/View/Projects/cocoonhub.php", "cocoonhub", "/wwwroot/images/Projects/Cocoonhub/18.jpg", "Cocoon Hub"),
-                new Project("/View/Projects/handtool.php", "handtool", "/wwwroot/images/Projects/Handtool/displayimg.png", "Hand Tool")
+                new Project("/View/Projects/handtool.php", "handtool", "/wwwroot/images/Projects/Handtool/displayimg.png", "Hand Tool"),
+                new Project("/View/Projects/coraiot.php", "coraiot", "/wwwroot/images/Projects/CoraIot/displayimg.png", "Cora Iot")
             );
         }
     }

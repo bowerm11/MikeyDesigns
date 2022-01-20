@@ -107,16 +107,6 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 margin-t-b-10">  
-                                <img class="w-100 h-100 margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo HandtoolConstants::$img4?>">          
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 margin-t-b-10">  
-                                <img class="w-100 h-100 margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo HandtoolConstants::$img5?>">          
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-12 col-sm-6 margin-t-b-10">  
                                 <img class="w-100 h-100 margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo HandtoolConstants::$img6?>">          
                             </div>
@@ -148,6 +138,16 @@
                             </div>
                             <div class="col-12 col-sm-6 margin-t-b-10">  
                                 <img class="w-100 h-100 margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo HandtoolConstants::$img13?>">          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 margin-t-b-10">  
+                                <img class="w-100 h-100 margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo HandtoolConstants::$img4?>">          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 margin-t-b-10">  
+                                <img class="w-100 h-100 margin-l-r-auto d-block img-cover border-r-5 border-blue" src="<?php echo HandtoolConstants::$img5?>">          
                             </div>
                         </div>
                         <div class="row">

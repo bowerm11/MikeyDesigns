@@ -87,7 +87,7 @@
                     <span class="position-relative animate-underline center-underline-white">Projects</span>
                 </p>    
                 <div id="projects-info" class="projects-container">
-                    <div id="card-container" class="card-container">
+                    <div id="card-container" class="card-container nav-scroll-style">
                         <?php foreach(Projects::$projects as &$project): ?>
                             <div class="row projects-card" data-card-name="<?= $project->projectCardName; ?>" data-page-url="<?= $project->projectPageUrl; ?>">
                                 <div class="col-12 card-img-container">
