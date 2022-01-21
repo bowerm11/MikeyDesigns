@@ -23,7 +23,7 @@
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>
         <div class="error-main-container navbar-removeable-section">
             <img class="error-img" src="<?php echo $navConst->loadingImg?>" alt="Dog Image">
-            <p class="text-center margin-none">Ruh-oh! Your request to <?php echo GlobalConstants::$requestedPage ?> was not found.</p>
+            <p class="text-center margin-none">Ruh-oh! Your request to <span id="url-location">this URL</span> was not found.</p>
             <p class="text-center">Please go to the menu bar and select what you need there.</p>
         </div>      
         <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
