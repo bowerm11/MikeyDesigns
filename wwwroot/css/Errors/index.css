@@ -1,0 +1,10 @@
+.error-main-container {
+    opacity: 0;
+    text-align: center;
+}
+
+.error-img {
+    width: 400px;
+    height: 400px;
+    animation: loadingScale 2s infinite alternate-reverse, loadingRotate 1s infinite alternate-reverse;
+}

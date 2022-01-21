@@ -5,4 +5,4 @@
 </IfModule>
 # php -- END cPanel-generated handler, do not edit
 
-ErrorDocument 404 /404.php
+ErrorDocument 404 /View/Errors/404.php
