@@ -90,7 +90,10 @@ function MenuBtns(navBar) {
         }
         
         this.homeElm.onclick = function() {
-            window.location.href = obj.homeElm.getAttribute("data-url");
+            obj.navBar.hideRemoveableSections(); 
+            obj.navBar.navBackground.closeMenuBar(function () {
+                window.location.href = obj.homeElm.getAttribute("data-url");
+            });
         } 
     }
 

@@ -38,7 +38,7 @@
                                     <li><span class="toc-list js-toc-goto" data-goto-content-item="Material Manufacturing">Material Manufacturing</span></li>
                                     <li><span class="toc-list js-toc-goto" data-goto-content-item="Biomaterials Utilized">Biomaterials Utilized</span></li>
                                     <li><span class="toc-list js-toc-goto" data-goto-content-item="Sketches">Sketches</span></li>
-                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Bill of Materials">Bill of Materials</span></li>
+                                    <li><span class="toc-list js-toc-goto" data-goto-content-item="Materials">Materials</span></li>
                                     <li><span class="toc-list js-toc-goto" data-goto-content-item="Final Product">Final Product</span></li>
                                 </ol>
                             </div>
@@ -208,8 +208,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="section js-toc-content-item" data-toc-title="Bill of Materials">
-                    <p class="title margin-none">Bill of Materials:</p>
+                <div class="section js-toc-content-item" data-toc-title="Materials">
+                    <p class="title margin-none">Materials:</p>
                     <div class="seperator-line"></div>
                     <div class="container margin-t-b-10">
                         <div class="row">
