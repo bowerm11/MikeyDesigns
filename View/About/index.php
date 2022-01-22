@@ -113,11 +113,11 @@
                             <tbody>
                                 <tr>
                                     <td>13th Annual IDA Awards - Product Design</td>
-                                    <td>2020</td>
+                                    <td>2019</td>
                                 </tr>
                                 <tr>
                                     <td>European Product Design Award Honorable Mention</td>
-                                    <td>2020</td>
+                                    <td>2019</td>
                                 </tr>
                                 <tr>
                                     <td>Scholastic Art and Writing Gold Key Drawing</td>
