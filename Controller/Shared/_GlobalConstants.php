@@ -16,6 +16,8 @@
         public static $navbarPhpLocation;
         public static $noscriptPhpLocation;
         public static $noscriptCssLocation;
+        public static $footerCssLocation;
+        public static $footerPhpLocation;
         public static $navbarJsLocation;
 
         public static function __constructStatic() {
@@ -34,6 +36,8 @@
             static::$navbarPhpLocation = $_SERVER['DOCUMENT_ROOT'] . "/View/Shared/_navbar.php";
             static::$noscriptPhpLocation = $_SERVER['DOCUMENT_ROOT'] . "/View/Shared/_noscript.php";
             static::$noscriptCssLocation = GlobalConstants::AppendVersion("/wwwroot/css/Shared/noscript.css");
+            static::$footerCssLocation = GlobalConstants::AppendVersion("/wwwroot/css/Shared/footer.css");
+            static::$footerPhpLocation = $_SERVER['DOCUMENT_ROOT'] . "/View/Shared/_footer.php";
             static::$navbarJsLocation = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
         }
 

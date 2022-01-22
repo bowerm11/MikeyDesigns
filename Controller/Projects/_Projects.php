@@ -4,6 +4,7 @@
 
     class Projects {
         public static $projects;
+        public static $projectsCount;
 
         public static function __constructStatic() {
             static::$projects = array(
@@ -12,6 +13,7 @@
                 new Project("/View/Projects/handtool.php", "handtool", "/wwwroot/images/Projects/Handtool/displayimg.png", "Hand Tool"),
                 new Project("/View/Projects/coraiot.php", "coraiot", "/wwwroot/images/Projects/CoraIot/displayimg.png", "Cora IOT")
             );
+            static::$projectsCount = count(static::$projects);
         }
     }
 

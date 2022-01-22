@@ -1,6 +1,6 @@
 <?php 
     $pageTitle = "About";
-
+    
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/About/AboutConstants.php");
@@ -16,6 +16,7 @@
 <html lang="en">
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
+        <link rel="stylesheet" href="<?php echo GlobalConstants::$footerCssLocation?>">
         <link rel="stylesheet" type="text/css" href="<?php echo AboutConstants::$aboutCss?>">
     </head>
     <body>
@@ -24,7 +25,7 @@
                 <div class="about-title-box-container">
                     <div class="about-title-box">
                         <p class="margin-none header">Hi, I'm Michael.</p>
-                        <p class="margin-none font-size-18">Industrial Designer</p>
+                        <p class="margin-none font-size-18"> Designer</p>
                     </div>
                 </div>
                 <div class="parallax-container">
@@ -139,6 +140,7 @@
                     </div>
                 </div>  
             </div>
+            <?php include_once(GlobalConstants::$footerPhpLocation)?>   
         </div>    
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>

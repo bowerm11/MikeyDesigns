@@ -1,10 +1,26 @@
+.error-main-container * {
+    font-family: 'Yantramanav', sans-serif, Arial, Helvetica;
+    font-weight: 200;
+}
+
+.push-footer-to-bottom {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .error-main-container {
     opacity: 0;
-    text-align: center;
 }
 
 .error-img {
     width: 400px;
     height: 400px;
     animation: loadingScale 2s infinite alternate-reverse, loadingRotate 1s infinite alternate-reverse;
+}
+
+.error-header {
+    font-weight: 300;
+    font-size: 24px;
 }

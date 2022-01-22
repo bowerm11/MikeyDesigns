@@ -13,7 +13,7 @@
     <div id="hamburger-top-line" class="hamburger-line"></div>
     <div id="hamburger-bottom-line" class="hamburger-line"></div>
 </div>  
-<div id="homeClickable" class="consistent-btn home-wrapper" data-url="/View/Home/index.php">
+<div id="homeClickable" class="consistent-btn home-wrapper" data-url="<?php echo $navConst->homeUrl?>">
     <img class="home-icon no-select" src="<?php echo $navConst->homeImg?>" alt="Home">
 </div>  
 <div class="nav-logo-container">
@@ -59,17 +59,17 @@
                                 </div>    
                                 <div class="contact-table-line margin-t-10">
                                     <img src="<?php echo $navConst->emailImg?>" alt="Email: " class="contact-img no-select">
-                                    <a href="mailto:bower.michael316@gmail.com" class="contact-text">bower.michael316@gmail.com</a>
+                                    <a href="mailto:<?php echo $navConst->email?>" class="contact-text"><?php echo $navConst->email?></a>
                                     <div class="seperator-line"></div>
                                 </div>    
                                 <div class="contact-table-line">
                                     <img src="<?php echo $navConst->phoneImg?>" alt="Number: " class="contact-img no-select">
-                                    <a href="tel:1-912-312-6253" class="contact-text">+1 (912) 312-6253</a>
+                                    <a href="tel:<?php echo $navConst->phoneNum?>" class="contact-text">+<?php echo $navConst->phoneNum?></a>
                                     <div class="seperator-line"></div>
                                 </div> 
                                 <div class="contact-table-line">
                                     <img src="<?php echo $navConst->locationImg?>" alt="Location: " class="contact-img no-select">
-                                    <a href="https://www.google.com/maps/place/Jacksonville,+FL/@30.3452116,-81.8231902,65957m/data=!3m2!1e3!4b1!4m5!3m4!1s0x88e5b716f1ceafeb:0xc4cd7d3896fcc7e2!8m2!3d30.3321838!4d-81.655651" target="_blank" class="contact-text">Jacksonville, FL</a>
+                                    <a href="<?php echo $navConst->locationGeo?>" target="_blank" class="contact-text"><?php echo $navConst->locationDisplayName?></a>
                                 </div> 
                             </div>
                             <div class="contact-social-section">

@@ -1,3 +1,8 @@
+#nav-screen * {
+    font-family: 'Yantramanav', sans-serif, Arial, Helvetica;
+    font-weight: 200;
+}
+
 .no-select {
     user-select: none;
 }
@@ -105,6 +110,7 @@
     top: 0%;
     z-index: 999;
     width: 100%;
+    transition: .3s;
 }
 
 .nav-logo-wrapper {
@@ -522,6 +528,13 @@
 
     #nav-square-large-right {
         border-radius: 0px 0px 10px 10px;
+    }
+}
+
+@media (max-width: 499px) {
+    .nav-logo-container {
+        opacity: 0;
+        pointer-events: none;
     }
 }
 

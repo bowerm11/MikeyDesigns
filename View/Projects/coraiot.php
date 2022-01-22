@@ -16,6 +16,7 @@
 <html lang="en">
     <head>
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
+        <link rel="stylesheet" href="<?php echo GlobalConstants::$footerCssLocation?>">
         <link rel="stylesheet" href="<?php echo ProjectConstants::$indexCss?>">
     </head>
     <body>  
@@ -383,7 +384,8 @@
                         </div>
                     </div>
                 </div>
-            </div>      
+            </div>   
+            <?php include_once(GlobalConstants::$footerPhpLocation)?>   
         </div>
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>

@@ -20,9 +20,16 @@
 
         //About
         public $aboutUrl;
+        public $homeUrl;
 
         //Projects
         public $footwearImg;
+
+        //Etc
+        public $phoneNum;
+        public $email;
+        public $locationGeo;
+        public $locationDisplayName;
 
         function __construct() {
             $this->hamburgerImg = GlobalConstants::AppendVersion("/wwwroot/images/Shared/bars.svg");
@@ -38,7 +45,13 @@
 
             $this->resumePath = GlobalConstants::AppendVersion("/wwwroot/images/Shared/Michael_Bower_Resume.pdf");
             $this->aboutUrl = "/View/About/index.php";
+            $this->homeUrl = "/View/Home/index.php";
             $this->footwearImg = GlobalConstants::AppendVersion("/wwwroot/images/Projects/Footwear/titlepic.jpg");
+
+            $this->phoneNum = "1-912-312-6253";
+            $this->email = "bower.michael316@gmail.com";
+            $this->locationGeo = "https://www.google.com/maps/place/Jacksonville,+FL/@30.3452116,-81.8231902,65957m/data=!3m2!1e3!4b1!4m5!3m4!1s0x88e5b716f1ceafeb:0xc4cd7d3896fcc7e2!8m2!3d30.3321838!4d-81.655651";
+            $this->locationDisplayName = "Jacksonville, FL";
         }
     }
 
