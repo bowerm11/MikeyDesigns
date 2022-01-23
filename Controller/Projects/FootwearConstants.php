@@ -1,6 +1,7 @@
 <?php 
     include_once(__DIR__ . "/../Shared/preventDirectCall.php");
     include_once(__DIR__ . "/../Shared/_GlobalConstants.php");
+    include_once(__DIR__ . "/ProjectConstants.php");
 
     class FootwearConstants {
         //CSS
