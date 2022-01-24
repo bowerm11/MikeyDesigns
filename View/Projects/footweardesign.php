@@ -1,5 +1,5 @@
 <?php 
-    $pageTitle = "Footwear Design Project";
+    $pageTitle = "Footwear Design";
 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
@@ -176,6 +176,11 @@
                                     </div>
                                     <div class="col-12 col-lg-6 margin-t-b-10">
                                         <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img18?>">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <p class="margin-none">Senior Project for Industrial Design / Date 2018 / 40 weeks</p>
                                     </div>
                                 </div>
                             </div>
