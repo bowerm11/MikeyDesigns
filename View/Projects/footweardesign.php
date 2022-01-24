@@ -129,7 +129,7 @@
                                 <p class="margin-none">Dritz Round and Braided Soft Stretch Elastic Cord</p>
                                 <p>1/8 in (.316 cm) & $1/4 in (.64 cm)</p>
                             </div>
-                            <div class="col-12 col-lg-6 margin-t-b-10 text-center">
+                            <div class="col-12 margin-t-b-10 text-center">
                                 <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img11?>">
                             </div>
                         </div>
