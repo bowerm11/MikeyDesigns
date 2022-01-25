@@ -33,6 +33,10 @@
     max-width: 700px;
 }
 
+.max-width-900px {
+    max-width: 900px;
+}
+
 .border-r-5 {
     border-radius: 5px;
 }
