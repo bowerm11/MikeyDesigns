@@ -14,7 +14,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head>  
         <?php include_once(GlobalConstants::$defaultHtmlHeadersLocation)?>
         <link rel="stylesheet" href="<?php echo HomeConstants::$homeCss?>">
     </head>

@@ -8,6 +8,7 @@
 <meta content="origin" name="referrer">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title><?php echo $pageTitle?></title>
+<link rel="shortcut icon" type="image/x-icon" href="/wwroot/images/shared/favicon.ico/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
