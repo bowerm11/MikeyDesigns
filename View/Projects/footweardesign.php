@@ -51,7 +51,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <p class="margin-none">A simple question, a shoe is a tool worn on the foot that protects the user from elements and aids in mobility. Footwear trends today have been driven by social demands rather than the physical need. The cultural implication of shoes enforce gender stereotypes, class and identity.</p>
-                                <p class="margin-none"></p>
                             </div>
                         </div>
                     </div>
@@ -63,7 +62,6 @@
                         <div class="row">
                             <div class="col-12">
                                 <p class="margin-none">The footwear is sustainable by 3D printing the wearable soles, an expensive concept that is already being created from various companies. As the twenty-first century heads into automated manufacturing, the consumer would just have to order the new parts online and return the old to be recycled. The goal of designing modular footwear with the intended purpose to not affect a landfill would be for the consumer to only replace what they need when they need it.</p>
-                                <p class="margin-none"></p>
                             </div>
                         </div>
                     </div>
