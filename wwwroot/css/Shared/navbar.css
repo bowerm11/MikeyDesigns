@@ -307,11 +307,12 @@
     margin-bottom: 10px;
     border-radius: 5px;
     background-color: #ffffff;
+    transition: all .25s ease-out;
 }
 
 .projects-card:hover {
     transform: scale(1.05);
-    transition: all .25s ease-out;
+    background-color: #f1f1f1;
 }
 
 .project-card-header {
