@@ -73,6 +73,7 @@ function TableContentItem(containerElm, contentItemElm, offsetOnScroll) {
 
     this.createEventHandlers = function() {
         const obj = this;
+
         $(this.contentBtnElm).hover(function() {
             obj.contentTitleElm.classList.add("content-title-btn-active");
             obj.containerElm.classList.add("toc-container-btn-active");
@@ -91,6 +92,11 @@ function TableContentItem(containerElm, contentItemElm, offsetOnScroll) {
             } else {
                 obj.contentBtnElm.classList.remove("in-viewport");
             }
+        });
+
+        $window.on("touchmove", function(e) {
+            obj.contentTitleElm.classList.remove("content-title-btn-active");
+            obj.containerElm.classList.remove("toc-container-btn-active");
         });
     }
 
