@@ -8,6 +8,7 @@ function NavBar() {
     this.init = function() {
         setAllVWVHMaxNoScroll();
         setAllVWVHMax();
+        setAllVWVHMaxVerticalSensitiveNoScroll();
     }
 
     this.showRemovableSections = function (whenDone) {
@@ -661,46 +662,63 @@ function setAllVWVHMax() {
     var $window = $(window);
     var initWidth = $window.width();
 
-    for (let i = 0; i < viewportsToMax.length; i++) {
-        const viewportElm = viewportsToMax[i];
-        viewportElm.style.width = $window.width() + "px";
-        viewportElm.style.height = $window.height() + "px";
-    }
+    setDimensions();
 
     window.addEventListener('resize', function() {
         var $width = $window.width();
-        var $height = $window.height();
         if (initWidth != $width) {
             initWidth = $width;
-            for (let i = 0; i < viewportsToMax.length; i++) {
-                const viewportElm = viewportsToMax[i];
-                viewportElm.style.width = $width + "px";
-                viewportElm.style.height = $height + "px";
-            }
+            setDimensions();
         }     
     });
+
+    function setDimensions() {
+        for (let i = 0; i < viewportsToMax.length; i++) {
+            const viewportElm = viewportsToMax[i];
+            viewportElm.style.width = $window.width() + "px";
+            viewportElm.style.height = $window.height() + "px";
+        }
+    }
+}
+
+function setAllVWVHMaxVerticalSensitiveNoScroll() {
+    const viewportsToMax = document.getElementsByClassName("100-Vw-Vh-vertical-sensitive-no-scroll");
+
+    setDimensions();
+
+    window.addEventListener('resize', function() {
+        setDimensions();
+    });
+
+    function setDimensions() {
+        for (let i = 0; i < viewportsToMax.length; i++) {
+            const viewportElm = viewportsToMax[i];
+            viewportElm.style.width = window.innerWidth + "px";
+            viewportElm.style.height = window.innerHeight + "px";
+        }
+    }
 }
 
 function setAllVWVHMaxNoScroll() {
     const viewportsToMax = document.getElementsByClassName("100-Vw-Vh-no-scroll");
     var initWidth = window.innerWidth;
 
-    for (let i = 0; i < viewportsToMax.length; i++) {
-        const viewportElm = viewportsToMax[i];
-        viewportElm.style.width = window.innerWidth + "px";
-        viewportElm.style.height = window.innerHeight + "px";
-    }
+    setDimensions();
 
     window.addEventListener('resize', function() {
         if (initWidth != window.innerWidth) {
             initWidth = window.innerWidth;
-            for (let i = 0; i < viewportsToMax.length; i++) {
-                const viewportElm = viewportsToMax[i];
-                viewportElm.style.width = window.innerWidth + "px";
-                viewportElm.style.height = window.innerHeight + "px";
-            }
+            setDimensions();
         }     
     });
+
+    function setDimensions() {
+        for (let i = 0; i < viewportsToMax.length; i++) {
+            const viewportElm = viewportsToMax[i];
+            viewportElm.style.width = window.innerWidth + "px";
+            viewportElm.style.height = window.innerHeight + "px";
+        }
+    }
 }
 
 reloadPageIfBackButtonHit();

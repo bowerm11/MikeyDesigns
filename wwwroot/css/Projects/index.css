@@ -124,7 +124,7 @@
     transition: .2s;
     opacity: 0;
     pointer-events: none;
-    animation: toc_slideIn .7s 2s ease-out forwards;
+    animation: toc_slideIn .7s 1.5s ease-out forwards;
 }
 
 #table-of-contents-container.toc-container-btn-active {
@@ -193,6 +193,41 @@
     100% {
         opacity: 1;
         transform: translate(0px, 0%);
+    }
+}
+
+/*Cover Styles*/
+.arrow-down-cover-container {
+    bottom: 0%;
+    width: 100%;
+}
+
+.arrow-down-cover-img {
+    width: 40px;
+    height: 40px;
+    user-select: none;
+    animation: arrow-down-animation 3.2s ease-in-out infinite;
+}
+
+@keyframes arrow-down-animation {
+    0% {
+        opacity: 0;
+        transform: translate(0px, -24px);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(0px, -24px);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0px 0px);
     }
 }
 

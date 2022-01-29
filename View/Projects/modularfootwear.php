@@ -1,9 +1,9 @@
 <?php 
-    $pageTitle = "Footwear Design";
+    $pageTitle = "Modular Footwear";
 
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/allowDirectCall.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/globalErrorHandler.php");
-    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Projects/FootwearConstants.php");
+    include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Projects/ModularfootwearConstants.php");
     include_once($_SERVER['DOCUMENT_ROOT'] . "/Controller/Shared/SqlVisitors.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/Logger.php");
     include_once(GlobalConstants::$rootPath . "/Controller/Shared/_defaultHeaders.php");
@@ -22,8 +22,11 @@
     <body>  
         <div id="table-of-contents-container"></div>
         <div class="project-main-container navbar-removeable-section">
-            <div class="100-Vw-Vh">
-                <img class="img-fill-container-cover" src="<?php echo FootwearConstants::$titlePicImg?>">
+            <div class="100-Vw-Vh position-relative">
+                <div class="arrow-down-cover-container position-absolute">
+                    <img class="arrow-down-cover-img d-block margin-l-r-auto" src="<?php echo ProjectConstants::$arrowDownWhiteSvg?>">
+                </div>
+                <img class="img-fill-container-cover" src="<?php echo ModularfootwearConstants::$titlePicImg?>">
             </div>
             <div class="project-main">
                 <div class="section">
@@ -74,33 +77,33 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img1?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img1?>">
                                     </div>
                                 </div>  
                                 <div class="row">
                                     <div class="col-12 col-lg-6 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img2?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img2?>">
                                     </div>
                                     <div class="col-12 col-lg-6 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img3?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img3?>">
                                     </div>
                                 </div>   
                                 <div class="row">
                                     <div class="col-12 col-lg-6 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img4?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img4?>">
                                     </div>
                                     <div class="col-12 col-lg-6 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img5?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img5?>">
                                     </div>
                                 </div> 
                                 <div class="row">
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img6?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img6?>">
                                     </div>
                                 </div>  
                                 <div class="row">
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img7?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img7?>">
                                     </div>
                                 </div>     
                             </div>
@@ -113,7 +116,7 @@
                     <div class="container margin-t-b-10">
                         <div class="row">
                             <div class="col-12 col-lg-6 margin-t-b-10 text-center">
-                                <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img8?>">
+                                <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img8?>">
                                 <p class="margin-none">Knitting in the round: 55 Stitches</p>
                                 <p class="margin-none">Needle 1 has 27 Stitches</p>
                                 <p class="margin-none">Needle 2 has 14 Stitches</p>
@@ -122,13 +125,13 @@
                                 <p>Decreasing by SSK (slip slip knit) every other round of knits</p>
                             </div>
                             <div class="col-12 col-lg-6 margin-t-b-10 text-center">
-                                <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img9?>">
+                                <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img9?>">
                                 <p class="margin-none">Material used on Upper</p>
                                 <p class="margin-none">Dritz Round and Braided Soft Stretch Elastic Cord</p>
                                 <p>1/8 in (.316 cm) & $1/4 in (.64 cm)</p>
                             </div>
                             <div class="col-12 margin-t-b-10 text-center">
-                                <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img11?>">
+                                <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img11?>">
                             </div>
                         </div>
                     </div>
@@ -141,16 +144,16 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img12?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img12?>">
                                     </div>
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-300px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img13?>">
+                                        <img class="w-100 max-width-300px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img13?>">
                                     </div>
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img14?>">
+                                        <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img14?>">
                                     </div>
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img15?>">
+                                        <img class="w-100 max-width-500px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img15?>">
                                     </div>
                                 </div> 
                             </div>
@@ -165,15 +168,15 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-12 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img16?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img16?>">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-lg-6 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img17?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img17?>">
                                     </div>
                                     <div class="col-12 col-lg-6 margin-t-b-10">
-                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo FootwearConstants::$img18?>">
+                                        <img class="w-100 max-width-700px d-block margin-l-r-auto border-r-5" src="<?php echo ModularfootwearConstants::$img18?>">
                                     </div>
                                 </div>
                                 <div class="row">

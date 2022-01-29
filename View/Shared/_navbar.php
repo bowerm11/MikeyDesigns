@@ -21,12 +21,12 @@
         <img class="nav-logo-img no-select" src="<?php echo $navConst->logoImg?>" alt="Mikey Designs">
     </div>
 </div>
-<div id="nav-screen" class="container-fluid 100-Vw-Vh-no-scroll" hidden>
+<div id="nav-screen" class="container-fluid 100-Vw-Vh-vertical-sensitive-no-scroll" hidden>
     <div class="row stretch-to-screen margin-none">
         <div class="col-12 col-md-5 no-padding">
-            <div class="row stretch-to-screen margin-none">
+            <div class="row margin-none">
                 <div id="nav-square-small-top-container" class="col-12" data-url="<?php echo $navConst->aboutUrl?>">  
-                    <div id="nav-square-small-top" title="Click Here for More Info">
+                    <div id="nav-square-small-top" class="nav-scroll-style" title="Click Here for More Info">
                         <div>
                             <p id="about-text" class="block-title color-gray">
                                 <span class="position-relative color-white animate-underline right-underline-gray">About</span>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div id="nav-square-small-bottom-container" class="col-12">
-                    <div id="nav-square-small-bottom">
+                    <div id="nav-square-small-bottom" class="nav-scroll-style">
                         <div>
                             <p id="contact-text" class="block-title color-white">
                                 <span class="position-relative animate-underline left-underline-white">Let's Talk</span>

@@ -8,7 +8,7 @@
 
         public static function __constructStatic() {
             static::$projects = array(
-                new Project("/View/Projects/footweardesign.php", "footwear", "/wwwroot/images/Projects/Footwear/titlepic.jpg", "Modular Footwear"),
+                new Project("/View/Projects/modularfootwear.php", "modularfootwear", "/wwwroot/images/Projects/Footwear/titlepic.jpg", "Modular Footwear"),
                 new Project("/View/Projects/bagdesign.php", "bagdesign", "/wwwroot/images/Projects/Bagdesign/titlepic.png", "Bag Design"),
                 new Project("/View/Projects/armadahomeiot.php", "armadahomeiot", "/wwwroot/images/Projects/Armadahomeiot/1.png", "Armada Home IOT"),
                 new Project("/View/Projects/cocoonhub.php", "cocoonhub", "/wwwroot/images/Projects/Cocoonhub/18.jpg", "Cocoon Hub"),

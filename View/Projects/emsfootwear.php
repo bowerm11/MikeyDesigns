@@ -22,7 +22,10 @@
     <body>  
         <div id="table-of-contents-container"></div>
         <div class="project-main-container navbar-removeable-section">
-            <div class="100-Vw-Vh">
+            <div class="100-Vw-Vh position-relative">
+                <div class="arrow-down-cover-container position-absolute">
+                    <img class="arrow-down-cover-img d-block margin-l-r-auto" src="<?php echo ProjectConstants::$arrowDownBlackSvg?>">
+                </div>
                 <img class="img-fill-container-cover" src="<?php echo EmsfootwearConstants::$img1?>">
             </div>
             <div class="project-main">

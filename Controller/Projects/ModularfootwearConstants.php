@@ -3,7 +3,7 @@
     include_once(__DIR__ . "/../Shared/_GlobalConstants.php");
     include_once(__DIR__ . "/ProjectConstants.php");
 
-    class FootwearConstants {
+    class ModularfootwearConstants {
         public static $titlePicImg;
         public static $img1;
         public static $img2;
@@ -47,5 +47,5 @@
         }
     }
 
-    FootwearConstants::__constructStatic();
+    ModularfootwearConstants::__constructStatic();
 ?>

@@ -355,7 +355,8 @@
 }
 
 #nav-square-large-right:hover {
-    background-color: #363636;
+    background-color: #242424;
+    background-color: #242424e6;
     -webkit-transition: background-color 200ms ease-out;
     -ms-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
@@ -379,6 +380,7 @@
 #nav-square-small-top:hover {
     cursor: pointer;
     background-color: #247299;
+    background-color: #247299f0;
     -webkit-transition: background-color 200ms ease-out;
     -ms-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
@@ -401,6 +403,7 @@
 
 #nav-square-small-bottom:hover {
     background-color: #006395;
+    background-color: #006395f5;
     -webkit-transition: background-color 200ms ease-out;
     -ms-transition: background-color 200ms ease-out;
     transition: background-color 200ms ease-out;
