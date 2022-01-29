@@ -2,12 +2,13 @@ function TOCScroller(tocContainerElm) {
     this.containerElm = tocContainerElm;
     this.t_contentItems = [];
     this.gotoHandler = null;
+    this.scrollTopOffsetPx = -30;
 
     this.init = function() {
         var contentItemElms = document.getElementsByClassName("js-toc-content-item");
         for (let i = 0; i < contentItemElms.length; i++) {
             const contentItemElm = contentItemElms[i];
-            this.t_contentItems.push(new TableContentItem(this.containerElm, contentItemElm));
+            this.t_contentItems.push(new TableContentItem(this.containerElm, contentItemElm, this.scrollTopOffsetPx));
         }
 
         for (let i = 0; i < this.t_contentItems.length; i++) {
@@ -21,12 +22,13 @@ function TOCScroller(tocContainerElm) {
     this.init();
 }
 
-function TableContentItem(containerElm, contentItemElm) {
+function TableContentItem(containerElm, contentItemElm, offsetOnScroll) {
     var $window = $(window);
 
     this.containerElm = containerElm;
     this.contentItemElm = contentItemElm;
     this.$contentItemElm = $(contentItemElm);
+    this.offsetOnScroll = offsetOnScroll;
     this.contentTitle = contentItemElm.getAttribute("data-toc-title");
     this.contentTitleElm = null;
     this.contentBtnElm = null;
@@ -94,7 +96,7 @@ function TableContentItem(containerElm, contentItemElm) {
 
     this.scrollToElm = function() {
         $([document.documentElement, document.body]).animate({
-            scrollTop: this.$contentItemElm.offset().top
+            scrollTop: this.$contentItemElm.offset().top + this.offsetOnScroll
         }, 80);
     }
 

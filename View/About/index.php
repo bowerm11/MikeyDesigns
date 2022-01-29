@@ -25,7 +25,7 @@
                 <div class="about-title-box-container">
                     <div class="about-title-box">
                         <p class="margin-none header">Hi, I'm Michael.</p>
-                        <p class="margin-none font-size-18"> Designer</p>
+                        <p class="margin-none font-size-18">Industrial Designer</p>
                     </div>
                 </div>
                 <div class="parallax-container">

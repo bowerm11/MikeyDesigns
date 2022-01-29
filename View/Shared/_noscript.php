@@ -4,5 +4,6 @@
 ?>
 <noscript>
     <link rel="stylesheet" type="text/css" href="<?php echo GlobalConstants::$noscriptCssLocation?>">
-    <p>Turn on JavaScript, silly!</p>
+    <p>This site requires JavaScript.</p>
+    <p>So enable on JavaScript, silly!</p>
 </noscript>
