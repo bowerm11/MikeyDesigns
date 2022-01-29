@@ -91,7 +91,7 @@
                         <?php foreach(Projects::$projects as &$project): ?>
                             <div class="row projects-card" data-card-name="<?= $project->projectCardName; ?>" data-page-url="<?= $project->projectPageUrl; ?>">
                                 <div class="col-12 card-img-container">
-                                    <img src="<?= $project->projectImgUrl;?>" alt="Footwear Project">
+                                    <img src="<?= $project->projectImgUrl;?>" alt="<?= $project->projectDisplayName; ?>">
                                 </div>
                                 <div class="col-12">
                                     <p class="project-card-header"><?= $project->projectDisplayName; ?></p>
