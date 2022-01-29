@@ -524,18 +524,6 @@
         transform: translate(100%, 0%);
         height: auto;
     }
-
-    #nav-square-small-top {
-        border-radius: 10px 10px 0px 0px;
-    }
-
-    #nav-square-small-bottom {
-        border-radius: 0px 0px 0px 0px;
-    }
-
-    #nav-square-large-right {
-        border-radius: 0px 0px 10px 10px;
-    }
 }
 
 @media (max-width: 499px) {
