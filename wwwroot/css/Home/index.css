@@ -36,3 +36,12 @@ body {
         transform: rotate(30deg) translate(35px, -10px);
     }
 }
+
+@keyframes wave-hand-fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

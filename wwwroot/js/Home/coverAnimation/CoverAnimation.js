@@ -5,11 +5,27 @@ class AssetLoader {
         this.Promises = [];
 
         this.IslandModel = null;
+        this.BoatModel = null;
+        this.HouseModel = null;
+        this.CloudModel = null;
+        this.MailboxModel = null;
+        this.PinetreeModel = null;
+        this.PlantModel = null;
+        this.PondModel = null;
+
         this.SmokeTexture = null;
     }
 
     startLoadingAssetsAsync() {
         this.#loadGLTFAssetAsync("/wwwroot/models/island.glb", (model) => this.IslandModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/boat.glb", (model) => this.BoatModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/house.glb", (model) => this.HouseModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/cloud.glb", (model) => this.CloudModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/mailbox.glb", (model) => this.MailboxModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/pinetree.glb", (model) => this.PinetreeModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/plant.glb", (model) => this.PlantModel = model);
+        this.#loadGLTFAssetAsync("/wwwroot/models/pond.glb", (model) => this.PondModel = model);
+
         this.#loadTextureAsync("/wwwroot/images/Home/smoke.png", (model) => this.SmokeTexture = model);
     }
 
@@ -81,7 +97,7 @@ class CoverAnimation {
         this.StarBackground = new StarBackground(this);
         this.IslandModel = new Island(this);
 
-        this.Camera.position.set(0, 0, 50);
+        this.Camera.position.set(0, 0, 5);
         this.CameraOrbitControl.target.set(0, 0, 0);
         this.CameraOrbitControl.enableDamping = true;
         this.CameraOrbitControl.dampingFactor = 0.25;
@@ -112,7 +128,7 @@ class CoverAnimation {
         }, false);
 
         this.Renderer.domElement.addEventListener('click', function() {
-            coverAnimationObj.handHelperElm.style.animation = "fadeOut 1s forwards";
+            coverAnimationObj.handHelperElm.style.animation = "wave-hand-fade-out 1s forwards";
             setTimeout(function() {
                 coverAnimationObj.handHelperElm.remove();
             }, 1000);
@@ -133,45 +149,4 @@ function runAnimationLoop(CoverAnimation) {
     CoverAnimation.Renderer.clear(true, true, true);
     CoverAnimation.IslandModel.render();
     CoverAnimation.StarBackground.render();
-}
-
-class ThreeObjectSet {
-    constructor(coverAnimation) {
-        this.CoverAnimation = coverAnimation;
-        this.Scenes = [];
-    }
-
-    rotateAllBy(x, y, z) {
-        for (var i = 0; i < this.Scenes.length; i++) {
-            var scene = this.Scenes[i];
-            ThreeObjectSet.rotateSceneBy(scene, x, y, z);
-        }
-    }
-
-    setAllRotationAnimation(updateSpeed, x, y, z) {
-        var obj = this;
-        setInterval(function() {
-            obj.rotateAllBy(x, y, z);
-        }, updateSpeed);
-    }
-
-    setAllScenes() {
-        var keys = Object.keys(this);
-        var scenes = [];
-
-        for (var i = 0; i < keys.length; i++) {
-            var val = this[keys[i]];
-            if(val.name == this.CoverAnimation.THREE.Scene.name) {
-                scenes.push(val);
-            }
-        }
-
-        this.Scenes = scenes;
-    }
-
-    static rotateSceneBy(scene, x, y, z) {
-        scene.rotation.x += x;
-        scene.rotation.y += y;
-        scene.rotation.z += z;
-    }
 }
