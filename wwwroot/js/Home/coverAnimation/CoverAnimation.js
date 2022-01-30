@@ -103,7 +103,7 @@ class CoverAnimation {
         this.CameraOrbitControl.dampingFactor = 0.25;
 
         //Set size will set size of canvas. Add third param and set to false to change resolution.
-        //Add css canvas style to 100% for same render size but lower res.
+        //Add css canvas style to 100% for same render size but lower res
         this.Renderer.setClearColor(0xffffff, 0.15);
         this.Renderer.setSize($(homeConatiner).width(), $(homeConatiner).height());
         this.Renderer.setPixelRatio(1.5);
