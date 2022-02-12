@@ -4,14 +4,10 @@
     include_once(__DIR__ . "/Config.php");
     include_once(__DIR__ . "/Logger.php");
 
-    class SqlVisitors {
+    class Sql {
         public static $pdo = null;
 
         public static function __contructStatic() {
-            if (!Config::$isProduction) {
-                return;
-            }
-
             $dsn = "mysql:host=" . Config::$dbhost . ";dbname=" . Config::$db . ";charset=utf8mb4";
             $options = [
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
@@ -26,13 +22,24 @@
             }
         }
 
-        public static function SqlInsertVisitors() {
+        public static function PdoConnectionSuccess()
+        {
             if (static::$pdo == null) {
+                return false;
+            }
+
+            return true;
+        }
+    }
+
+    class SqlVisitors {
+        public static function SqlInsertVisitors() {
+            if (!Sql::PdoConnectionSuccess()) {
                 return;
             }
 
             try {
-                static::$pdo->prepare("
+                Sql::$pdo->prepare("
                     INSERT INTO Visitors (UserAgent, IpRemote, IpForwarded, RequestedPage)
                     VALUES (?, ?, ?, ?)
                     ")->execute([GlobalConstants::$userAgent, GlobalConstants::$ipRemote, GlobalConstants::$ipForwarded, GlobalConstants::$requestedPage]);
@@ -42,5 +49,5 @@
         }
     }
 
-    SqlVisitors::__contructStatic();
+    Sql::__contructStatic();
 ?>
