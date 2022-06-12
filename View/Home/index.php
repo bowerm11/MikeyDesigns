@@ -28,10 +28,8 @@
         <?php include_once(GlobalConstants::$navbarPhpLocation) ?>
         <?php include_once(GlobalConstants::$noscriptPhpLocation) ?>
         <script type="text/javascript" src="<?php echo GlobalConstants::$jQueryJs?>"></script>
-        <script type="text/javascript" src="<?php echo HomeConstants::$coverAnimationJs?>"></script>
-        <script type="text/javascript" src="<?php echo HomeConstants::$starBackgroundJs?>"></script>
-        <script type="text/javascript" src="<?php echo HomeConstants::$islandJs?>"></script>
         <script type="text/javascript" src="<?php echo GlobalConstants::$navbarJsLocation?>"></script>
+        <script type="text/javascript" src="<?php echo HomeConstants::$homeAnimationJs?>"></script>
         <script type="module" src="<?php echo HomeConstants::$indexJs?>"></script>
     </body>   
 </html>

@@ -7,10 +7,9 @@
         public static $homeCss;
 
         //JS
-        public static $coverAnimationJs;
-        public static $starBackgroundJs;
-        public static $islandJs;
+        public static $homeAnimationJs;
         public static $navBarJs;
+        public static $threeJs;
         public static $indexJs;
 
         //IMG
@@ -21,10 +20,9 @@
         public static function __constructStatic() {
             static::$homeCss = GlobalConstants::AppendVersion("/wwwroot/css/Home/index.css");
 
-            static::$coverAnimationJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/CoverAnimation.js");
-            static::$starBackgroundJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/StarBackground.js");
-            static::$islandJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/coverAnimation/island/Island.js");
+            static::$homeAnimationJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/HomeAnimation.js");
             static::$navBarJs = GlobalConstants::AppendVersion("/wwwroot/js/Shared/navbar.js");
+            static::$threeJs = GlobalConstants::AppendVersion("/wwwroot/js/src/threeJs/three.min.js");
             static::$indexJs = GlobalConstants::AppendVersion("/wwwroot/js/Home/index.js");
 
             static::$handImg = GlobalConstants::AppendVersion("/wwwroot/images/Home/hand-pointer.svg");
