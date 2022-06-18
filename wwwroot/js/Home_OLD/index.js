@@ -7,9 +7,10 @@ $(document).ready(function() {
     const nav = new NavBar();
     const assets = new AssetLoader(GLTFLoader, THREE);
     
-    assets.startLoadingAssetsAsync(function() {
-        const homeAnimation = new HomeAnimation(THREE, assets, OrbitControls, homeContainer);
-        homeAnimation.run();
+    assets.startLoadingAssetsAsync();
+    assets.doneLoadingAssets(() => {
+        const coverAnimation = new CoverAnimation(THREE, assets, OrbitControls, homeContainer);
+        coverAnimation.run();
         nav.loadingScreen.doneLoading();
     });
 });
