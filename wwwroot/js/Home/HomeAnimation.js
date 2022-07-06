@@ -137,8 +137,10 @@ class KeyCoin {
     }
 
     #addModelToScene() {
-        this.Scene.add(this.Axis);
+        //this.Scene.add(this.Axis);
         this.Scene.add(this.CoinKeyModelModel);
+        this.CoinKeyModelModel.rotation.x = -Math.PI / 2;
+        this.CoinKeyModelModel.rotation.y = (-Math.PI / 2) * 2;
     }
 
     #setLighting() {
